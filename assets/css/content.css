@@ -1,0 +1,23 @@
+.contentContainer {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+}
+.createSurvey {
+	margin: 0 auto;
+}
+.createSurvey span{
+	font-size: 2.5vw;
+	letter-spacing: .2vw;
+  padding: 1.5vw;
+  color: #ffffff;
+  border: .1vw solid #14a3dc;
+  border-radius: .9vw;
+	background:  #14a3dc;
+	cursor: pointer;
+	transition: background .2s ease-in-out;
+}
+.createSurvey span:hover {
+	background: #0e88b9;
+}
