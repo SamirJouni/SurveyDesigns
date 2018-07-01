@@ -11,17 +11,19 @@
 	align-items: center;
 }
 .sidebar span {
-	color: #000000;
-	font-size: 1.6vw;
+	color: #75a902;
+	font-size: 1.45vw;
+	font-weight: 800;
 	padding: 3.9vw 0;
 	border-bottom: .15vw solid #dce5ee;
-	width: 90%;
-	text-align: center;
+	width: 80%;
+	text-align: left;
 	cursor: pointer;
 	overflow-y: hidden;
 }
 .sidebar span:last-child {
 	border-bottom: 0;
+	text-align: center;
 }
 .sidebar span:hover {
 	background: #fbfbfb;
