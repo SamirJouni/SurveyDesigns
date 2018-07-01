@@ -1,28 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 460">
-  <path fill="#cff9f4" d="M276.563 87.084V48.281H230l-15.521 38.803z" data-old_color="#CEF9F4" data-original="#FFEDB5"/>
-  <path fill="#beedf3" d="M183.437 48.281H230v38.802h-46.563z" data-old_color="#C9EDF2" data-original="#FFFFFF"/>
-  <path fill="#00ffcb" d="M214.829 371.741L230 394.5h131.073V68.281H302z" data-old_color="#00FFDB" data-original="#FFC61B"/>
-  <path fill="#f3e0f6" d="M341.07 129v245.5H230L210.47 125z" data-old_color="#F3DEF6" data-original="#C2FBFF"/>
-  <path fill="#beedf3" d="M341.07 88.28V129H230l-23.34-40.72z" class="active-path" data-old_color="#D4C8E8" data-original="#71E2F0"/>
-  <path fill="#88edd3" d="M158 68.281h-58V394.5h130v-22.759z" data-old_color="#87EDD3" data-original="#FEE187"/>
-  <path fill="#beedf3" d="M230 125v249.5H118.93V129z" data-old_color="#C9EDF2" data-original="#FFFFFF"/>
-  <path fill="#f3e0f6" d="M118.93 88.28H230V129H118.93z" data-old_color="#F3DEF6" data-original="#C2FBFF"/>
-  <path fill="#88edd3" d="M230 68.281l-15.173 20 15.173 20h72v-40z" data-old_color="#87EDD3" data-original="#FEE187"/>
-  <path fill="#cff9f4" d="M158 68.281h72v40h-72z" data-old_color="#CEF9F4" data-original="#FFEDB5"/>
-  <path fill="#f3e0f6" d="M138.927 287.5v20H230l9.5-10-9.5-10z" data-old_color="#F3DEF6" data-original="#C2FBFF"/>
-  <path fill="#beedf3" d="M230 287.5h51.073v20H230zM301.073 287.5h20v20h-20z" class="active-path" data-old_color="#D4C8E8" data-original="#71E2F0"/>
-  <path fill="#f3e0f6" d="M138.927 331v20H230l9.5-10-9.5-10z" data-old_color="#F3DEF6" data-original="#C2FBFF"/>
-  <path fill="#beedf3" d="M230 331h51.073v20H230zM301.073 331h20v20h-20z" class="active-path" data-old_color="#D4C8E8" data-original="#71E2F0"/>
-  <path fill="#f3e0f6" d="M138.927 172.5v-20H230l9.5 10-9.5 10z" data-old_color="#F3DEF6" data-original="#C2FBFF"/>
-  <path fill="#beedf3" d="M230 152.5h51.073v20H230zM301.073 152.5h20v20h-20z" class="active-path" data-old_color="#D4C8E8" data-original="#71E2F0"/>
-  <path fill="#88edd3" d="M100 265l-78.593-35L100 211.333z" data-old_color="#87EDD3" data-original="#FEE187"/>
-  <path fill="#beedf3" d="M100 230H21.407L100 195z" data-old_color="#C9EDF2" data-original="#FFFFFF"/>
-  <path fill="#00afff" d="M341.411 264.999L100 265v-35l251.411-18.667z" data-old_color="#00A8FF" data-original="#121149"/>
-  <path fill="#00fff2" d="M351.411 230H100v-35h241.411z" data-old_color="#00FFF9" data-original="#366796"/>
-  <path fill="#beedf3" d="M230 219.474h121.411v20H230z" data-old_color="#C9EDF2" data-original="#FFFFFF"/>
-  <path fill="#88edd3" d="M431.411 239.47v-18.94l-50-.004v18.948z" data-old_color="#87EDD3" data-original="#FEE187"/>
-  <path fill="#00afff" d="M401.64 265h-40l-10-53.667 50 18.667z" data-old_color="#00A8FF" data-original="#121149"/>
-  <path fill="#00fff2" d="M401.64 230h-50l10-35h40z" data-old_color="#00FFF9" data-original="#366796"/>
-  <path fill="#88edd3" d="M341.411 264.999V230l5-9.334 15 9.334v34.999z" data-old_color="#87EDD3" data-original="#FEE187"/>
-  <path fill="#beedf3" d="M341.411 195.002h20v35h-20z" data-old_color="#C9EDF2" data-original="#FFFFFF"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 410.00399 346.21901">
+  <path fill="#66d709" d="M208.593.000002l-15.521 38.803h62.084v-38.803z" class="active-path" data-old_color="#65D30A" data-original="#FFEDB5"/>
+  <path fill="#ebeaea" d="M162.03 0h46.563v38.801998H162.03z" data-old_color="#EDEBEB" data-original="#FFFFFF"/>
+  <path fill="#4fad01" d="M339.666 346.219002v-326.219h-59.073l-87.171 303.46 15.171 22.759z" data-old_color="#58BF03" data-original="#FFC61B"/>
+  <path fill="#6fdb87" d="M208.593 326.219002l-19.53-249.5 130.6 4v245.5z" data-old_color="#65D47E" data-original="#C2FBFF"/>
+  <path fill="#5fc575" d="M208.593 80.719002l-23.34-40.72h134.41v40.72z" data-old_color="#78CD8B" data-original="#71E2F0"/>
+  <path fill="#38ff00" d="M78.593 346.219002h130v-22.759l-72-303.46h-58z" data-old_color="#30FF00" data-original="#FEE187"/>
+  <path fill="#ebeaea" d="M97.523 326.219002v-245.5l111.07-4v249.5z" data-old_color="#EDEBEB" data-original="#FFFFFF"/>
+  <path fill="#6fdb87" d="M97.523 39.999001h111.07v40.720001H97.523z" data-old_color="#65D47E" data-original="#C2FBFF"/>
+  <path fill="#38ff00" d="M208.593 60.000002h72v-40h-72l-15.173 20z" data-old_color="#30FF00" data-original="#FEE187"/>
+  <path fill="#66d709" d="M136.593 20h72v40h-72z" class="active-path" data-old_color="#65D30A" data-original="#FFEDB5"/>
+  <path fill="#6fdb87" d="M208.593 259.219002l9.5-10-9.5-10H117.52v20z" data-old_color="#65D47E" data-original="#C2FBFF"/>
+  <path fill="#5fc575" d="M208.593 239.219002h51.073002v20H208.593zM279.666 239.219002h20v20h-20z" data-old_color="#78CD8B" data-original="#71E2F0"/>
+  <path fill="#6fdb87" d="M208.593 302.719002l9.5-10-9.5-10H117.52v20z" data-old_color="#65D47E" data-original="#C2FBFF"/>
+  <path fill="#5fc575" d="M208.593 282.719002h51.073002v20H208.593zM279.666 282.719002h20v20h-20z" data-old_color="#78CD8B" data-original="#71E2F0"/>
+  <path fill="#6fdb87" d="M208.593 104.219002l9.5 10-9.5 10H117.52v-20z" data-old_color="#65D47E" data-original="#C2FBFF"/>
+  <path fill="#5fc575" d="M208.593 104.219002h51.073002v20H208.593zM279.666 104.219002h20v20h-20z" data-old_color="#78CD8B" data-original="#71E2F0"/>
+  <path fill="#38ff00" d="M78.593 163.052002v53.667l-78.593-35z" data-old_color="#30FF00" data-original="#FEE187"/>
+  <path fill="#ebeaea" d="M78.593 146.719002v35H0z" data-old_color="#EDEBEB" data-original="#FFFFFF"/>
+  <path fill="#75a902" d="M78.593 181.719002l251.411-18.667-10 53.666-241.411.001z" data-old_color="#75a902" data-original="#121149"/>
+  <path fill="#7fbb00" d="M78.593 146.719002h241.411l10 35H78.593z" data-old_color="#7fbb00" data-original="#366796"/>
+  <path fill="#ebeaea" d="M208.593 171.193002h121.411v20H208.593z" data-old_color="#EDEBEB" data-original="#FFFFFF"/>
+  <path fill="#38ff00" d="M360.004 172.245002v18.948l50-.004v-18.94z" data-old_color="#30FF00" data-original="#FEE187"/>
+  <path fill="#75a902" d="M330.233 163.052002l50 18.667v35h-40z" data-old_color="#75a902" data-original="#121149"/>
+  <path fill="#7fbb00" d="M340.233 146.719002h40v35h-50z" data-old_color="#7fbb00" data-original="#366796"/>
+  <path fill="#38ff00" d="M325.004 172.385002l15 9.334v34.999h-20v-34.999z" data-old_color="#30FF00" data-original="#FEE187"/>
+  <path fill="#ebeaea" d="M320.00401 146.721002h20v35h-20z" data-old_color="#EDEBEB" data-original="#FFFFFF"/>
 </svg>
