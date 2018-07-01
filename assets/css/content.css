@@ -11,18 +11,26 @@
 	align-items: center;
 }
 .sidebar span {
-	font-size: 2vw;
+	color: #000000;
+	font-size: 1.6vw;
 	padding: 3.9vw 0;
 	border-bottom: .15vw solid #dce5ee;
 	width: 90%;
 	text-align: center;
 	cursor: pointer;
+	overflow-y: hidden;
 }
 .sidebar span:last-child {
 	border-bottom: 0;
 }
 .sidebar span:hover {
 	background: #fbfbfb;
+}
+.sidebar span img {
+	max-width: 5vw;
+	max-height: 5vw;
+	width: 100%;
+	height: 100%;
 }
 .createSurvey {
 	margin: 0 auto;
