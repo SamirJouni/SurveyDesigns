@@ -40,12 +40,12 @@
 	letter-spacing: .2vw;
   padding: 1.5vw;
   color: #ffffff;
-  border: .1vw solid #14a3dc;
+  border: .1vw solid #7fbb00;
   border-radius: .9vw;
-	background:  #14a3dc;
+	background:  #7fbb00;
 	cursor: pointer;
 	transition: background .2s ease-in-out;
 }
 .createSurvey span:hover {
-	background: #0e88b9;
+	background: #75a902;
 }
