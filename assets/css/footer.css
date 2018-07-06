@@ -1,8 +1,18 @@
 .footer {
 	background: #000000;
+	color: #ffffff;
 }
 .bottomText{
 	width: 90vw;
 	height: 20vw;
 	text-align: center;
+}
+.theLinks a {
+	text-decoration: none;
+	color: #ffffff;
+	transition: color .2s ease-in-out;
+}
+.theLinks a:hover {
+	text-decoration: underline;
+	color:#7fbb00;
 }
