@@ -2,11 +2,11 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-
 	width: 22vw;
 	height: 91vh;
 	box-shadow: .15vw 0 .1vw rgba(0, 0, 0, 0.05);
 }
+
 .sidebar span {
 	color: #75a902;
 	font-size: 1.45vw;
@@ -18,13 +18,16 @@
 	cursor: pointer;
 	overflow-y: hidden;
 }
+
 .sidebar span:last-child {
 	border-bottom: 0;
 	text-align: center;
 }
+
 .sidebar span:hover {
 	background: #fbfbfb;
 }
+
 .sidebar span img {
 	max-width: 5vw;
 	max-height: 5vw;
