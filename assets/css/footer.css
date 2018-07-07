@@ -10,7 +10,7 @@
 	flex-direction: row;
 	align-items: flex-start;
 	justify-content: space-evenly;
-	margin-bottom: 5vw;
+	margin-bottom: 4vw;
 }
 .theLinks {
 	display: flex;
@@ -24,6 +24,7 @@
 .linksTitle,
 .initiative,
 .bottomText {
+	margin-top: 1vw;
 	padding: 1vw 0;
 }
 .bottomText span {
