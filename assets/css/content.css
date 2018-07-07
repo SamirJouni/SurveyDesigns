@@ -5,20 +5,23 @@
 	justify-content: flex-start;
 	box-shadow: 0 .15vw .1vw rgba(0, 0, 0, 0.05);
 }
+
 .createSurvey {
 	margin: 0 auto;
 }
-.createSurvey span{
+
+.createSurvey span {
 	font-size: 2.5vw;
 	letter-spacing: .2vw;
-  padding: 1.5vw;
-  color: #ffffff;
-  border: .1vw solid #7fbb00;
-  border-radius: .9vw;
-	background:  #7fbb00;
+	padding: 1.5vw;
+	color: #ffffff;
+	border: .1vw solid #7fbb00;
+	border-radius: .9vw;
+	background: #7fbb00;
 	cursor: pointer;
 	transition: background .2s ease-in-out;
 }
+
 .createSurvey span:hover {
 	background: #75a902;
 }

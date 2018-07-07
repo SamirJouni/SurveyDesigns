@@ -37,6 +37,7 @@
   letter-spacing: .15vw;
   padding: 1vw .2vw;
 }
+
 .signup a {
   font-size: 1.18vw;
   letter-spacing: .18vw;
@@ -46,12 +47,14 @@
   color: #ffffff;
   border: .1vw solid #7fbb00;
   border-radius: .5vw;
-  background:  #7fbb00;
-	transition: background .15s ease-in-out;
+  background: #7fbb00;
+  transition: background .15s ease-in-out;
 }
+
 .signup a:hover {
-	background: #75a902;
+  background: #75a902;
 }
+
 /* Mobile Responsive Design */
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {
