@@ -53,3 +53,9 @@
 	text-decoration: underline;
 	color: #7fbb00;
 }
+.ztmLogo img {
+	max-width: 14vw;
+	max-height: 14vw;
+	width: 100%;
+	height: 100%;
+}
