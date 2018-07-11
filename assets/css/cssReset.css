@@ -23,8 +23,11 @@ body {
   -ms-user-select: none;
 }
 
-*:focus {
-  outline: none;
+:focus {
+  outline: 0;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
 }
 
 ::placeholder {
