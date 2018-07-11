@@ -5,12 +5,12 @@
 	justify-content: flex-start;
 	box-shadow: 0 .15vw .1vw rgba(0, 0, 0, 0.05);
 }
+.fillForm {
+	margin: 0 auto;
+}
 .fillForm form{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-}
-.fillForm {
-	margin: 0 auto;
 }
