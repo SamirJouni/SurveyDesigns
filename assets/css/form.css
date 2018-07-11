@@ -22,3 +22,6 @@
 	box-shadow: none;
 	outline: none;
 }
+.fillForm form input:last-child {
+	border: 0;
+}
