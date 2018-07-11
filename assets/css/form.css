@@ -16,6 +16,7 @@
 }
 .fillForm form input {
 	font-size: 1.5vw;
+	padding: .4vw 1vw;
 	margin: 1vw 0;
 	border: 0;
 	border-bottom: .2vw solid #7fbb00;
