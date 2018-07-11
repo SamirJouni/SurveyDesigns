@@ -14,3 +14,11 @@
 	align-items: center;
 	justify-content: center;
 }
+.fillForm form input {
+	font-size: 1.5vw;
+	margin: 1vw 0;
+	border 0;
+	border-bottom:.2vw solid #7fbb00;
+	box-shadow: none;
+	outline: none;
+}
