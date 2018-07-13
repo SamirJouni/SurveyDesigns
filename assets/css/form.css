@@ -24,6 +24,10 @@
 	outline: none;
 }
 .fillForm form input:last-child {
+	font-family: 'Roboto', sans-serif;
+	color:#ffffff;
+	letter-spacing: .13vw;
+	font-size: 2vw;
 	border: 0;
   border-radius: .5vw;
   background: #7fbb00;
