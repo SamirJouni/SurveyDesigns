@@ -25,4 +25,7 @@
 }
 .fillForm form input:last-child {
 	border: 0;
+  border-radius: .5vw;
+  background: #7fbb00;
+  transition: background .15s ease-in-out;
 }
