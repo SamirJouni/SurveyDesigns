@@ -32,5 +32,5 @@
   border-radius: .5vw;
   background: #7fbb00;
 	transition: background .15s ease-in-out;
-	cursor: pointer;
+	cursor:url('../img/aero-middle-finger.cur'), pointer;
 }
