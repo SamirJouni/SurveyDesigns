@@ -14,7 +14,7 @@
 	align-items: center;
 	justify-content: center;
 }
-.fillForm form input {
+.fillForm form div input {
 	font-family: 'Roboto', sans-serif;
 	font-size: 1.5vw;
 	padding: .4vw 1vw;
@@ -24,7 +24,7 @@
 	box-shadow: none;
 	outline: none;
 }
-.fillForm form input:last-child {
+.fillForm form div:last-child input {
 	color:#ffffff;
 	letter-spacing: .13vw;
 	font-size: 2vw;
@@ -35,6 +35,6 @@
 	transition: background .15s ease-in-out;
 	cursor:url('../img/aero-middle-finger.cur'), pointer;
 }
-.fillForm form input:last-child:hover {
+.fillForm form div:last-child:hover input {
   background: #75a902;
 }
