@@ -17,7 +17,7 @@
 .fillForm form div input {
 	font-family: 'Roboto', sans-serif;
 	font-size: 1.5vw;
-	padding: .4vw 1vw;
+	padding: .4vw 2.8vw;
 	margin: 1vw 0;
 	border: 0;
 	border-bottom: .2vw solid #7fbb00;
@@ -46,6 +46,6 @@
 
 	position: relative;
 	top: .5vw;
-	left:-19vw;
+	left:-22.5vw;
 	z-index: 11;
 }
