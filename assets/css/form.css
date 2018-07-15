@@ -38,3 +38,9 @@
 .fillForm form div:last-child:hover input {
   background: #75a902;
 }
+.fillForm form div img {
+	max-width: 2vw;
+	max-height: 2vw;
+	width: 100%;
+	height: 100%;
+}
