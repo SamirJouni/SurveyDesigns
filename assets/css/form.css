@@ -43,4 +43,9 @@
 	max-height: 2vw;
 	width: 100%;
 	height: 100%;
+
+	position: relative;
+	top: .5vw;
+	left:-19vw;
+	z-index: 11;
 }
