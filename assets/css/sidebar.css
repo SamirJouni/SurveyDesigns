@@ -17,6 +17,7 @@
 	text-align: left;
 	cursor: pointer;
 	overflow-y: hidden;
+	transition: color .1s ease-in-out;
 }
 
 .sidebar span:last-child {
@@ -25,12 +26,58 @@
 }
 
 .sidebar span:hover {
-	background: #fbfbfb;
+	color: #7fbb00;
 }
-
 .sidebar span img {
 	max-width: 5vw;
 	max-height: 5vw;
 	width: 100%;
 	height: 100%;
+}
+.sidebar span:last-child:hover {
+	animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: rotate();
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10% {
+    transform: rotate(5deg);
+  }
+	20% {
+    transform: rotate(10deg);
+	}
+
+  30% {
+    transform: rotate(15deg);
+	}
+
+	40% {
+    transform: rotate(20deg);
+  }
+
+  50% {
+    transform: rotate(-5deg);
+  }
+
+	60% {
+    transform: rotate(-10deg);
+	}
+
+  70% {
+    transform: rotate(-15deg);
+	}
+
+	80% {
+    transform: rotate(-20deg);
+	}
+
+	90% {
+		transform: rotate(-10deg);
+	}
+
+	100% {
+    transform: rotate(0deg);
+  }
 }
