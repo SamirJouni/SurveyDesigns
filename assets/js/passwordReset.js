@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	submitButton.addEventListener('click', function(event){
 
 		event.preventDefault();
-		var username = usernameInput.value;
+		const username = usernameInput.value;
 
 
 		if (username) {
