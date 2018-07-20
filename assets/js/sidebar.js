@@ -18,4 +18,26 @@ allSurveys.addEventListener('click', function(){
 	}
 });
 
+mySurveys.addEventListener('click', function(){
+	if (!createSurvey){
+		window.location.href = "mySurveys.html"
+}
+	else {
+		window.location.href = "assets/html/mySurveys.html"
+	}
+});
+
+myAccount.addEventListener('click', function(){
+	if (!createSurvey){
+		window.location.href = "myAccount.html"
+}
+	else {
+		window.location.href = "assets/html/myAccount.html"
+	}
+});
+
+projectRepo.addEventListener('click', function(){
+		window.location.href = "https://github.com/zero-to-mastery/TheVerySpecialProject"
+});
+
 });
