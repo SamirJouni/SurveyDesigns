@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		const password2 = passwordInput2.value;
 
 
-		if (password && (password === password2)) {
+		if (password && (password === password2) && (password.length >= 8)) {
 			window.location.href = "newPasswordSet.html";
 		}
 	});
