@@ -20,6 +20,12 @@
 	font-size: 1.25vw;
 	color: #000000;
 	margin: 1vw;
+	transition: .2s color ease-in-out;
+}
+.surveyTitle span:hover {
+	color: #7fbb00;
+	text-decoration: underline;
+
 }
 .surveyDescription span {
 	font-size: .9vw;
