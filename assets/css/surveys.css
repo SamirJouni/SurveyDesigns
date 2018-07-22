@@ -1,0 +1,15 @@
+.surveyList {
+	padding: 1vw 2vw;
+}
+.surveyTitle {
+	margin: 1.5vw 3vw;
+}
+.surveyTitle span {
+	font-size: 1.25vw;
+	color: #000000;
+	margin: 1vw;
+}
+.surveyDescription span {
+	font-size: .9vw;
+	margin: 1vw;
+}
