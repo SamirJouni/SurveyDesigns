@@ -1,3 +1,5 @@
+/* This is a script that allows the sidebar text to redirect to the right pages */
+
 document.addEventListener('DOMContentLoaded', function () {
 	"use strict";
 	const allSurveys = document.getElementById('allSurveys');

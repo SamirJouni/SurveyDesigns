@@ -1,3 +1,5 @@
+/* This redirects to the page that tells the user that an email has been sent to reset the password */
+
 document.addEventListener('DOMContentLoaded', function () {
 	"use strict";
 

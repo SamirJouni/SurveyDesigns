@@ -1,3 +1,4 @@
+/* This is a script that redirects the user to the homepage if the icon in the navbar is clicked */
 document.addEventListener('DOMContentLoaded', function () {
 	"use strict";
 

@@ -1,3 +1,5 @@
+/* This is a script for the footer links of the ztm community */
+
 document.addEventListener('DOMContentLoaded', function () {
 	"use strict";
 
