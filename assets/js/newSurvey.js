@@ -1,3 +1,5 @@
+/* This redirects the user to the page where they could create a new survey when the create new survey button is pressed */
+
 document.addEventListener('DOMContentLoaded', function () {
 	"use strict";
 

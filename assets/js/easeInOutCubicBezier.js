@@ -1,3 +1,4 @@
+/* This is an ease in out cubic bezier animation function */
 function easeInOutCubicBezier(t) {
   "use strict";
 

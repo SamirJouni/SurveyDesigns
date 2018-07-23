@@ -1,3 +1,4 @@
+/* This script compares the passwords and if the conditions are met, then it opens the new password set html page */
 document.addEventListener('DOMContentLoaded', function () {
 	"use strict";
 
