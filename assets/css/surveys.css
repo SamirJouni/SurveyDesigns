@@ -6,11 +6,13 @@
 	overflow-x: hidden;
 }
 .survey {
-	width: 100%;
+	width: 90%;
 	box-shadow: 0 .2vw .3vw 0 rgba(0, 0, 0, 0.05), 0 .1vw .5vw 0 rgba(0, 0, 0, 0.05);
 	transition: box-shadow .2s ease-in-out;
 	padding: 1.5vw;
 	margin-bottom: 3.5vw;
+	transition: opacity .2s ease-in-out;
+
 }
 .survey:hover {
 	box-shadow: 0 .2vw .3vw 0 rgba(0, 0, 0, 0.08), 0 .1vw .5vw 0 rgba(0, 0, 0, 0.08);
@@ -34,4 +36,47 @@
 .surveyDescription span {
 	font-size: .9vw;
 	margin: 1vw;
+}
+
+/* Animations Used On The Webpage */
+.zoomInOut {
+  animation: zoominout .3s forwards;
+}
+@keyframes zoominout {
+  0% {
+    transform: scale(.95);
+  }
+  10% {
+    transform: scale(.955);
+  }
+  20% {
+    transform: scale(.96);
+  }
+  30% {
+    transform: scale(.965);
+  }
+  40% {
+    transform: scale(.97);
+  }
+  50% {
+    transform: scale(.975);
+  }
+  60% {
+    transform: scale(.98);
+  }
+  70% {
+    transform: scale(.985);
+  }
+  80% {
+    transform: scale(.99);
+  }
+  90% {
+    transform: scale(.995);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.transparent {
+  opacity: 0;
 }
