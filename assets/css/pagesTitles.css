@@ -1,6 +1,7 @@
 .contentAndTitles {
 	height: 92vh;
 	width: 71%;
+	overflow: hidden;
 }
 .surveysTitle {
 	font-size: 1.5vw;
