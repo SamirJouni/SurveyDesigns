@@ -1,6 +1,8 @@
 .surveyList {
 	padding: 1vw 2vw;
 	width: 100%;
+	height: 70vh;
+	overflow-y: scroll;
 }
 .survey {
 	width: 100%;
