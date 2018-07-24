@@ -10,6 +10,7 @@
 	box-shadow: 0 .2vw .3vw 0 rgba(0, 0, 0, 0.05), 0 .1vw .5vw 0 rgba(0, 0, 0, 0.05);
 	transition: box-shadow .2s ease-in-out;
 	padding: 1.5vw;
+	margin-bottom: 3.5vw;
 }
 .survey:hover {
 	box-shadow: 0 .2vw .3vw 0 rgba(0, 0, 0, 0.08), 0 .1vw .5vw 0 rgba(0, 0, 0, 0.08);
