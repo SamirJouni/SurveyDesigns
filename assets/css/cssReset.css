@@ -30,10 +30,6 @@ body {
   box-shadow: none !important;
 }
 
-::placeholder {
-  opacity: 1;
-}
-
 .center {
   text-align: center;
   margin-left: auto;
