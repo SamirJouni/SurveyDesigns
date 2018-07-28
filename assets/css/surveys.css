@@ -23,6 +23,11 @@
 	box-shadow: 0 .2vw .3vw 0 rgba(0, 0, 0, 0.08), 0 .1vw .5vw 0 rgba(0, 0, 0, 0.08);
 	cursor: pointer;
 }
+.surveyArtwork {
+  width: 6vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
+}
 .surveyArtwork img {
   max-width: 6vw;
   max-height: 6vw;
