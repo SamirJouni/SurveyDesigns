@@ -1,3 +1,7 @@
+.surveyText {
+  position: relative;
+  width: 70%
+}
 .surveyFunctions {
   display: flex;
   flex-direction: row;
@@ -6,8 +10,8 @@
   width: 2vw;
   height: 2vw;
   position: relative;
-  top: 2.5vw;
-  left: 41vw;
+  top: 2.7vw;
+  left: 15vw;
 }
 .surveyFunctions img {
   max-width: 2vw;
