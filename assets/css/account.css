@@ -1,0 +1,19 @@
+.settingsTitle {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: flex-start;
+}
+.settingsTitle img {
+	max-width: 4vw;
+	max-height: 4vw;
+	width: 100%;
+	height: 100%;
+	margin-left: 3vw;
+}
+.settingsTitle span {
+	font-size: 2vw;
+	font-weight: 900;
+	padding: 2vw 1.3vw;
+}
