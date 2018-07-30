@@ -1,3 +1,5 @@
+/* This script controls the animations of when a survey is clicked */
+
 document.addEventListener('DOMContentLoaded', function () {
 	"use strict";
 	const surveys = Array.from(document.getElementsByClassName('survey'));
