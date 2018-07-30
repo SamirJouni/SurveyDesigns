@@ -1,3 +1,5 @@
+/* This is a script to hide the scrollbar of the surveys list */
+
 document.addEventListener('DOMContentLoaded', function () {
 	"use strict";
 	const parent = document.getElementsByClassName('contentAndTitles')[0];
