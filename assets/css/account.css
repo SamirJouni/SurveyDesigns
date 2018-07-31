@@ -28,6 +28,19 @@
 .infoDescription {
 	font-weight: 900;
 }
-.changeButton {
+.changeButton span {
+  font-size: .9vw;
+  letter-spacing: .06vw;
+	padding: .35vw;
 	margin-left: 4vw;
+  color: #ffffff;
+  border: .1vw solid #7fbb00;
+  border-radius: .5vw;
+	background: #7fbb00;
+	cursor: pointer;
+  transition: background .15s ease-in-out;
+}
+
+.changeButton span:hover {
+  background: #75a902;
 }
