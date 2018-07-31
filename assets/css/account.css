@@ -21,12 +21,24 @@
 .changeInfo {
 	margin-left: 6vw;
 	margin-bottom: 1vw;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: flex-start;
+}
+.changeInfo div img{
+	width: 2vw;
+	height: auto;
+	margin-right: 1vw;
 }
 .changeInfo span{
 	 font-size: 1.2vw;
 }
-.infoDescription {
+.infoDescription span {
+	font-size: 1.4vw;
 	font-weight: 900;
+	padding-right: .7vw;
 }
 .changeButton span {
   font-size: .9vw;
