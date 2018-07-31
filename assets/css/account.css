@@ -4,6 +4,7 @@
 	flex-wrap: nowrap;
 	align-items: center;
 	justify-content: flex-start;
+	margin-bottom: 3vw;
 }
 .settingsTitle img {
 	max-width: 4vw;
@@ -16,4 +17,17 @@
 	font-size: 2vw;
 	font-weight: 900;
 	padding: 2vw 1.3vw;
+}
+.changeInfo {
+	margin-left: 6vw;
+	margin-bottom: 1vw;
+}
+.changeInfo span{
+	 font-size: 1.2vw;
+}
+.infoDescription {
+	font-weight: 900;
+}
+.changeButton {
+	margin-left: 4vw;
 }
