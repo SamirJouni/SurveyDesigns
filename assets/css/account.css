@@ -78,11 +78,25 @@
 	justify-content: flex-start;
 	margin-bottom: 1.5vw;
 }
+.manageSpan {
+	font-size: 1.4vw;
+	font-weight: 900;
+	padding-right: .7vw;
+	padding-bottom: 1vw;
+}
+.manageInfo div input {
+	padding: 0 1vw;
+	border: 0;
+	border-bottom: .2vw solid #7fbb00;
+	font-size: 1.2vw;
+	font-family: 'Roboto', sans-serif;
+}
 .warning {
 	font-size: 1.2vw;
 	color: #FF1900;
 }
 .deleteAccButton {
+	padding-right: 0;
 	font-size: .9vw;
   letter-spacing: .06vw;
 	padding: .35vw;
