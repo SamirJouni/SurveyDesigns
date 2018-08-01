@@ -18,9 +18,12 @@
 	font-weight: 900;
 	padding: 2vw 1.3vw;
 }
+.changeInfoContainer {
+	padding: 2vw 0;
+}
 .changeInfo {
 	margin-left: 6vw;
-	margin-bottom: 1vw;
+	margin-bottom: 1.5vw;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
