@@ -47,10 +47,9 @@
 .changeButton span {
   font-size: .9vw;
   letter-spacing: .06vw;
-	padding: .35vw;
+	padding: .4vw;
 	margin-left: 4vw;
   color: #ffffff;
-  border: .1vw solid #7fbb00;
   border-radius: .25vw;
 	background: #7fbb00;
 	cursor: pointer;
@@ -99,10 +98,9 @@
 	padding-right: 0;
 	font-size: .9vw;
   letter-spacing: .06vw;
-	padding: .35vw;
+	padding: .4vw;
 	margin-left: 4vw;
   color: #ffffff;
-  border: .1vw solid #FF1900;
   border-radius: .25vw;
 	background: #FF1900;
 	cursor: pointer;
