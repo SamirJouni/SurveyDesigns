@@ -27,7 +27,8 @@
 	align-items: center;
 	justify-content: flex-start;
 }
-.changeInfo div img{
+.changeInfo div img,
+.manageInfo div img {
 	width: 2vw;
 	height: auto;
 	margin-right: 1vw;
@@ -55,4 +56,41 @@
 
 .changeButton span:hover {
   background: #75a902;
+}
+.manageInfo {
+	margin-left: 6vw;
+	margin-bottom: 1vw;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-items: flex-start;
+	justify-content: center;
+	margin-bottom: 6vw;
+}
+.manageInfo div {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: flex-start;
+	margin-bottom: 1.5vw;
+}
+.warning {
+	font-size: 1.2vw;
+	color: #FF1900;
+}
+.deleteAccButton {
+	font-size: .9vw;
+  letter-spacing: .06vw;
+	padding: .35vw;
+	margin-left: 4vw;
+  color: #ffffff;
+  border: .1vw solid #FF1900;
+  border-radius: .25vw;
+	background: #FF1900;
+	cursor: pointer;
+  transition: background .15s ease-in-out;
+}
+.deleteAccButton:hover {
+  background: #dd1904;
 }
