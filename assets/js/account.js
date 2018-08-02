@@ -16,7 +16,11 @@ document.addEventListener('DOMContentLoaded', function () {
 		username.classList.toggle('displayNone');
 		usernameInput.classList.toggle('displayNone');
 
-		if ( usernameInput.value) {
+		const usernameInputValue = usernameInput.value;
+
+		if (usernameInputValue) {
+
+			username.textContent = usernameInputValue;
 
 		}
 
@@ -26,6 +30,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		email.classList.toggle('displayNone');
 		emailInput.classList.toggle('displayNone');
+
+		const emailInputValue = emailInput.value;
+
+		if (emailInputValue) {
+
+			email.textContent = emailInputValue;
+
+		}
 
 	 });
 
