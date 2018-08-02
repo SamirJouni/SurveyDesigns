@@ -1,0 +1,1 @@
+/* This script enables all the interactions on the my account page */
