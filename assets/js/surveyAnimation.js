@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 	"use strict";
 	const surveys = Array.from(document.getElementsByClassName('survey'));
-	const svgicons = Array.from(document.getElementsByClassName('svgIcon'));
+	const svgIcons = Array.from(document.getElementsByClassName('svgIcon'));
 	var mouseOverSVG = false;
 
 
@@ -20,13 +20,21 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 
 
-		svgicons.forEach(function(svgicon) {
+		svgIcons.forEach(function(svgIcon) {
 
-			svgicon.addEventListener('mouseover', function () {
+			svgIcon.addEventListener('mouseover', function () {
 
 				mouseOverSVG = true;
-				console.log(mouseOverSVG);
 			});
+		});
+
+			svgIcon.addEventListener('click', function() {
+
+        svgIcon.classList.add('zoomInOut', 'transparent');
+
+				setTimeout(function() {
+          svgIcon.classList.remove('zoomInOut', 'transparent');
+				}, 200);
 		});
 
 			});
