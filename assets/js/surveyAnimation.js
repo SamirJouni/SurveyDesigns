@@ -17,4 +17,5 @@ document.addEventListener('DOMContentLoaded', function () {
 			});
 		});
 
+		const svgicon = Array.from(document.getElementsByClassName('svgIcon'));
 			});
