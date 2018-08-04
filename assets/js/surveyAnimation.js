@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		survey.addEventListener('click', function() {
 
-			if (mouseOverSVG) {
+			if (!mouseOverSVG) {
         survey.classList.add('zoomInOut', 'transparent');
 
 				setTimeout(function() {
@@ -27,6 +27,12 @@ document.addEventListener('DOMContentLoaded', function () {
 			svgIcon.addEventListener('mouseover', function () {
 
 				mouseOverSVG = true;
+			});
+
+
+			svgIcon.addEventListener('mouseleave', function () {
+
+				mouseOverSVG = false;
 			});
 
 			svgIcon.addEventListener('click', function() {
