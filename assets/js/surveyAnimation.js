@@ -3,6 +3,8 @@
 document.addEventListener('DOMContentLoaded', function () {
 	"use strict";
 	const surveys = Array.from(document.getElementsByClassName('survey'));
+	const svgicons = Array.from(document.getElementsByClassName('svgIcon'));
+	var mouseOverSVG = false;
 
 
   surveys.forEach(function(survey) {
@@ -17,5 +19,14 @@ document.addEventListener('DOMContentLoaded', function () {
 			});
 		});
 
-		const svgicon = Array.from(document.getElementsByClassName('svgIcon'));
+
+		svgicons.forEach(function(svgicon) {
+
+			svgicon.addEventListener('mouseover', function () {
+
+				mouseOverSVG = true;
+				console.log(mouseOverSVG);
+			});
+		});
+
 			});
