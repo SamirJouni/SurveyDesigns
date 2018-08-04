@@ -11,11 +11,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		survey.addEventListener('click', function() {
 
+			if (mouseOverSVG) {
         survey.classList.add('zoomInOut', 'transparent');
 
 				setTimeout(function() {
           survey.classList.remove('zoomInOut', 'transparent');
 				}, 200);
+			}
 			});
 		});
 
@@ -26,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 				mouseOverSVG = true;
 			});
-		});
 
 			svgIcon.addEventListener('click', function() {
 
@@ -36,5 +37,5 @@ document.addEventListener('DOMContentLoaded', function () {
           svgIcon.classList.remove('zoomInOut', 'transparent');
 				}, 200);
 		});
-
-			});
+	});
+});
