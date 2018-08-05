@@ -1,0 +1,10 @@
+.createSurvey div {
+	margin: 2vw 4vw;
+}
+.createSurvey div input {
+	padding: 0 1vw;
+	border: 0;
+	border-bottom: .2vw solid #7fbb00;
+	font-size: 1.2vw;
+	font-family: 'Roboto', sans-serif;
+}
