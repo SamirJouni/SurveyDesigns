@@ -1,4 +1,5 @@
 .createSurvey > div {
+	padding-top: 4vw;
 	margin: 2vw 4vw;
 }
 .createSurvey div input {
@@ -7,6 +8,12 @@
 	border-bottom: .2vw solid #7fbb00;
 	font-size: 1.2vw;
 	font-family: 'Roboto', sans-serif;
+}
+.makeAChoice {
+	padding-bottom: 2vw;
+}
+.makeAChoice span {
+	font-size: 1.2vw;
 }
 .questionType {
 	width: 20vw;
