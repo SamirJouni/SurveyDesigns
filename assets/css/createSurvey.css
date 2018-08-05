@@ -1,4 +1,4 @@
-.createSurvey div {
+.createSurvey > div {
 	margin: 2vw 4vw;
 }
 .createSurvey div input {
@@ -7,4 +7,16 @@
 	border-bottom: .2vw solid #7fbb00;
 	font-size: 1.2vw;
 	font-family: 'Roboto', sans-serif;
+}
+.questionType {
+	width: 20vw;
+	height: 4vw;
+}
+.questionType img {
+	max-width: 4vw;
+	max-height: 4vw;
+	width: 100%;
+	height: 100%;
+	margin-right: 2vw;
+	cursor: pointer;
 }
