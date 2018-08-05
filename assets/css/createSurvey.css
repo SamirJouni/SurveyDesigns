@@ -1,3 +1,7 @@
+.createSurvey {
+	margin-top: 3vw;
+	margin-bottom: 6vw;
+}
 .createSurvey > div {
 	padding-top: 4vw;
 	margin: 2vw 4vw;
@@ -26,4 +30,18 @@
 	height: 100%;
 	margin-right: 2vw;
 	cursor: pointer;
+}
+.createSurveyButton span {
+  font-size: 1.2vw;
+  letter-spacing: .12vw;
+	padding: .8vw;
+  color: #ffffff;
+  border-radius: .25vw;
+	background: #7fbb00;
+	cursor: pointer;
+  transition: background .15s ease-in-out;
+}
+
+.createSurveyButton span:hover {
+  background: #75a902;
 }
