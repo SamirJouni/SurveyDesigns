@@ -39,6 +39,14 @@
 .changeInfo span{
 	 font-size: 1.2vw;
 }
+.changeInfo input {
+	padding-left: 1vw;
+	border: 0;
+	border-bottom: .2vw solid #7fbb00;
+	font-size: 1vw;
+	font-family: 'Roboto', sans-serif;
+	line-height: 1.5;
+}
 .infoDescription span {
 	font-size: 1.4vw;
 	font-weight: 900;
