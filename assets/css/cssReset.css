@@ -22,7 +22,10 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
 }
-
+::selection {
+  color: #ffffff;
+  background: #7fbb00;
+}
 :focus {
   outline: 0;
   -webkit-box-shadow: none !important;
