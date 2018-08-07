@@ -1,3 +1,4 @@
+/* This is the corresponding css file for html files with content in the middle */
 .contentContainer {
 	display: flex;
 	flex-direction: row;
