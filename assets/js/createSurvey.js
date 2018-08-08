@@ -11,8 +11,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	for (var i = 0; i < NumberOfButtons; i++) {
 
-		buttons[i].addEventListener('click', function () {
+		buttons[i].addEventListener('click', function (button) {
 			modal.style.display = "block";
+			createSpecificModal(button.id);
 		});
 	}
 
@@ -26,4 +27,15 @@ document.addEventListener('DOMContentLoaded', function () {
 			modal.style.display = "none";
 		}
 	});
+
+	function createSpecificModal(buttonId) {
+
+		if (buttonId[1] == '1') {
+
+		} else if (buttonId[1] == '2') {
+
+		} else if (buttonId[1] == '3') {
+
+		}
+	}
 });
