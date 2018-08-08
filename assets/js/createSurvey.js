@@ -5,8 +5,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	const modal = document.getElementById('accountModal');
 	const buttons = document.getElementsByClassName('addAQuestion');
-	const close = document.getElementById('closeModal');
 	const NumberOfButtons = buttons.length;
+	const close = document.getElementById('closeModal');
+	const modalTextContent = document.getElementById('modalTextContent');
+
 
 
 	for (var i = 0; i < NumberOfButtons; i++) {
@@ -32,7 +34,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		if (buttonId[1] === '1') {
 
-			console.log('1');
+			while (modalTextContent.hasChildNodes()) {
+				modalTextContent.removeChild(modalTextContent.lastChild);
+				}
+
+			const content1 = document.createElement('p');
+			const content2 = document.createElement('div');
+			const content3 = document.createElement('input');
+			content1.textContent = "Enter The Question In The Input Field";
+			content3.placeholder = "Please Enter A Question";
+			content2.appendChild(content3);
+
+			modalTextContent.appendChild(content1);
+			modalTextContent.appendChild(content2);
+
 		} else if (buttonId[1] === '2') {
 			console.log('2');
 		} else if (buttonId[1] === '3') {
