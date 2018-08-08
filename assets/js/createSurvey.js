@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		buttons[i].addEventListener('click', function (button) {
 			modal.style.display = "block";
-			createSpecificModal(button.id);
+			createSpecificModal(button.target.id);
 		});
 	}
 
@@ -30,12 +30,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	function createSpecificModal(buttonId) {
 
-		if (buttonId[1] == '1') {
+		if (buttonId[1] === '1') {
 
-		} else if (buttonId[1] == '2') {
-
-		} else if (buttonId[1] == '3') {
-
+			console.log('1');
+		} else if (buttonId[1] === '2') {
+			console.log('2');
+		} else if (buttonId[1] === '3') {
+			console.log('3');
 		}
 	}
 });
