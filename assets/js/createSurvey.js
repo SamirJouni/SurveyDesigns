@@ -57,17 +57,15 @@ document.addEventListener('DOMContentLoaded', function () {
 			const content1 = document.createElement('p');
 			const content2 = document.createElement('div');
 			const content3 = document.createElement('input');
-			const content4 = document.createElement('select');
-			const content5 = document.createElement('option');
+			const content4 = document.createElement('input');
+			const content5 = document.createElement('button');
 			content1.textContent = "Enter The Question In The Input Field";
 			content3.placeholder = "Please Enter A Question";
 			content2.appendChild(content3);
-			content5.textContent = 'test option';
-			content4.appendChild(content5);
+
 
 			modalTextContent.appendChild(content1);
 			modalTextContent.appendChild(content2);
-			modalTextContent.appendChild(content4);
 
 		} else if (buttonId[1] === '3') {
 			console.log('3');
