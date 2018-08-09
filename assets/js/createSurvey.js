@@ -41,12 +41,15 @@ document.addEventListener('DOMContentLoaded', function () {
 			const content1 = document.createElement('p');
 			const content2 = document.createElement('div');
 			const content3 = document.createElement('input');
+			const content4 = document.createElement('button');
 			content1.textContent = "Enter The Question In The Input Field";
 			content3.placeholder = "Please Enter A Question";
 			content2.appendChild(content3);
+			content4.textContent = "Send To Preview";
 
 			modalTextContent.appendChild(content1);
 			modalTextContent.appendChild(content2);
+			modalTextContent.appendChild(content4);
 
 		} else if (buttonId[1] === '2') {
 
