@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			content2.appendChild(content3);
 			content4.placeholder = "Please Enter an Option";
 			content5.textContent = "Save Option Or Add More";
-			content6.placeholder = "Send To Preview";
+			content6.textContent = "Send To Preview";
 
 			content5.addEventListener('click', function(){
 				console.log(content4.value);
