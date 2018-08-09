@@ -62,10 +62,13 @@ document.addEventListener('DOMContentLoaded', function () {
 			content1.textContent = "Enter The Question In The Input Field";
 			content3.placeholder = "Please Enter A Question";
 			content2.appendChild(content3);
-
+			content4.placeholder = "Please Enter an Option";
+			content5.textContent = "Save Option Or Add More";
 
 			modalTextContent.appendChild(content1);
 			modalTextContent.appendChild(content2);
+			modalTextContent.appendChild(content4);
+			modalTextContent.appendChild(content5);
 
 		} else if (buttonId[1] === '3') {
 			console.log('3');
