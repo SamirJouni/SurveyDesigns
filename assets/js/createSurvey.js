@@ -65,6 +65,11 @@ document.addEventListener('DOMContentLoaded', function () {
 			content4.placeholder = "Please Enter an Option";
 			content5.textContent = "Save Option Or Add More";
 
+			content5.addEventListener('click', function(){
+				console.log(content4.value);
+				content4.value = "";
+			});
+
 			modalTextContent.appendChild(content1);
 			modalTextContent.appendChild(content2);
 			modalTextContent.appendChild(content4);
