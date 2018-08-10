@@ -78,7 +78,9 @@ document.addEventListener('DOMContentLoaded', function () {
 			modalTextContent.appendChild(content6);
 
 		} else if (buttonId[1] === '3') {
-			console.log('3');
+
+			clearContent();
+
 		}
 	}
 	function clearContent(){
