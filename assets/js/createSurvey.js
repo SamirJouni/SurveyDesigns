@@ -88,6 +88,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		}
 	}
+
+	/* A fuction that clears the content of the modal, used to clear the modal before
+	adding the content to prevent duplicate content from other button presses */
+
 	function clearContent(){
 		while (modalTextContent.hasChildNodes()) {
 			modalTextContent.removeChild(modalTextContent.lastChild);
