@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	const modalTextContent = document.getElementById('modalTextContent');
 
 
-/* Add an event listener to open modal when a button among the question buttons is clicked */
+/* Add an event listener to open modal when a button among the question creation buttons is clicked */
 	for (var i = 0; i < NumberOfButtons; i++) {
 
 		buttons[i].addEventListener('click', function (button) {
