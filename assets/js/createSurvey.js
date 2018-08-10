@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			modalTextContent.appendChild(content5);
 			modalTextContent.appendChild(content6);
 
-			/* specific modal creation if add a multiple choice question button was pressed */
+			/* specific modal creation if the "add a multiple choice question" button was pressed */
 		} else if (buttonId[1] === '3') {
 
 			clearContent();
