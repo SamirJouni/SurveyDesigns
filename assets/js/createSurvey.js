@@ -53,9 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		} else if (buttonId[1] === '2') {
 
-			while (modalTextContent.hasChildNodes()) {
-				modalTextContent.removeChild(modalTextContent.lastChild);
-				}
+			clearContent();
 
 			const content1 = document.createElement('p');
 			const content2 = document.createElement('div');
@@ -84,5 +82,10 @@ document.addEventListener('DOMContentLoaded', function () {
 		} else if (buttonId[1] === '3') {
 			console.log('3');
 		}
+	}
+	function clearContent(){
+		while (modalTextContent.hasChildNodes()) {
+			modalTextContent.removeChild(modalTextContent.lastChild);
+			}
 	}
 });
