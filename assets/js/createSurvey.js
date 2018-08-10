@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			modalTextContent.appendChild(content2);
 			modalTextContent.appendChild(content4);
 
-		/* specific modal creation if add a one option question button was pressed */
+		/* specific modal creation if the "add a one option question" button was pressed */
 		} else if (buttonId[1] === '2') {
 
 			clearContent();
