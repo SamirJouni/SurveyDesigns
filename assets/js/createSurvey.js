@@ -1,4 +1,4 @@
-/* This script controls the seperate animations and interactions for the survey creation on Create A Survey section */
+/* This script controls the seperate interactions for the survey creation on Create A Survey section */
 
 document.addEventListener('DOMContentLoaded', function () {
 	"use strict";
