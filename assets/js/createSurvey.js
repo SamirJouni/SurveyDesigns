@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	/* Create a specific content in the modal based on what button was pressed */
 	function createSpecificModal(buttonId) {
 
-		/* specific modal creation if add a question button was pressed */
+		/* specific modal creation if the "add a question" button was pressed */
 		if (buttonId[1] === '1') {
 
 			clearContent();
