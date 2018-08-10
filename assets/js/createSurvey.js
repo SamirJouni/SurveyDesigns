@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	}
 
+	/* Add an event listener to close modal when the x symbol is clicked */
 	close.addEventListener('click', function () {
 		modal.style.display = "none";
 	});
