@@ -34,9 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		if (buttonId[1] === '1') {
 
-			while (modalTextContent.hasChildNodes()) {
-				modalTextContent.removeChild(modalTextContent.lastChild);
-				}
+			clearContent();
 
 			const content1 = document.createElement('p');
 			const content2 = document.createElement('div');
