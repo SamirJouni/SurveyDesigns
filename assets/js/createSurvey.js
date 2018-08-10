@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	});
 
+	/* Create a specific content in the modal based on what button was pressed */
 	function createSpecificModal(buttonId) {
 
 		if (buttonId[1] === '1') {
