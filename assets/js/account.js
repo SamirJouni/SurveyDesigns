@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	const changeEmail = document.getElementById('changeEmail');
 	const emailInput = document.getElementById('emailInput');
 
-
+/* Change username to value in input if present, when the change button is clicked */
 	 changeUsername.addEventListener('click', function (){
 
 		username.classList.toggle('displayNone');
