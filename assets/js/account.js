@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	 });
 
+	 /* Change email to value in input if present, when the change button is clicked */
 	 changeEmail.addEventListener('click', function (){
 
 		email.classList.toggle('displayNone');
