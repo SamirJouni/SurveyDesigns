@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	const logo = document.getElementsByClassName('logoWithText')[0];
 
+	/* Take user to homepage when the logo in the left corner of the navbar is clicked */
 	logo.addEventListener('click', function(){
 
 		window.location.href= "../../index.html"
