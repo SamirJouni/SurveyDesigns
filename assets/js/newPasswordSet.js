@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	const passwordInput = document.getElementById('passwordInput');
 	const passwordInput2 = document.getElementById('passwordInput2');
 
+	/* event listener to compare passwords and redirect to newPasswordSet.html when the button is pressed */
 	submitButton.addEventListener('click', function(event){
 
 		event.preventDefault();
