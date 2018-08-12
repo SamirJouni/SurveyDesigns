@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	const submitButton = document.getElementById('resetPassword');
 	const usernameInput = document.getElementById('usernameInput');
 
-
+/* event listener for the button that says "submit", when pressed the user will be informed that an email has been sent to recover the password */
 	submitButton.addEventListener('click', function(event){
 
 		event.preventDefault();
