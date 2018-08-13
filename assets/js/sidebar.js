@@ -43,6 +43,8 @@ myAccount.addEventListener('click', function(){
 	}
 });
 
+/* event listener that opens the page of the repo of this project when the github logo
+is pressed */
 projectRepo.addEventListener('click', function(){
 		window.location.href = "https://github.com/zero-to-mastery/TheVerySpecialProject"
 });
