@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 /* event listener that redirects to a page that displays all surveys that have ever been created,
-when the all surveys button in the sidebar is pressed */
+when the "all surveys" button in the sidebar is pressed */
 allSurveys.addEventListener('click', function(){
 	if (!createSurvey){
 		window.location.href = "allSurveys.html"
