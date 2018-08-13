@@ -22,7 +22,7 @@ allSurveys.addEventListener('click', function(){
 });
 
 /* event listener that redirects to a page that displays all surveys that the user has created,
-when the my surveys button in the sidebar is pressed */
+when the "my surveys" button in the sidebar is pressed */
 mySurveys.addEventListener('click', function(){
 	if (!createSurvey){
 		window.location.href = "mySurveys.html"
