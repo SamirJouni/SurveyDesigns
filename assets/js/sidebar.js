@@ -33,7 +33,7 @@ mySurveys.addEventListener('click', function(){
 });
 
 /* event listener that opens a page that displays user account information allows the user
-to edit the info. The page opens when the my account button in the sidbar is pressed */
+to edit the info. The page opens when the "my account" button in the sidbar is pressed */
 myAccount.addEventListener('click', function(){
 	if (!createSurvey){
 		window.location.href = "myAccount.html"
