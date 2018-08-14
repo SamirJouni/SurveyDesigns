@@ -1,4 +1,4 @@
-/* This script controls the animations of when a survey is clicked */
+/* This script controls the animations of surveys or any of the function buttons on them ( if present ), when they are clicked */
 
 document.addEventListener('DOMContentLoaded', function () {
 	"use strict";
