@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			});
 		});
 
-
+/* event listener to check if the mouse is over one of the function buttons or not */
 		svgIcons.forEach(function(svgIcon) {
 
 			svgIcon.addEventListener('mouseover', function () {
