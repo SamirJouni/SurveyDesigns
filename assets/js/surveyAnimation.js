@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	var mouseOverSVG = false;
 
 
+	/* adds an event listener to each listed survey, to play the the "Zoom Out and Back In" animation once a survey is clicked */
   surveys.forEach(function(survey) {
 
 		survey.addEventListener('click', function() {
