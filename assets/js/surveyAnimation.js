@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			});
 		});
 
-/* An event listener to check if the mouse is over one of the function buttons ( "edit" or "delete" ) or not */
+/* An event listener to check if the mouse is over one of the function buttons ( "edit" or "delete" ) */
 		svgIcons.forEach(function(svgIcon) {
 
 			svgIcon.addEventListener('mouseover', function () {
