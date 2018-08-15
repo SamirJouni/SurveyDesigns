@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			const content2 = document.createElement('div');
 			const content3 = document.createElement('input');
 			const content4 = document.createElement('button');
-			content1.textContent = "Enter The Question In The Input Field";
+			content1.textContent = "Enter The Question Below";
 			content3.placeholder = "Please Enter A Question";
 			content2.appendChild(content3);
 			content4.textContent = "Send To Preview";
