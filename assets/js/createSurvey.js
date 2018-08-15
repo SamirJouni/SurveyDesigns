@@ -86,6 +86,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
 			clearContent();
 
+			const content1 = document.createElement('p');
+			const content2 = document.createElement('div');
+			const content3 = document.createElement('input');
+			const content4 = document.createElement('input');
+			const content5 = document.createElement('button');
+			const content6 = document.createElement('button');
+			content1.textContent = "Enter The Question In The Input Field";
+			content3.placeholder = "Please Enter A Question";
+			content2.appendChild(content3);
+			content4.placeholder = "Please Enter a choice";
+			content5.textContent = "Save choice Or Add More";
+			content6.textContent = "Send To Preview";
+
+			content5.addEventListener('click', function(){
+				console.log(content4.value);
+				content4.value = "";
+			});
+
+			modalTextContent.appendChild(content1);
+			modalTextContent.appendChild(content2);
+			modalTextContent.appendChild(content4);
+			modalTextContent.appendChild(content5);
+			modalTextContent.appendChild(content6);
+
 		}
 	}
 
