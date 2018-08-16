@@ -14,13 +14,13 @@
 	width: 16.8vw;
 }
 .modalTextContent button {
-	font-size: .9vw;
+	font-size: 1vw;
   letter-spacing: .06vw;
-	padding: .4vw;
+	padding: .6vw;
 	margin-left: 4vw;
 	color: #ffffff;
 	border: 0;
-  border-radius: .25vw;
+  border-radius: .3vw;
 	background: #7fbb00;
 	cursor: pointer;
   transition: background .15s ease-in-out;
