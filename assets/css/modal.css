@@ -1,8 +1,12 @@
+.modalTextContent p {
+	font-size: 2vw;
+	padding: 2vw 1.3vw;
+}
 .modalTextContent input {
 	font-family: 'Roboto', sans-serif;
 	font-size: 1.5vw;
 	padding: .4vw 2.8vw;
-	margin: 1vw 0;
+	margin: 1vw 4vw;
 	border: 0;
 	border-bottom: .2vw solid #7fbb00;
 	box-shadow: none;
