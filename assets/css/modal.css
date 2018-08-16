@@ -1,3 +1,9 @@
+.accountModal {
+	width: 100%;
+	padding-right: 100vw;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
 .modalTextContent {
 	display: flex;
 	flex-direction: column;
