@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	for (var i = 0; i < NumberOfButtons; i++) {
 
 		buttons[i].addEventListener('click', function (button) {
-			modal.style.display = "block";
+			modal.style.display = "flex";
 			createSpecificModal(button.target.id);
 		});
 	}
