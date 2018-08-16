@@ -25,4 +25,7 @@
 	cursor: pointer;
   transition: background .15s ease-in-out;
 }
+.modalTextContent button:hover {
+  background: #75a902;
+}
 
