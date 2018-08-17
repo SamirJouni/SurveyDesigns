@@ -43,16 +43,21 @@ document.addEventListener('DOMContentLoaded', function () {
 			const content2 = document.createElement('div');
 			const content3 = document.createElement('input');
 			const content4 = document.createElement('button');
+			const content5 = document.createElement('div');
+
 			content1.textContent = "Enter The Question Below";
 			content3.placeholder = "Please Enter A Question";
 			content2.appendChild(content3);
 			content4.textContent = "Send To Preview";
-			content4.classList.add = "sendToPreview";
+			content5.appendChild(content4);
+			content5.classList.add("sendToPreview");
 
 
 			modalTextContent.appendChild(content1);
 			modalTextContent.appendChild(content2);
-			modalTextContent.appendChild(content4);
+			modalTextContent.appendChild(content5);
+
+			togglePlaceholderOnClick ();
 
 		/* specific modal creation if the "add a one option question" button was pressed */
 		} else if (buttonId[1] === '2') {
@@ -65,13 +70,16 @@ document.addEventListener('DOMContentLoaded', function () {
 			const content4 = document.createElement('input');
 			const content5 = document.createElement('button');
 			const content6 = document.createElement('button');
+			const content7 = document.createElement('div');
+
 			content1.textContent = "Enter The Question Below";
 			content3.placeholder = "Please Enter A Question";
 			content2.appendChild(content3);
 			content4.placeholder = "Please Enter An Option";
 			content5.textContent = "Add More";
 			content6.textContent = "Send To Preview";
-			content6.classList.add = "sendToPreview";
+			content7.appendChild(content6);
+			content7.classList.add("sendToPreview");
 
 			content5.addEventListener('click', function(){
 				console.log(content4.value);
@@ -82,7 +90,9 @@ document.addEventListener('DOMContentLoaded', function () {
 			modalTextContent.appendChild(content2);
 			modalTextContent.appendChild(content4);
 			modalTextContent.appendChild(content5);
-			modalTextContent.appendChild(content6);
+			modalTextContent.appendChild(content7);
+
+			togglePlaceholderOnClick ();
 
 			/* specific modal creation if the "add a multiple choice question" button was pressed */
 		} else if (buttonId[1] === '3') {
@@ -95,13 +105,16 @@ document.addEventListener('DOMContentLoaded', function () {
 			const content4 = document.createElement('input');
 			const content5 = document.createElement('button');
 			const content6 = document.createElement('button');
+			const content7 = document.createElement('div');
+
 			content1.textContent = "Enter A Question Below";
 			content3.placeholder = "Please Enter A Question";
 			content2.appendChild(content3);
 			content4.placeholder = "Please Enter A choice";
 			content5.textContent = "Add More";
 			content6.textContent = "Send To Preview";
-			content6.classList.add = "sendToPreview";
+			content7.appendChild(content6);
+			content7.classList.add("sendToPreview");
 
 
 			content5.addEventListener('click', function(){
@@ -113,8 +126,9 @@ document.addEventListener('DOMContentLoaded', function () {
 			modalTextContent.appendChild(content2);
 			modalTextContent.appendChild(content4);
 			modalTextContent.appendChild(content5);
-			modalTextContent.appendChild(content6);
+			modalTextContent.appendChild(content7);
 
+			togglePlaceholderOnClick ();
 		}
 	}
 
@@ -127,3 +141,25 @@ document.addEventListener('DOMContentLoaded', function () {
 			}
 	}
 });
+
+function togglePlaceholderOnClick () {
+
+	const Elements = Array.from(document.querySelectorAll('input'));
+  var ElementText = []; // An array to store placeholders
+
+  Elements.forEach(function(element){
+    ElementText.push(element.placeholder); // pushing placeholders into the empty array
+
+    element.addEventListener("focusin", function (event) { // Event listener when element is in focus
+      element.placeholder = ""; // setting placeholder to nothing
+
+    });
+
+    element.addEventListener("focusout", function (event) { // Event listener on when element is not in focus
+      if (!element.value){
+        element.placeholder = ElementText[Elements.indexOf(element)]; // retrieving old placeholder and setting it
+      }
+
+    });
+  });
+}

@@ -42,4 +42,8 @@
 .modalTextContent button:hover {
   background: #75a902;
 }
+.sendToPreview button{
+	margin-top: 4vw;
+	margin-left: 2vw;
+}
 
