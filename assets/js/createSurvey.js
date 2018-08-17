@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			content3.placeholder = "Please Enter A Question";
 			content2.appendChild(content3);
 			content4.placeholder = "Please Enter An Option";
-			content5.textContent = "Add More";
+			content5.textContent = "Add More Options";
 			content6.textContent = "Send To Preview";
 			content7.appendChild(content6);
 			content7.classList.add("sendToPreview");
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			content3.placeholder = "Please Enter A Question";
 			content2.appendChild(content3);
 			content4.placeholder = "Please Enter A choice";
-			content5.textContent = "Add More";
+			content5.textContent = "Add More Choices";
 			content6.textContent = "Send To Preview";
 			content7.appendChild(content6);
 			content7.classList.add("sendToPreview");
