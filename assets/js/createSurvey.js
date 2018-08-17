@@ -69,6 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			content4.placeholder = "Please Enter An Option";
 			content5.textContent = "Add More";
 			content6.textContent = "Send To Preview";
+			content6.classList.add = "sendToPreview";
 
 			content5.addEventListener('click', function(){
 				console.log(content4.value);
