@@ -47,6 +47,8 @@ document.addEventListener('DOMContentLoaded', function () {
 			content3.placeholder = "Please Enter A Question";
 			content2.appendChild(content3);
 			content4.textContent = "Send To Preview";
+			content4.classList.add = "sendToPreview";
+
 
 			modalTextContent.appendChild(content1);
 			modalTextContent.appendChild(content2);
