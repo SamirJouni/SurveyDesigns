@@ -86,8 +86,12 @@ document.addEventListener('DOMContentLoaded', function () {
 			content7.classList.add("sendToPreview");
 
 			content5.addEventListener('click', function(){
-				optionCounter++;
-				content8.textContent = choiceCounter.toString();
+
+				if (content4.value){
+					optionCounter++;
+					content8.textContent = choiceCounter.toString();
+				}
+
 				console.log(content4.value);
 				content4.value = "";
 			});
