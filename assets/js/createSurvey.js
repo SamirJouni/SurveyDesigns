@@ -129,6 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 			content5.addEventListener('click', function(){
 				choiceCounter++;
+				content8.textContent = choiceCounter.toString();
 				console.log(content4.value);
 				content4.value = "";
 			});
