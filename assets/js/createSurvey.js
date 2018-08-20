@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 				if (content4.value){
 					optionCounter++;
-					content8.textContent = choiceCounter.toString();
+					content8.textContent = optionCounter.toString();
 				}
 
 				console.log(content4.value);
