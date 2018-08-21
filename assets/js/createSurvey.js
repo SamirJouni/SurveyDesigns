@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			content5.textContent = "Add More Options";
 			content5.classList.add("addOption");
 			content8.textContent = optionCounter.toString();
+			content9.classList.add('addMore');
 			content9.appendChild(content5);
 			content9.appendChild(content8);
 			content6.textContent = "Send To Preview";
@@ -131,6 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			content5.classList.add("addChoice");
 			content8.textContent = choiceCounter.toString();
 			content6.textContent = "Send To Preview";
+			content9.classList.add('addMore');
 			content9.appendChild(content5);
 			content9.appendChild(content8);
 			content7.appendChild(content6);
