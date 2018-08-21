@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			const content6 = document.createElement('button');
 			const content7 = document.createElement('div');
 			const content8 = document.createElement('span');
+			const content9 = document.createElement('div');
 			var optionCounter = 0;
 
 			content1.textContent = "Enter The Question Below";
@@ -80,8 +81,10 @@ document.addEventListener('DOMContentLoaded', function () {
 			content4.placeholder = "Please Enter An Option";
 			content5.textContent = "Add More Options";
 			content5.classList.add("addOption");
-			content6.textContent = "Send To Preview";
 			content8.textContent = optionCounter.toString();
+			content9.appendChild(content5);
+			content9.appendChild(content8);
+			content6.textContent = "Send To Preview";
 			content7.appendChild(content6);
 			content7.classList.add("sendToPreview");
 
@@ -99,8 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			modalTextContent.appendChild(content1);
 			modalTextContent.appendChild(content2);
 			modalTextContent.appendChild(content4);
-			modalTextContent.appendChild(content5);
-			modalTextContent.appendChild(content8);
+			modalTextContent.appendChild(content9);
 			modalTextContent.appendChild(content7);
 
 			togglePlaceholderOnClick ();
