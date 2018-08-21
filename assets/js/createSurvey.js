@@ -94,10 +94,9 @@ document.addEventListener('DOMContentLoaded', function () {
 				if (content4.value){
 					optionCounter++;
 					content8.textContent = optionCounter.toString();
+					console.log(content4.value);
+					content4.value = "";
 				}
-
-				console.log(content4.value);
-				content4.value = "";
 			});
 
 			modalTextContent.appendChild(content1);
@@ -144,10 +143,9 @@ document.addEventListener('DOMContentLoaded', function () {
 				if (content4.value){
 					choiceCounter++;
 					content8.textContent = choiceCounter.toString();
+					console.log(content4.value);
+					content4.value = "";
 				}
-
-				console.log(content4.value);
-				content4.value = "";
 			});
 
 			modalTextContent.appendChild(content1);
