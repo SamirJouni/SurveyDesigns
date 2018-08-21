@@ -181,8 +181,8 @@ function togglePlaceholderOnClick () {
 
     });
 
-    element.addEventListener("focusout", function (event) { // Event listener on when element is not in focus
-      if (!element.value){
+		window.addEventListener("click", function (event) { // Event listener on when element is not in focus
+      if (!element.value && event.target !== element){
         element.placeholder = ElementText[Elements.indexOf(element)]; // retrieving old placeholder and setting it
       }
 
