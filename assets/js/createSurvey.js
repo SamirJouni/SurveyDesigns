@@ -59,6 +59,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
 			togglePlaceholderOnClick ();
 
+			/* Send Question To Preview */
+			content4.addEventListener('click', function (){
+
+				if (content3.value) {
+					const questionObject = {
+						question: content3.value,
+					}
+					createPreview( 1 , questionObject);
+				}
+			});
+
 		/* specific modal creation if the "add a one option question" button was pressed */
 		} else if (buttonId[1] === '2') {
 
