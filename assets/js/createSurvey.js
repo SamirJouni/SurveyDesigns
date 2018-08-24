@@ -84,8 +84,8 @@ document.addEventListener('DOMContentLoaded', function () {
 			const content7 = document.createElement('div');
 			const content8 = document.createElement('span');
 			const content9 = document.createElement('div');
-			var optionCounter = 0;
-			var optionsArray = [];
+			let optionCounter = 0;
+			let optionsArray = [];
 
 			content1.textContent = "Enter The Question Below";
 			content3.placeholder = "Please Enter A Question";
