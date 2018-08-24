@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	const modalTextContent = document.getElementById('modalTextContent');
 
 
-/* Add an event listener to open modal when a button among the question creation buttons is clicked */
+	/* Add an event listener to open modal when a button among the question creation buttons is clicked */
 	for (var i = 0; i < NumberOfButtons; i++) {
 
 		buttons[i].addEventListener('click', function (button) {
@@ -57,20 +57,20 @@ document.addEventListener('DOMContentLoaded', function () {
 			modalTextContent.appendChild(content2);
 			modalTextContent.appendChild(content5);
 
-			togglePlaceholderOnClick ();
+			togglePlaceholderOnClick();
 
 			/* Send Question To Preview */
-			content4.addEventListener('click', function (){
+			content4.addEventListener('click', function () {
 
 				if (content3.value) {
 					const questionObject = {
 						question: content3.value,
 					}
-					createPreview( 1 , questionObject);
+					createPreview(1, questionObject);
 				}
 			});
 
-		/* specific modal creation if the "add a one option question" button was pressed */
+			/* specific modal creation if the "add a one option question" button was pressed */
 		} else if (buttonId[1] === '2') {
 
 			clearContent();
@@ -85,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			const content8 = document.createElement('span');
 			const content9 = document.createElement('div');
 			var optionCounter = 0;
+			var optionsArray = [];
 
 			content1.textContent = "Enter The Question Below";
 			content3.placeholder = "Please Enter A Question";
@@ -100,12 +101,12 @@ document.addEventListener('DOMContentLoaded', function () {
 			content7.appendChild(content6);
 			content7.classList.add("sendToPreview");
 
-			content5.addEventListener('click', function(){
+			content5.addEventListener('click', function () {
 
-				if (content4.value){
+				if (content4.value) {
 					optionCounter++;
 					content8.textContent = optionCounter.toString();
-					console.log(content4.value);
+					optionsArray.push(content4.value);
 					content4.value = "";
 				}
 			});
@@ -116,7 +117,23 @@ document.addEventListener('DOMContentLoaded', function () {
 			modalTextContent.appendChild(content9);
 			modalTextContent.appendChild(content7);
 
-			togglePlaceholderOnClick ();
+			togglePlaceholderOnClick();
+
+			/* Send Question To Preview */
+			content6.addEventListener('click', function () {
+
+				if (content3.value && content4.value) {
+
+					optionsArray.push(content4.value);
+
+					const questionObject = {
+						question: content3.value,
+						options: optionsArray,
+
+					}
+					createPreview(2, questionObject);
+				}
+			});
 
 			/* specific modal creation if the "add a multiple choice question" button was pressed */
 		} else if (buttonId[1] === '3') {
@@ -149,9 +166,9 @@ document.addEventListener('DOMContentLoaded', function () {
 			content7.classList.add("sendToPreview");
 
 
-			content5.addEventListener('click', function(){
+			content5.addEventListener('click', function () {
 
-				if (content4.value){
+				if (content4.value) {
 					choiceCounter++;
 					content8.textContent = choiceCounter.toString();
 					console.log(content4.value);
@@ -165,38 +182,38 @@ document.addEventListener('DOMContentLoaded', function () {
 			modalTextContent.appendChild(content9);
 			modalTextContent.appendChild(content7);
 
-			togglePlaceholderOnClick ();
+			togglePlaceholderOnClick();
 		}
 	}
 
 	/* A fuction that clears the content of the modal, used to clear the modal before
 	adding the content to prevent duplicate content from other button presses */
 
-	function clearContent(){
+	function clearContent() {
 		while (modalTextContent.hasChildNodes()) {
 			modalTextContent.removeChild(modalTextContent.lastChild);
-			}
+		}
 	}
 });
 
-function togglePlaceholderOnClick () {
+function togglePlaceholderOnClick() {
 
 	const Elements = Array.from(document.querySelectorAll('input'));
-  var ElementText = []; // An array to store placeholders
+	var ElementText = []; // An array to store placeholders
 
-  Elements.forEach(function(element){
-    ElementText.push(element.placeholder); // pushing placeholders into the empty array
+	Elements.forEach(function (element) {
+		ElementText.push(element.placeholder); // pushing placeholders into the empty array
 
-    element.addEventListener("focusin", function (event) { // Event listener when element is in focus
-      element.placeholder = ""; // setting placeholder to nothing
+		element.addEventListener("focusin", function (event) { // Event listener when element is in focus
+			element.placeholder = ""; // setting placeholder to nothing
 
-    });
+		});
 
 		window.addEventListener("click", function (event) { // Event listener on when element is not in focus
-      if (!element.value && event.target !== element){
-        element.placeholder = ElementText[Elements.indexOf(element)]; // retrieving old placeholder and setting it
-      }
+			if (!element.value && event.target !== element) {
+				element.placeholder = ElementText[Elements.indexOf(element)]; // retrieving old placeholder and setting it
+			}
 
-    });
-  });
+		});
+	});
 }
