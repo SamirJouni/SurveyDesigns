@@ -149,8 +149,8 @@ document.addEventListener('DOMContentLoaded', function () {
 			const content7 = document.createElement('div');
 			const content8 = document.createElement('span');
 			const content9 = document.createElement('div');
-			var choiceCounter = 0;
-			var choicesArray = [];
+			let choiceCounter = 0;
+			let choicesArray = [];
 
 			content1.textContent = "Enter A Question Below";
 			content3.placeholder = "Please Enter A Question";
