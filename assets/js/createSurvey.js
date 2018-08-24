@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
 						question: content3.value,
 					}
 					createPreview(1, questionObject);
+					modal.style.display = "none";
 				}
 			});
 
@@ -84,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			const content7 = document.createElement('div');
 			const content8 = document.createElement('span');
 			const content9 = document.createElement('div');
-			let optionCounter = 0;
+			let optionsCounter = 0;
 			let optionsArray = [];
 
 			content1.textContent = "Enter The Question Below";
@@ -93,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			content4.placeholder = "Please Enter An Option";
 			content5.textContent = "Add More Options";
 			content5.classList.add("addOption");
-			content8.textContent = optionCounter.toString();
+			content8.textContent = optionsCounter.toString();
 			content9.classList.add('addMore');
 			content9.appendChild(content5);
 			content9.appendChild(content8);
@@ -104,8 +105,8 @@ document.addEventListener('DOMContentLoaded', function () {
 			content5.addEventListener('click', function () {
 
 				if (content4.value) {
-					optionCounter++;
-					content8.textContent = optionCounter.toString();
+					optionsCounter++;
+					content8.textContent = optionsCounter.toString();
 					optionsArray.push(content4.value);
 					content4.value = "";
 				}
@@ -122,9 +123,11 @@ document.addEventListener('DOMContentLoaded', function () {
 			/* Send Question To Preview */
 			content6.addEventListener('click', function () {
 
-				if (content3.value && content4.value) {
+				if (content3.value && (content4.value || (optionsCounter > 0))) {
 
-					optionsArray.push(content4.value);
+					if (content4.value) {
+						optionsArray.push(content4.value);
+					}
 
 					const questionObject = {
 						question: content3.value,
@@ -132,6 +135,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 					}
 					createPreview(2, questionObject);
+					modal.style.display = "none";
 				}
 			});
 
@@ -149,8 +153,8 @@ document.addEventListener('DOMContentLoaded', function () {
 			const content7 = document.createElement('div');
 			const content8 = document.createElement('span');
 			const content9 = document.createElement('div');
-			let choiceCounter = 0;
-			let choicesArray = [];
+			var choicesCounter = 0;
+			var choicesArray = [];
 
 			content1.textContent = "Enter A Question Below";
 			content3.placeholder = "Please Enter A Question";
@@ -158,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			content4.placeholder = "Please Enter A choice";
 			content5.textContent = "Add More Choices";
 			content5.classList.add("addChoice");
-			content8.textContent = choiceCounter.toString();
+			content8.textContent = choicesCounter.toString();
 			content6.textContent = "Send To Preview";
 			content9.classList.add('addMore');
 			content9.appendChild(content5);
@@ -170,8 +174,8 @@ document.addEventListener('DOMContentLoaded', function () {
 			content5.addEventListener('click', function () {
 
 				if (content4.value) {
-					choiceCounter++;
-					content8.textContent = choiceCounter.toString();
+					choicesCounter++;
+					content8.textContent = choicesCounter.toString();
 					choicesArray.push(content4.value);
 					content4.value = "";
 				}
@@ -188,9 +192,11 @@ document.addEventListener('DOMContentLoaded', function () {
 			/* Send Question To Preview */
 			content6.addEventListener('click', function () {
 
-				if (content3.value && content4.value) {
+				if (content3.value && (content4.value || (choicesCounter > 0))) {
 
-					choicesArray.push(content4.value);
+					if (content4.value) {
+						choicesArray.push(content4.value);
+					}
 
 					const questionObject = {
 						question: content3.value,
@@ -198,6 +204,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 					}
 					createPreview(3, questionObject);
+					modal.style.display = "none";
 				}
 			});
 		}
@@ -216,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function togglePlaceholderOnClick() {
 
 	const Elements = Array.from(document.querySelectorAll('input'));
-	var ElementText = []; // An array to store placeholders
+	let ElementText = []; // An array to store placeholders
 
 	Elements.forEach(function (element) {
 		ElementText.push(element.placeholder); // pushing placeholders into the empty array
