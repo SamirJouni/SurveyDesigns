@@ -150,6 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			const content8 = document.createElement('span');
 			const content9 = document.createElement('div');
 			var choiceCounter = 0;
+			var choicesArray = [];
 
 			content1.textContent = "Enter A Question Below";
 			content3.placeholder = "Please Enter A Question";
@@ -171,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				if (content4.value) {
 					choiceCounter++;
 					content8.textContent = choiceCounter.toString();
-					console.log(content4.value);
+					choicesArray.push(content4.value);
 					content4.value = "";
 				}
 			});
@@ -183,6 +184,22 @@ document.addEventListener('DOMContentLoaded', function () {
 			modalTextContent.appendChild(content7);
 
 			togglePlaceholderOnClick();
+
+			/* Send Question To Preview */
+			content6.addEventListener('click', function () {
+
+				if (content3.value && content4.value) {
+
+					choicesArray.push(content4.value);
+
+					const questionObject = {
+						question: content3.value,
+						choices: choicesArray,
+
+					}
+					createPreview(3, questionObject);
+				}
+			});
 		}
 	}
 
