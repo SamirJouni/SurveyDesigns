@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 				if (content3.value) {
 					const questionObject = {
-						question: content3.value,
+						question: content3.value.includes('?') ? content3.value : content3.value + '?',
 					}
 					createPreview(1, questionObject);
 					modal.style.display = "none";
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
 					}
 
 					const questionObject = {
-						question: content3.value,
+						question: content3.value.includes('?') ? content3.value : content3.value + '?',
 						options: optionsArray,
 
 					}
@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function () {
 					}
 
 					const questionObject = {
-						question: content3.value,
+						question: content3.value.includes('?') ? content3.value : content3.value + '?',
 						choices: choicesArray,
 
 					}
