@@ -72,8 +72,13 @@ function createPreview ( questionType, questionObject ) {
 		questionObject.choices.forEach(
 			(choice, i) => {
 				const content6 = document.createElement('div');
-				const content7 = document.createElement('input', { type : 'checkbox', name: choice, value: choice, id: choice + i });
-				const content8 = document.createElement('label', {for: choice + i});
+				const content7 = document.createElement('input');
+				content7.type = 'checkbox';
+				content7.name = choice;
+				content7.value = choice;
+				content7.id = choice + i;
+				const content8 = document.createElement('label');
+				content8.for = choice + i;
 				content8.textContent = choice;
 
 				content6.appendChild(content7);
