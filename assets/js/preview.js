@@ -57,7 +57,34 @@ function createPreview ( questionType, questionObject ) {
 		togglePlaceholderOnClick();
 
 	} else if (questionType === 3) {
+		const content1 = document.createElement('div');
+		const content2 = document.createElement('div');
+		const content3 = document.createElement('span');
+		const content4 = document.createElement('div');
 
+		content1.classList.add('previewQuestion')
+		content3.textContent = questionObject.question;
+
+		content2.appendChild(content3);
+		content1.appendChild(content2);
+		content1.appendChild(content4);
+
+		questionObject.choices.forEach(
+			(choice, i) => {
+				const content6 = document.createElement('div');
+				const content7 = document.createElement('input', { type : 'checkbox', name: choice, value: choice, id: choice + i });
+				const content8 = document.createElement('label', {for: choice + i});
+				content8.textContent = choice;
+
+				content6.appendChild(content7);
+				content6.appendChild(content8);
+				content4.appendChild(content6);
+			}
+		)
+
+		pRoot.appendChild(content1);
+
+		togglePlaceholderOnClick();
 	}
 
 	function togglePlaceholderOnClick() {
