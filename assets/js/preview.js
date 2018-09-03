@@ -3,8 +3,6 @@
 function createPreview ( questionType, questionObject ) {
 	'use strict';
 
-	console.log(questionObject);
-
 	const pRoot = document.getElementById('pRoot');
 
 	if (questionType === 1 ) {
