@@ -29,6 +29,33 @@ function createPreview ( questionType, questionObject ) {
 
 	} else if (questionType === 2 ) {
 
+		const content1 = document.createElement('div');
+		const content2 = document.createElement('div');
+		const content3 = document.createElement('span');
+		const content4 = document.createElement('div');
+		const content5 = document.createElement('select');
+
+		content1.classList.add('previewQuestion')
+		content3.textContent = questionObject.question;
+
+		content2.appendChild(content3);
+		content4.appendChild(content5);
+		content1.appendChild(content2);
+		content1.appendChild(content4);
+
+		questionObject.options.forEach(
+			(option) => {
+				const content6 = document.createElement('option');
+				content6.textContent = option;
+				content6.value = option;
+				content5.appendChild(content6);
+			}
+		)
+
+		pRoot.appendChild(content1);
+
+		togglePlaceholderOnClick();
+
 	} else if (questionType === 3) {
 
 	}
