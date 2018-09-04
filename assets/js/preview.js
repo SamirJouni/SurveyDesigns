@@ -39,14 +39,21 @@ function createPreview ( questionType, questionObject, questionId ) {
 		const content3 = document.createElement('span');
 		const content4 = document.createElement('div');
 		const content5 = document.createElement('select');
+		const contentDelete = document.createElement('button');
 
 		content1.id = String(questionId);
 		content1.classList.add('previewQuestion');
 		content3.textContent = questionObject.question;
+		contentDelete.textContent = 'Delete';
+		contentDelete.qid = content1.id;
+
 		content2.appendChild(content3);
 		content4.appendChild(content5);
 		content1.appendChild(content2);
 		content1.appendChild(content4);
+		content1.appendChild(contentDelete);
+
+		contentDelete.onclick = () => handleDeleteContent(contentDelete.qid);
 
 		questionObject.options.forEach(
 			(option) => {
@@ -66,14 +73,20 @@ function createPreview ( questionType, questionObject, questionId ) {
 		const content2 = document.createElement('div');
 		const content3 = document.createElement('span');
 		const content4 = document.createElement('div');
+		const contentDelete = document.createElement('button');
 
 		content1.id = String(questionId);
 		content1.classList.add('previewQuestion')
 		content3.textContent = questionObject.question;
+		contentDelete.textContent = 'Delete';
+		contentDelete.qid = content1.id;
 
 		content2.appendChild(content3);
 		content1.appendChild(content2);
 		content1.appendChild(content4);
+		content1.appendChild(contentDelete);
+
+		contentDelete.onclick = () => handleDeleteContent(contentDelete.qid);
 
 		questionObject.choices.forEach(
 			(choice, i) => {
