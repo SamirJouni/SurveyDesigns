@@ -34,9 +34,9 @@ function createPreview ( questionType, questionObject, questionId ) {
 		const content4 = document.createElement('div');
 		const content5 = document.createElement('select');
 
+		content1.id = String(questionId);
 		content1.classList.add('previewQuestion')
 		content3.textContent = questionObject.question;
-
 		content2.appendChild(content3);
 		content4.appendChild(content5);
 		content1.appendChild(content2);
@@ -61,6 +61,7 @@ function createPreview ( questionType, questionObject, questionId ) {
 		const content3 = document.createElement('span');
 		const content4 = document.createElement('div');
 
+		content1.id = String(questionId);
 		content1.classList.add('previewQuestion')
 		content3.textContent = questionObject.question;
 
