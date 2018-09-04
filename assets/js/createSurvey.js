@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
 	const close = document.getElementById('closeModal');
 	const modalTextContent = document.getElementById('modalTextContent');
 
+	let questionId = 0 ;
+
 
 	/* Add an event listener to open modal when a button among the question creation buttons is clicked */
 	for (var i = 0; i < NumberOfButtons; i++) {
@@ -66,7 +68,8 @@ document.addEventListener('DOMContentLoaded', function () {
 					const questionObject = {
 						question: content3.value.includes('?') ? content3.value : content3.value + '?',
 					}
-					createPreview(1, questionObject);
+					createPreview(1, questionObject, questionId);
+					questionId++;
 					modal.style.display = "none";
 				}
 			});
@@ -134,7 +137,8 @@ document.addEventListener('DOMContentLoaded', function () {
 						options: optionsArray,
 
 					}
-					createPreview(2, questionObject);
+					createPreview(2, questionObject, questionId);
+					questionId++;
 					modal.style.display = "none";
 				}
 			});
@@ -203,7 +207,8 @@ document.addEventListener('DOMContentLoaded', function () {
 						choices: choicesArray,
 
 					}
-					createPreview(3, questionObject);
+					createPreview(3, questionObject, questionId);
+					questionId++;
 					modal.style.display = "none";
 				}
 			});
