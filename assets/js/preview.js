@@ -1,6 +1,6 @@
 /* This JS script will create a vertical preview of the survey questions */
 
-function createPreview ( questionType, questionObject ) {
+function createPreview ( questionType, questionObject, questionId ) {
 	'use strict';
 
 	const pRoot = document.getElementById('pRoot');
@@ -12,7 +12,8 @@ function createPreview ( questionType, questionObject ) {
 		const content4 = document.createElement('div');
 		const content5 = document.createElement('input');
 
-		content1.classList.add('previewQuestion')
+		content1.id = String(questionId);
+		content1.classList.add('previewQuestion');
 		content3.textContent = questionObject.question;
 		content5.placeholder = 'And Your Answer is...';
 
