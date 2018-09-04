@@ -11,16 +11,22 @@ function createPreview ( questionType, questionObject, questionId ) {
 		const content3 = document.createElement('span');
 		const content4 = document.createElement('div');
 		const content5 = document.createElement('input');
+		const contentDelete = document.createElement('button');
 
 		content1.id = String(questionId);
 		content1.classList.add('previewQuestion');
 		content3.textContent = questionObject.question;
 		content5.placeholder = 'And Your Answer is...';
+		contentDelete.textContent = 'Delete';
+		contentDelete.qid = content1.id;
+
+		contentDelete.onclick = () => handleDeleteContent(contentDelete.qid);
 
 		content2.appendChild(content3);
 		content4.appendChild(content5);
 		content1.appendChild(content2);
 		content1.appendChild(content4);
+		content1.appendChild(contentDelete);
 
 		pRoot.appendChild(content1);
 
@@ -35,7 +41,7 @@ function createPreview ( questionType, questionObject, questionId ) {
 		const content5 = document.createElement('select');
 
 		content1.id = String(questionId);
-		content1.classList.add('previewQuestion')
+		content1.classList.add('previewQuestion');
 		content3.textContent = questionObject.question;
 		content2.appendChild(content3);
 		content4.appendChild(content5);
@@ -90,6 +96,10 @@ function createPreview ( questionType, questionObject, questionId ) {
 		pRoot.appendChild(content1);
 
 		togglePlaceholderOnClick();
+	}
+
+	function handleDeleteContent (id) {
+		console.log(id);
 	}
 
 	function togglePlaceholderOnClick() {
