@@ -112,7 +112,7 @@ function createPreview ( questionType, questionObject, questionId ) {
 	}
 
 	function handleDeleteContent (id) {
-		console.log(id);
+		document.getElementById(id).remove();
 	}
 
 	function togglePlaceholderOnClick() {
