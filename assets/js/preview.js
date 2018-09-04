@@ -11,13 +11,13 @@ function createPreview ( questionType, questionObject, questionId ) {
 		const content3 = document.createElement('span');
 		const content4 = document.createElement('div');
 		const content5 = document.createElement('input');
-		const contentDelete = document.createElement('button');
+		const contentDelete = document.createElement('img');
 
 		content1.id = String(questionId);
 		content1.classList.add('previewQuestion');
 		content3.textContent = questionObject.question;
 		content5.placeholder = 'And Your Answer is...';
-		contentDelete.textContent = 'Delete';
+		contentDelete.src = '../svg/delete.svg';
 		contentDelete.qid = content1.id;
 
 		contentDelete.onclick = () => handleDeleteContent(contentDelete.qid);
@@ -39,12 +39,12 @@ function createPreview ( questionType, questionObject, questionId ) {
 		const content3 = document.createElement('span');
 		const content4 = document.createElement('div');
 		const content5 = document.createElement('select');
-		const contentDelete = document.createElement('button');
+		const contentDelete = document.createElement('img');
 
 		content1.id = String(questionId);
 		content1.classList.add('previewQuestion');
 		content3.textContent = questionObject.question;
-		contentDelete.textContent = 'Delete';
+		contentDelete.src = '../svg/delete.svg';
 		contentDelete.qid = content1.id;
 
 		content2.appendChild(content3);
@@ -73,12 +73,12 @@ function createPreview ( questionType, questionObject, questionId ) {
 		const content2 = document.createElement('div');
 		const content3 = document.createElement('span');
 		const content4 = document.createElement('div');
-		const contentDelete = document.createElement('button');
+		const contentDelete = document.createElement('img');
 
 		content1.id = String(questionId);
 		content1.classList.add('previewQuestion')
 		content3.textContent = questionObject.question;
-		contentDelete.textContent = 'Delete';
+		contentDelete.src = '../svg/delete.svg';
 		contentDelete.qid = content1.id;
 
 		content2.appendChild(content3);
