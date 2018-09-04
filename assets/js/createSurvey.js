@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	}
 
-	surveyTitle.onchange = (e) => {
+	surveyTitle.onkeyup = (e) => {
 		surveyTitlePreview.textContent = e.target.value;
 	};
 	/* A fuction that clears the content of the modal, used to clear the modal before
