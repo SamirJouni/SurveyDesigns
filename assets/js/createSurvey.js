@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
 	const NumberOfButtons = buttons.length;
 	const close = document.getElementById('closeModal');
 	const modalTextContent = document.getElementById('modalTextContent');
-
+	const surveyTitle = document.getElementById('surveyTitle');
+	const surveyTitlePreview = document.getElementById('surveyTitlePreview');
 	let questionId = 0 ;
 
 
@@ -215,6 +216,9 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	}
 
+	surveyTitle.onchange = (e) => {
+		surveyTitlePreview.textContent = e.target.value;
+	};
 	/* A fuction that clears the content of the modal, used to clear the modal before
 	adding the content to prevent duplicate content from other button presses */
 
