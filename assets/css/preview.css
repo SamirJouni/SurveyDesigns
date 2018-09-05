@@ -29,6 +29,14 @@
 	line-height: 1.6;
 	width: 75vw;
 }
+.previewQuestion > div select {
+	padding: .2vw .5vw;
+	margin-left: 1vw;
+	border: .1vw solid #7fbb00;
+	font-size: 1vw;
+	font-family: 'Roboto', sans-serif;
+	color: #808182;
+}
 .previewQuestion img {
   max-width: 2vw;
   max-height: 2vw;
