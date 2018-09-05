@@ -15,18 +15,21 @@ function createPreview ( questionType, questionObject, questionId ) {
 
 		content1.id = String(questionId);
 		content1.classList.add('previewQuestion');
-		content3.textContent = questionObject.question;
+		content3.textContent = 'Q. ' + questionObject.question;
+		content4.textContent = 'A. ';
 		content5.placeholder = 'And Your Answer is...';
 		contentDelete.src = '../svg/delete.svg';
+		contentDelete.title = 'Delete From Preview (Only Available For Creator)';
 		contentDelete.qid = content1.id;
 
 		contentDelete.onclick = () => handleDeleteContent(contentDelete.qid);
 
 		content2.appendChild(content3);
 		content4.appendChild(content5);
+		content1.appendChild(contentDelete);
 		content1.appendChild(content2);
 		content1.appendChild(content4);
-		content1.appendChild(contentDelete);
+
 
 		pRoot.appendChild(content1);
 
@@ -45,6 +48,7 @@ function createPreview ( questionType, questionObject, questionId ) {
 		content1.classList.add('previewQuestion');
 		content3.textContent = questionObject.question;
 		contentDelete.src = '../svg/delete.svg';
+		contentDelete.title = 'Delete From Preview (Only Available For Creator)';
 		contentDelete.qid = content1.id;
 
 		content2.appendChild(content3);
@@ -79,6 +83,7 @@ function createPreview ( questionType, questionObject, questionId ) {
 		content1.classList.add('previewQuestion')
 		content3.textContent = questionObject.question;
 		contentDelete.src = '../svg/delete.svg';
+		contentDelete.title = 'Delete From Preview (Only Available For Creator)';
 		contentDelete.qid = content1.id;
 
 		content2.appendChild(content3);
