@@ -82,15 +82,17 @@ function createPreview ( questionType, questionObject, questionId ) {
 
 		content1.id = String(questionId);
 		content1.classList.add('previewQuestion')
-		content3.textContent = questionObject.question;
+		content3.textContent = 'Q. ' + questionObject.question;
+		content4.textContent = 'A. Pick One Or More Of The Following Choices: ';
+		content4.classList.add('previewCheckbox');
 		contentDelete.src = '../svg/delete.svg';
 		contentDelete.title = 'Delete From Preview (Only Available For Creator)';
 		contentDelete.qid = content1.id;
 
 		content2.appendChild(content3);
+		content1.appendChild(contentDelete);
 		content1.appendChild(content2);
 		content1.appendChild(content4);
-		content1.appendChild(contentDelete);
 
 		contentDelete.onclick = () => handleDeleteContent(contentDelete.qid);
 

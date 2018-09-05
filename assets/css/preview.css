@@ -29,6 +29,15 @@
 	line-height: 1.6;
 	width: 75vw;
 }
+.previewQuestion > div input[type="checkbox"] {
+	padding: 0 1vw;
+	border: 0;
+	font-size: 1.2vw;
+	font-family: 'Roboto', sans-serif;
+	line-height: 1;
+	width: auto;
+	margin-right: 1vw;
+}
 .previewQuestion > div select {
 	padding: .2vw .5vw;
 	margin-left: 1vw;
@@ -46,4 +55,7 @@
 	position: relative;
 	top: 3.8vw;
 	left: 80vw;
+}
+.previewCheckbox div:first-child{
+	margin-top: 1vw;
 }
