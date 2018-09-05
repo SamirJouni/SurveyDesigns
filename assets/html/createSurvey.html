@@ -13,6 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/pagesTitles.css">
 	<link rel="stylesheet" type="text/css" href="../css/createSurvey.css">
 	<link rel="stylesheet" type="text/css" href="../css/modal.css">
+	<link rel="stylesheet" type="text/css" href="../css/preview.css">
 	<link rel="stylesheet" type="text/css" href="../css/footer.css">
 </head>
 
@@ -34,38 +35,40 @@
 		</div>
 	</div>
 	<div class="contentAndTitles">
-			<div class="surveysTitle">
-				<span>Create Your Survey</span>
+		<div class="surveysTitle">
+			<span>Create Your Survey</span>
+		</div>
+		<div class="createSurvey">
+			<div>
+				<input type="text" name="surveyTitle" id="surveyTitle" placeholder="Survey Title" />
 			</div>
-			<div class="createSurvey">
-				<div>
-						<input type="text" name="surveyTitle" id="surveyTitle" placeholder="Survey Title" />
+			<div>
+				<div class="makeAChoice">
+					<span>Add One Or More Of The Following To Create A Survey:</span>
 				</div>
-				<div>
-					<div class="makeAChoice">
-						<span>Add One Or More Of The Following To Create A Survey:</span>
-					</div>
-					<div class="questionType">
-						<img src="../svg/question.svg" alt="Add A Question" title="Add A Question" class="addAQuestion" id="B1"/>
-						<img src="../svg/option.svg" alt="Add A One Option Question" title="Add A One Option Question" class="addAQuestion" id="B2"/>
-						<img src="../svg/multipleChoices.svg" alt="Add a Multiple Choice Question" title="Add a Multiple Choice Question" class="addAQuestion" id="B3"/>
-					</div>
-				</div>
-				<div class="createSurveyButton">
-						<span>Create This Survey</span>
+				<div class="questionType">
+					<img src="../svg/question.svg" alt="Add A Question" title="Add A Question" class="addAQuestion" id="B1" />
+					<img src="../svg/option.svg" alt="Add A One Option Question" title="Add A One Option Question" class="addAQuestion"
+					  id="B2" />
+					<img src="../svg/multipleChoices.svg" alt="Add a Multiple Choice Question" title="Add a Multiple Choice Question"
+					  class="addAQuestion" id="B3" />
 				</div>
 			</div>
-			<div class="previewSurvey">
-					<div class="surveysTitle">
-							<span>Preview Your Survey</span>
-					</div>
-					<div id="pRoot">
-						<div>
-							<span id="surveyTitlePreview"></span>
-						</div>
-					</div>
+			<div class="createSurveyButton">
+				<span>Create This Survey</span>
 			</div>
 		</div>
+		<div class="previewSurvey">
+			<div class="surveysTitle">
+				<span>Preview Your Survey</span>
+			</div>
+			<div id="pRoot">
+				<div>
+					<span id="surveyTitlePreview"></span>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="footer">
 		<div class="links">
 			<div class="leftLinks">

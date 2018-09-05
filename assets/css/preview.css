@@ -1,0 +1,41 @@
+#pRoot {
+	margin-left: 6vw;
+	margin-top: 4vw;
+	margin-bottom: 10vw;
+}
+#pRoot > div:first-child {
+	margin-bottom: 4vw;
+}
+#surveyTitlePreview {
+	font-size: 1.9vw;
+	font-weight: 200;
+	color: #000000;
+}
+.previewQuestion {
+	margin-top: 3vw ;
+}
+.previewQuestion > div {
+	margin-top: 2vw;
+	font-size: 1.2vw;
+	font-weight: 400;
+	width: 79vw;
+}
+.previewQuestion > div input {
+	padding: 0 1vw;
+	border: 0;
+	border-bottom: .2vw solid #7fbb00;
+	font-size: 1.2vw;
+	font-family: 'Roboto', sans-serif;
+	line-height: 1.6;
+	width: 75vw;
+}
+.previewQuestion img {
+  max-width: 2vw;
+  max-height: 2vw;
+  width: 100%;
+	height: 100%;
+	cursor: pointer;
+	position: relative;
+	top: 3.8vw;
+	left: 80vw;
+}
