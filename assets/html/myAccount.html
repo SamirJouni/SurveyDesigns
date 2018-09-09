@@ -36,73 +36,88 @@
 	</div>
 
 	<div class="contentContainer">
+		<div class="sidebar">
+			<span id="allSurveys">ALL SURVEYS</span>
+			<span id="mySurveys">MY SURVEYS</span>
+			<span id="myAccount">MY ACCOUNT</span>
+			<span id="projectRepo">
+				<img src="../svg/github.svg" alt="github repo">
+			</span>
+		</div>
 		<div class="contentAndTitles">
 			<div class="surveysTitle">
 				<span>My Account</span>
 			</div>
-			<div class="personalInfo">
-				<div class="settingsTitle">
-					<img src="../svg/userProfile.svg" alt="Personal Info">
-					<span>Personal Info</span>
-				</div>
-				<div class="changeInfoContainer">
-					<div class="changeInfo">
-						<div>
+			<div class="infoAccountContainer">
+				<div class="personalInfo">
+					<div class="settingsTitle">
+						<img src="../svg/userProfile.svg" alt="Personal Info">
+						<span>Personal Info</span>
+					</div>
+					<div class="changeInfoContainer">
+						<div class="changeInfo">
+							<div>
 								<img src="../svg/username.svg" alt="username">
+							</div>
+							<span class="infoDescription"><span>Username: </span></span><span id="username">JohnDoe123</span>
+							<input type="text" name="username" placeholder="Enter A New Username" class="displayNone" id="usernameInput" />
+							<span class="changeButton" id="changeUsername"><span>Change</span></span>
 						</div>
-						<span class="infoDescription"><span>Username: </span></span><span id="username">JohnDoe123</span>
-						<input type="text" name="username" placeholder="Enter A New Username" class="displayNone" id="usernameInput"/>
-						<span class="changeButton" id="changeUsername"><span>Change</span></span>
-					</div>
-					<div class="changeInfo">
-						<div>
+						<div class="changeInfo">
+							<div>
 								<img src="../svg/email.svg" alt="email">
+							</div>
+							<span class="infoDescription"><span>Email: </span></span><span id="email">johndoe@jmail.com</span>
+							<input type="text" name="email" placeholder="Enter A New Email" class="displayNone" id="emailInput" />
+							<span class="changeButton" id="changeEmail"><span>Change</span></span>
 						</div>
-						<span class="infoDescription"><span>Email: </span></span><span id="email">johndoe@jmail.com</span>
-						<input type="text" name="email" placeholder="Enter A New Email" class="displayNone" id="emailInput"/>
-						<span class="changeButton" id="changeEmail"><span>Change</span></span>
-					</div>
-					<div class="changeInfo">
-						<div>
+						<div class="changeInfo">
+							<div>
 								<img src="../svg/avatar.svg" alt="avatar">
+							</div>
+							<span class="infoDescription"><span>Change Profile Photo: </span></span><span class="changeButton"><span>Change</span></span>
 						</div>
-						<span class="infoDescription"><span>Change Profile Photo: </span></span><span class="changeButton"><span>Change</span></span>
 					</div>
 				</div>
-			</div>
-			<div class="manageAccount">
-				<div class="settingsTitle">
-					<img src="../svg/manageAccount.svg" alt="Personal Info">
-					<span>Manage Account</span>
-				</div>
-				<div class="manageInfo">
-					<div>
-						<span class="manageSpan">Change Password: </span>
+				<div class="manageAccount">
+					<div class="settingsTitle">
+						<img src="../svg/manageAccount.svg" alt="Personal Info">
+						<span>Manage Account</span>
 					</div>
-					<div>
+					<div class="manageInfo">
+						<div>
+							<span class="manageSpan">Change Password: </span>
+						</div>
+						<div>
 							<img src="../svg/password.svg" alt="avatar">
 							<input type="password" name="oldPassword" placeholder="Old Password" />
+						</div>
+						<div>
+							<img src="../svg/password.svg" alt="avatar">
+							<input type="password" name="newPassword" placeholder="New Password" />
+						</div>
+						<div>
+							<img src="../svg/password.svg" alt="avatar">
+							<input type="password" name="newPassword" placeholder="New Password" />
+						</div>
+						<span class="changeButton"><span>Change</span></span>
 					</div>
-					<div>
-						<img src="../svg/password.svg" alt="avatar">
-						<input type="password" name="newPassword" placeholder="New Password" />
-				  </div>
-					<div>
-						<img src="../svg/password.svg" alt="avatar">
-						<input type="password" name="newPassword" placeholder="New Password" />
-					</div>
-					<span class="changeButton"><span>Change</span></span>
 				</div>
+
+
+			</div>
+			<div class="dangerContainer">
 				<div class="manageInfo">
-						<div class="warning">
-								<span>WARNING: DANGER ZONE !</span>
+					<div class="warning">
+						<span>WARNING: DANGER ZONE !</span>
 					</div>
 					<div>
-							<img src="../svg/delete.svg" alt="avatar">
-							<span class="infoDescription" class="manageSpan"><span>Delete Account: </span></span><span class="deleteAccButton"><span>Delete</span></span>
+						<img src="../svg/delete.svg" alt="avatar">
+						<span class="infoDescription" class="manageSpan"><span>Delete Account: </span></span><span class="deleteAccButton"><span>Delete</span></span>
 					</div>
 				</div>
 			</div>
+
 		</div>
 	</div>
 	<div class="footer">
@@ -148,6 +163,7 @@
 	</div>
 	<script type="text/javascript" src="../js/goToZTM.js"></script>
 	<script type="text/javascript" src="../js/navbar.js"></script>
+	<script type="text/javascript" src="../js/sidebar.js"></script>
 	<script type="text/javascript" src="../js/togglePlaceholderOnClick.js"></script>
 	<script type="text/javascript" src="../js/account.js"></script>
 	<script type="text/javascript" src="../js/footer.js"></script>
