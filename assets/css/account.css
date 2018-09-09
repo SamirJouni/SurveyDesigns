@@ -1,4 +1,15 @@
 /* This is the corresponding css file for myAccount.html */
+
+/* Wraps the Personal Info and Manage Account panels */
+.infoAccountContainer {
+	display:flex;
+	justify-content: space-evenly;
+}
+.dangerContainer {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
 .settingsTitle {
 	display: flex;
 	flex-direction: row;
@@ -29,7 +40,7 @@
 	flex-direction: row;
 	flex-wrap: nowrap;
 	align-items: center;
-	justify-content: flex-start;
+	justify-content: space-between;
 }
 .changeInfo div img,
 .manageInfo div img {
@@ -68,6 +79,7 @@
 .changeButton span:hover {
   background: #75a902;
 }
+
 .manageInfo {
 	margin-left: 6vw;
 	margin-bottom: 1vw;
