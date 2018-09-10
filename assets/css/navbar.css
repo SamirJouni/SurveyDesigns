@@ -40,13 +40,6 @@
   letter-spacing: .15vw;
   padding: 1vw .2vw;
 }
-.signupContainer {
-  display:flex;
-  flex:1;
-  height:100%;
-  justify-content:flex-end;
-  align-items:center;
-}
 
 .signup a {
   font-size: 1.18vw;
@@ -63,68 +56,6 @@
 
 .signup a:hover {
   background: #75a902;
-}
-
-.ghLink {
-	border-bottom: 0;
-	text-align: center;
-}
-
-.ghLink {
-	max-width: 2.2em;
-	max-height: 2.2em;
-	width: 100%;
-  height: 100%;
-  margin-top:.5vw;
-  margin-right:1em;
-}
-.ghLink:hover {
-	animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-  transform: rotate();
-  cursor:pointer;
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-@keyframes shake {
-  10% {
-    transform: rotate(5deg);
-  }
-	20% {
-    transform: rotate(10deg);
-	}
-
-  30% {
-    transform: rotate(15deg);
-	}
-
-	40% {
-    transform: rotate(20deg);
-  }
-
-  50% {
-    transform: rotate(-5deg);
-  }
-
-	60% {
-    transform: rotate(-10deg);
-	}
-
-  70% {
-    transform: rotate(-15deg);
-	}
-
-	80% {
-    transform: rotate(-20deg);
-	}
-
-	90% {
-		transform: rotate(-10deg);
-	}
-
-	100% {
-    transform: rotate(0deg);
-  }
 }
 
 /* Mobile Responsive Design */

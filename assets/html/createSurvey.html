@@ -10,8 +10,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="../css/cssReset.css">
 	<link rel="stylesheet" type="text/css" href="../css/navbar.css">
-	<link rel="stylesheet" type="text/css" href="../css/sidebar.css">
-	<link rel="stylesheet" type="text/css" href="../css/content.css">
 	<link rel="stylesheet" type="text/css" href="../css/pagesTitles.css">
 	<link rel="stylesheet" type="text/css" href="../css/createSurvey.css">
 	<link rel="stylesheet" type="text/css" href="../css/modal.css">
@@ -32,60 +30,45 @@
 			</div>
 		</div>
 		<!-- This is the signup button in the navbar -->
-		<div class="signupContainer">
-			<span id="projectRepo">
-				<img class="ghLink" src="../svg/github.svg" alt="github repo">
-			</span>
-			<div class="signup">
-				<a href="../html/signup.html">Sign Up</a>
-			</div>
+		<div class="signup">
+			<a href="../html/signup.html">Sign Up</a>
 		</div>
 	</div>
-
-	<div class="contentContainer">
-		<div class="sidebar">
-			<span id="allSurveys">ALL SURVEYS</span>
-			<span id="mySurveys">MY SURVEYS</span>
-			<span id="myAccount">MY ACCOUNT</span>
+	<div class="contentAndTitles">
+		<div class="surveysTitle">
+			<span>Create Your Survey</span>
 		</div>
-
-		<div class="contentAndTitles">
+		<div class="createSurvey">
+			<div>
+				<input type="text" name="surveyTitle" id="surveyTitle" placeholder="Survey Title" />
+			</div>
+			<div>
+				<div class="makeAChoice">
+					<span>Add One Or More Of The Following To Create A Survey:</span>
+				</div>
+				<div class="questionType">
+					<img src="../svg/question.svg" alt="Add A Question" title="Add A Question" class="addAQuestion" id="B1" />
+					<img src="../svg/option.svg" alt="Add A One Option Question" title="Add A One Option Question" class="addAQuestion"
+					  id="B2" />
+					<img src="../svg/multipleChoices.svg" alt="Add a Multiple Choice Question" title="Add a Multiple Choice Question"
+					  class="addAQuestion" id="B3" />
+				</div>
+			</div>
+			<div class="createSurveyButton">
+				<span>Create This Survey</span>
+			</div>
+		</div>
+		<div class="previewSurvey">
 			<div class="surveysTitle">
-				<span>Create Your Survey</span>
+				<span>Preview Your Survey</span>
 			</div>
-			<div class="createSurvey">
+			<div id="pRoot">
 				<div>
-					<input type="text" name="surveyTitle" id="surveyTitle" placeholder="Survey Title" />
-				</div>
-				<div>
-					<div class="makeAChoice">
-						<span>Add One Or More Of The Following To Create A Survey:</span>
-					</div>
-					<div class="questionType">
-						<img src="../svg/question.svg" alt="Add A Question" title="Add A Question" class="addAQuestion" id="B1" />
-						<img src="../svg/option.svg" alt="Add A One Option Question" title="Add A One Option Question" class="addAQuestion" id="B2"
-						/>
-						<img src="../svg/multipleChoices.svg" alt="Add a Multiple Choice Question" title="Add a Multiple Choice Question" class="addAQuestion"
-						 id="B3" />
-					</div>
-				</div>
-				<div class="createSurveyButton">
-					<span>Create This Survey</span>
-				</div>
-			</div>
-			<div class="previewSurvey">
-				<div class="surveysTitle">
-					<span>Preview Your Survey</span>
-				</div>
-				<div id="pRoot">
-					<div>
-						<span id="surveyTitlePreview"></span>
-					</div>
+					<span id="surveyTitlePreview"></span>
 				</div>
 			</div>
 		</div>
 	</div>
-
 	<div class="footer">
 		<div class="links">
 			<div class="leftLinks">
@@ -137,7 +120,6 @@
 	</div>
 	<script type="text/javascript" src="../js/goToZTM.js"></script>
 	<script type="text/javascript" src="../js/navbar.js"></script>
-	<script type="text/javascript" src="../js/sidebar.js"></script>
 	<script type="text/javascript" src="../js/togglePlaceholderOnClick.js"></script>
 	<script type="text/javascript" src="../js/preview.js"></script>
 	<script type="text/javascript" src="../js/createSurvey.js"></script>
