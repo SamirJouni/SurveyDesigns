@@ -8,13 +8,37 @@
 	margin: 2vw 4vw;
 }
 .createSurvey div input {
+	font-family: 'Montserrat', sans-serif;
 	padding: 0 1vw;
 	border: 0;
-	border-bottom: .2vw solid #7fbb00;
+	border-bottom: .1vw solid #7fbb00;
 	font-size: 1.2vw;
-	font-family: 'Roboto', sans-serif;
 	line-height: 1.6;
 }
+
+
+.field {
+	position: relative;
+	font-family: 'Montserrat', sans-serif;
+}
+.field label {
+	pointer-events: none;
+	position: absolute;
+	left: 0.7vw;
+	transition: 0.3s all;
+	color: #555555;
+}
+.field input:valid:not(:focus) + label,
+.field input:focus + label {
+	color: #7fbb00;
+	left: 0;
+	transform: translate(-1.2vw, -1.5vw) scale(0.7);
+}
+.field input:invalid:focus + label {
+	color: #ff7f7f;
+}
+
+
 .makeAChoice {
 	padding-bottom: 2vw;
 }

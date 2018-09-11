@@ -7,7 +7,10 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Create Survey - The Survey</title>
 	<link rel="shortcut icon" type="image/png" href="../img/favicon.png">
+
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Comfortaa|Montserrat:500" rel="stylesheet">
+
 	<link rel="stylesheet" type="text/css" href="../css/cssReset.css">
 	<link rel="stylesheet" type="text/css" href="../css/navbar.css">
 	<link rel="stylesheet" type="text/css" href="../css/sidebar.css">
@@ -54,12 +57,14 @@
 				<span>Create Your Survey</span>
 			</div>
 			<div class="createSurvey">
-				<div>
-					<input type="text" name="surveyTitle" id="surveyTitle" placeholder="Survey Title" />
+				<div class="field">
+					<input type="text" name="surveyTitle" id="surveyTitle" minlength="1" maxlength="30" size="30" 
+						placeholder="" required/>
+					<label>Enter Survey name</label>
 				</div>
 				<div>
 					<div class="makeAChoice">
-						<span>Add One Or More Of The Following To Create A Survey:</span>
+						<span>Choose variety of question types for your survey</span>
 					</div>
 					<div class="questionType">
 						<img src="../svg/question.svg" alt="Add A Question" title="Add A Question" class="addAQuestion" id="B1" />
