@@ -1,11 +1,7 @@
 /* This is the corresponding css file fo createSurvey.html */
-.createSurvey {
-	margin-top: 3vw;
-	margin-bottom: 8vw;
-}
-.createSurvey > div {
-	padding-top: 4vw;
-	margin: 2vw 4vw;
+
+.contentAndTitles {
+	margin-left: 4vw;
 }
 .createSurvey div input {
 	font-family: 'Montserrat', sans-serif;
@@ -13,11 +9,12 @@
 	border: 0;
 	border-bottom: .1vw solid #7fbb00;
 	font-size: 1.2vw;
-	line-height: 1.6;
 }
 
 
 .field {
+	margin-top: 3vw;
+	margin-left: 2vw;
 	position: relative;
 	font-family: 'Montserrat', sans-serif;
 }
@@ -40,35 +37,67 @@
 
 
 .makeAChoice {
+	margin-top: 3vw;
 	padding-bottom: 2vw;
 }
 .makeAChoice span {
 	font-size: 1.2vw;
 }
 .questionType {
-	width: 20vw;
-	height: 4vw;
+	width: 25vw;
+	margin-left: 2vw;
 }
-.questionType img {
-	max-width: 4vw;
-	max-height: 4vw;
-	width: 100%;
-	height: 100%;
-	margin-right: 2vw;
+.questionType div {
+	height: 2.5vw;
+	margin-bottom: 1vw;
+	position: relative;
+	padding: 0.5vw;
+	padding-left: 1vw;
+	border-radius: 2vw;
+	box-shadow: 0 0 0.5vw 0 #ddd;
 	cursor: pointer;
+	transition: 0.1s all;
+}
+.questionType div:hover {
+	transform: scale(0.98);
+}
+.questionType img {	
+	max-width: 2.5vw;
+	max-height: 2.5vw;
+}
+#B3 {
+	padding-top: .2vw;
+}
+#B2,#B3 {
+	padding-left: 0.2vw;
+}
+.questionType p {
+	position: absolute;
+	top: 0;
+	text-align: center;
+	border-left: .1vw solid;
+	border-image: linear-gradient(white, #888, white) 1 100%;
+	padding-left: 2vw;
+	left: 5vw;
+}
+.createSurveyButton {
+	margin-top: 4vw;
 }
 .createSurveyButton span {
-  font-size: 1.2vw;
-  letter-spacing: .12vw;
-	padding: .8vw;
-  color: #ffffff;
-  border-radius: .25vw;
+	margin-left: 4vw;
+	font-size: 1.2vw;
+	letter-spacing: .12vw;
+	padding: .8vw 1vw;
+	color: #ffffff;
+	border-radius: .5vw;
+	box-shadow: 0 0 5px 0 #ddd;
+	font-family: 'Comfortaa', cursive;
 	background: #7fbb00;
 	cursor: pointer;
-  transition: background .15s ease-in-out;
+	transition: background .15s ease-in-out;
 }
 .createSurveyButton span:hover {
-  background: #75a902;
+	background: #75a902;
 }
 .accountModal {
 	display: none;
