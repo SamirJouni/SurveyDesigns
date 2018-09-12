@@ -3,14 +3,6 @@
 .contentAndTitles {
 	margin-left: 4vw;
 }
-.createSurvey div input {
-	font-family: 'Montserrat', sans-serif;
-	padding: 0 1vw;
-	border: 0;
-	border-bottom: .1vw solid #7fbb00;
-	font-size: 1.2vw;
-}
-
 
 .field {
 	margin-top: 3vw;
@@ -18,6 +10,13 @@
 	height: 2vw;
 	position: relative;
 	font-family: 'Montserrat', sans-serif;
+}
+.field input {
+	font-family: 'Montserrat', sans-serif;
+	padding: 0 1vw;
+	border: 0;
+	border-bottom: .1vw solid #7fbb00;
+	font-size: 1.2vw;
 }
 .field label {
 	pointer-events: none;
@@ -44,11 +43,10 @@
 .makeAChoice span {
 	font-size: 1.2vw;
 }
-.questionType {
+.addAQuestion {
+	position: relative;
 	width: 25vw;
 	margin-left: 2vw;
-}
-.questionType .addAQuestion {
 	height: 2.5vw;
 	margin-bottom: 1vw;
 	position: relative;
@@ -57,10 +55,16 @@
 	border-radius: 2vw;
 	box-shadow: 0 0 0.5vw 0 #ddd;
 	cursor: pointer;
+	transition: 0.2s all;
+}
+.addAQuestion:hover {
+	transform: scale(0.98);
+}
+.addAQuestion div{
 	transition: 0.1s all;
 }
-.questionType .addAQuestion:hover {
-	transform: scale(0.98);
+.addAQuestion div:hover{
+	transform: scale(1.1);
 }
 .questionType img {	
 	pointer-events: none;
@@ -83,6 +87,10 @@
 	padding-left: 2vw;
 	left: 5vw;
 }
+.dropdown {
+	overflow: hidden;
+}
+
 .createSurveyButton {
 	margin-top: 4vw;
 }
