@@ -9,7 +9,7 @@
 	<link rel="shortcut icon" type="image/png" href="../img/favicon.png">
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Comfortaa|Montserrat:500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Comfortaa:300|Comfortaa:400|Montserrat:500|" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" href="../css/cssReset.css">
 	<link rel="stylesheet" type="text/css" href="../css/navbar.css">
@@ -67,17 +67,26 @@
 						<span>Choose variety of question types for your survey</span>
 					</div>
 					<div class="questionType">
-						<div>
-							<img src="../svg/question.svg"alt="Add A Question"class="addAQuestion"id="B1"/>
+						<div class="addAQuestion" id="B1">
+							<img src="../svg/question.svg"alt="Add A Question"/>
 							<p>Add a simple question</p>
 						</div>
-						<div>
-							<img src="../svg/option.svg"alt="Add A One Option Question"class="addAQuestion"id="B2"/>
+						<div class="questionType1"id="questionType1">
+
+						</div>
+						<div class="addAQuestion" id="B2">
+							<img src="../svg/option.svg"alt="Add A One Option Question"/>
 							<p>Add a single choice question</p>	
 						</div>
-						<div>
-							<img src="../svg/multipleChoices.svg" alt="Add a Multiple Choice Question"class="addAQuestion"id="B3" />
+						<div class="questionType2"id="questionType2">
+
+						</div>
+						<div class="addAQuestion" id="B3">
+							<img src="../svg/multipleChoices.svg"alt="Add a Multiple Choice Question"/>
 							<p>Add a multiple choice question</p>
+						</div>
+						<div class="questionType3"id="questionType3">
+
 						</div>
 					</div>
 				</div>
@@ -98,6 +107,21 @@
 		</div>
 	</div>
 
+	<div id="accountModal" class="accountModal">
+		<!-- modalContent is the white part of the popup -->
+		<div class="modalContent">
+			<!-- closeModal is the cross on the top right corner of the popup -->
+			<!-- &times; is to give the cross symbol to the close button for the popup -->
+			<span class="closeModal" id="closeModal">&times;</span>
+			<div id="modalTextContent" class="modalTextContent">
+
+			</div>
+		</div>
+	</div>
+
+
+
+<!-- FOOTER -->
 	<div class="footer">
 		<div class="links">
 			<div class="leftLinks">
@@ -137,14 +161,6 @@
 			<span>Made With
 				<span class="love">🖤</span>
 				By The ZTM Community</span>
-		</div>
-	</div>
-	<div id="accountModal" class="accountModal">
-		<div class="modalContent">
-			<span class="closeModal" id="closeModal">&times;</span>
-			<div id="modalTextContent" class="modalTextContent">
-
-			</div>
 		</div>
 	</div>
 	<script type="text/javascript" src="../js/goToZTM.js"></script>

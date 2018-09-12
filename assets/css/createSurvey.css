@@ -15,6 +15,7 @@
 .field {
 	margin-top: 3vw;
 	margin-left: 2vw;
+	height: 2vw;
 	position: relative;
 	font-family: 'Montserrat', sans-serif;
 }
@@ -29,7 +30,7 @@
 .field input:focus + label {
 	color: #7fbb00;
 	left: 0;
-	transform: translate(-1.2vw, -1.5vw) scale(0.7);
+	transform: translate(-1.2vw, -1.7vw) scale(0.7);
 }
 .field input:invalid:focus + label {
 	color: #ff7f7f;
@@ -47,7 +48,7 @@
 	width: 25vw;
 	margin-left: 2vw;
 }
-.questionType div {
+.questionType .addAQuestion {
 	height: 2.5vw;
 	margin-bottom: 1vw;
 	position: relative;
@@ -58,20 +59,22 @@
 	cursor: pointer;
 	transition: 0.1s all;
 }
-.questionType div:hover {
+.questionType .addAQuestion:hover {
 	transform: scale(0.98);
 }
 .questionType img {	
+	pointer-events: none;
 	max-width: 2.5vw;
 	max-height: 2.5vw;
 }
-#B3 {
+#B3 img {
 	padding-top: .2vw;
 }
-#B2,#B3 {
+#B2 img,#B3 img {
 	padding-left: 0.2vw;
 }
 .questionType p {
+	pointer-events: none;
 	position: absolute;
 	top: 0;
 	text-align: center;
@@ -107,26 +110,34 @@
 	height: 100vh;
 	overflow: auto;
 	background-color: rgba(127,187,0,0.6);
-
 	align-items: center;
 	justify-content: center;
 }
+.accountModal {
+	background-color: rgba(20, 20, 20, 0.6);
+}
 .modalContent {
 	background-color: #ffffff;
+	border-radius: 1vw;
+	box-shadow: 0 0 3vw 0 #777;
 	margin: auto;
 	padding: 1vw 1.3vw;
 	width: 80%;
 }
+
+/* closeModal is the cross button on the top-right corner of the pop-up */
 .closeModal {
 	color: #808182;
 	float: right;
-	font-size: 28px;
-	font-weight: bold;
+	font-size: 4vw;
+	font-family: 'Comfortaa', cursive;
+	font-weight: 300;
+	margin: 1vw 1.5vw;
 	transition: color .2s ease-in-out;
 }
 .closeModal:hover,
 .closeModal:focus {
-	color: #7fbb00;
+	color: red;
 	text-decoration: none;
 	cursor: pointer;
 }

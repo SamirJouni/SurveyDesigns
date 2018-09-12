@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	/* Add an event listener to open modal when a button among the question creation buttons is clicked */
 	for (var i = 0; i < NumberOfButtons; i++) {
-
 		buttons[i].addEventListener('click', function (button) {
 			modal.style.display = "flex";
 			createSpecificModal(button.target.id);
@@ -51,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			content1.textContent = "Enter The Question Below";
 			content3.placeholder = "Please Enter A Question";
 			content2.appendChild(content3);
-			content4.textContent = "Send To Preview";
+			content4.textContent = "Done";
 			content5.appendChild(content4);
 			content5.classList.add("sendToPreview");
 
