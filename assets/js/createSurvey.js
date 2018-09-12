@@ -73,6 +73,10 @@ document.addEventListener('DOMContentLoaded', function () {
 				currentdropdown.children[1].title = "minimum character length of a question should be " + currentdropdown.children[1].minLength;
 				currentdropdown.children[1].size = "30";
 				currentdropdown.children[1].addEventListener("input", onChange);
+				// run when enter is pressed inside the input field
+				currentdropdown.children[1].addEventListener("keyup", function(e) {
+					if(e.keyCode == '13' && $(currentdropdown.children[1]).is(':valid') && this.value.length) doneClicked();
+				});
 				function onChange(value) {
 					currentdropdown.children[1].size = "30";
 					if($(currentdropdown.children[1]).is(':valid') && this.value.length) {
@@ -88,13 +92,25 @@ document.addEventListener('DOMContentLoaded', function () {
 						}
 					}
 				}
+				content3.addEventListener('click', function() {
+					doneClicked();
+				});
+				function doneClicked(){
+					if (content2.value) {
+						const questionObject = {
+							question: content2.value.includes('?') ? content2.value : content2.value + '?',
+						}
+						createPreview(1, questionObject, questionId);
+						questionId++;
+						modal.style.display = "none";
+					}
+					closeAll(buttonId[1]);
+				}
 			}
 			firstClick = false;
 		} else {
-			closeAll(buttonId);
-			firstClick = true;
-		}
-		function viewDone(c){
+			closeAll(buttonId[1]);
+		} function viewDone(c){
 			buttons[buttonId[1]].appendChild(c);
 			c.style.boxShadow = "0 0 0.5vw 0 #aaa";
 			c.style.padding = "0.5vw 0.8vw";
@@ -105,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			c.style.color = "#77bb00";	
 		}
 	}
-	function closeAll(buttonId) {
+	function closeAll(b, bool) {
 		for(var i = 0; i < dropdown.length; i++) {
 			$( dropdown[i] ).animate({ height: "0" }, 200 );
 			const d = dropdown[i];
@@ -115,10 +131,13 @@ document.addEventListener('DOMContentLoaded', function () {
 					d.removeChild(d.firstChild);
 				}
 			}
-		} if(buttons[buttonId[1]].lastChild.textContent === 'Done') {
-			buttons[buttonId[1]].removeChild(buttons[buttonId[1]].lastChild);
+		} console.log(b); 
+		if(buttons[b].lastChild.textContent === 'Done') {
+			buttons[b].removeChild(buttons[b].lastChild);
 		}
+		firstClick = true;
 	}
+
 
 			// clearContent();
 
