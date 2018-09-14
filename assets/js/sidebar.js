@@ -6,8 +6,10 @@ document.addEventListener('DOMContentLoaded', function () {
 	const mySurveys = document.getElementById('mySurveys');
 	const myAccount = document.getElementById('myAccount');
 	const projectRepo = document.getElementById('projectRepo');
+	const createSurveySidebar = document.getElementById('createSurvey');
 
 	const createSurvey = document.getElementsByClassName('createSurvey')[0];
+	console.log(createSurvey);
 
 
 /* event listener that redirects to a page that displays all surveys that have ever been created,
@@ -40,6 +42,17 @@ myAccount.addEventListener('click', function(){
 }
 	else {
 		window.location.href = "assets/html/myAccount.html"
+	}
+});
+
+/* event listener that opens the create Survey page that allows a user to create a new survey.
+The page opens when the "Create Survey" button in the sidebar is pressed */
+createSurveySidebar.addEventListener('click', function(){
+	if (!createSurvey){
+		window.location.href = "createSurvey.html"
+}
+	else {
+		window.location.href = "assets/html/createSurvey.html"
 	}
 });
 
