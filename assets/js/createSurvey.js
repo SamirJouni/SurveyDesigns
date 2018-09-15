@@ -60,15 +60,36 @@ document.addEventListener('DOMContentLoaded', function () {
 				currentdropdown.appendChild(content2);
 				currentdropdown.appendChild(content4);
 
-				currentdropdown.style.paddingLeft = "7vw";
+				currentdropdown.style.paddingLeft = "8vw";
 
 				currentdropdown.children[0].style.fontStyle = "italic";
 
 				const countHolder = currentdropdown.children[2].style;
+				countHolder.padding = "0.4vw 0.8vw 0 0.8vw";
+				countHolder.height = "1.6vw";
+				countHolder.borderRadius = "1.4vw";
 				countHolder.position = "absolute";
-				countHolder.right = "5.2vw";
-				countHolder.top = "0.6vw";
+				countHolder.left = "3vw";
+				countHolder.top = "0.2vw";
 				content4.fontFamily = "monospace";
+				countHolder.opacity = "0.5";
+				countHolder.boxShadow = "0 0 0.2vw 0 #ddd";
+				countHolder.color = "#61d800";
+				countHolder.transition = "0.2s all";
+				currentdropdown.children[2].addEventListener('mouseenter', inCountEnter);
+				function inCountEnter() {
+					if (wordCounter > 12) {
+						countHolder.opacity = "1";
+						countHolder.boxShadow = "0 0 0.5vw 0 #ddd";
+					}
+				}
+				currentdropdown.children[2].addEventListener('mouseout', inCountOver);
+				function inCountOver() {
+				if (wordCounter > 12) {
+						countHolder.opacity = "0.5";
+						countHolder.boxShadow = "0 0 0.2vw 0 #ddd";
+					}
+				}
 
 				currentdropdown.children[2].title = "Maximum number of words";
 
@@ -118,6 +139,16 @@ document.addEventListener('DOMContentLoaded', function () {
 				    }
 				});
 				function onChange(value) {
+					if (wordCounter < 12) {
+						countHolder.opacity = "1";
+						countHolder.boxShadow = "0 0 0.5vw 0 #ddd";
+						countHolder.color = "#ff7f7f";
+					}
+					if (wordCounter > 12) {
+						countHolder.opacity = "0.5";
+						countHolder.boxShadow = "0 0 0.2vw 0 #ddd";
+						countHolder.color = "#61d800";
+					}
 					if (this.value.slice(-1) === " " && checkDelete < this.value.length) {
 						console.log(wordCounter);
 						wordCounter--;
