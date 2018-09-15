@@ -45,26 +45,23 @@
 }
 .addAQuestion {
 	position: relative;
-	width: 25vw;
-	margin-left: 2vw;
+	width: 27vw;
 	height: 2.5vw;
+	margin-left: 2vw;
 	margin-bottom: 1vw;
 	position: relative;
 	padding: 0.5vw;
 	padding-left: 1vw;
 	border-radius: 2vw;
-	box-shadow: 0 0 0.5vw 0 #ddd;
+	box-shadow: 0 0 0.2vw 0 #ddd;
 	cursor: pointer;
 	transition: 0.2s all;
 }
-.addAQuestion:hover {
+.addAQuestion:active {
 	transform: scale(0.98);
 }
-.addAQuestion div{
-	transition: 0.1s all;
-}
-.addAQuestion div:hover{
-	transform: scale(1.1);
+.addAQuestion:hover {
+	box-shadow: 0 0 0.5vw 0 #ddd;
 }
 .questionType img {	
 	pointer-events: none;

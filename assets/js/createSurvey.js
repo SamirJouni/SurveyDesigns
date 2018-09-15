@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 	/* Create a specific content in the modal based on what button was pressed */
 	function createSpecificModal(buttonId) {
-
 		/* specific modal creation if the "add a question" button was pressed */
 		if(buttonId[1] === '0' && firstClick[0]){
 
@@ -52,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 				content1.textContent = "Q" + (questionId + 1) + ": ";
 				content2.placeholder = "Enter your question here";
-				content3.textContent = "Done";
+				content3.textContent = "✔";
 				currentdropdown.appendChild(content1);
 				currentdropdown.appendChild(content2);
 
@@ -69,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				input.border = "0";
 				input.borderBottom = ".3vh solid #888";
 
-				// children[1] is for input box
+				// children[1] is for input box inside the dropdown
 				$(currentdropdown.children[1]).focus();
 				currentdropdown.children[1].minLength = "10";
 				currentdropdown.children[1].title = "minimum character length of a question should be " + currentdropdown.children[1].minLength;
@@ -80,21 +79,33 @@ document.addEventListener('DOMContentLoaded', function () {
 					if(e.keyCode == '13' && $(currentdropdown.children[1]).is(':valid') && this.value.length) doneClicked();
 				});
 				function onChange(value) {
+					// have to reassign the size because when the text inside the input box is again less than 10 
+					// then it have to make the done button transparent
 					currentdropdown.children[1].size = "39";
+					// if the input text is valid and non-zero length then run this block
+					// had to give the non-zero block because without it the input was showing valid at zero length also (maybe some bug)
 					if($(currentdropdown.children[1]).is(':valid') && this.value.length) {
-						input.borderBottom = ".3vh solid #77bb00";
+						input.borderBottom = ".3vh solid #77bb00";//green color borderBottom
+						// add the done button with some styling // the styling is done in the viewDoen function itself
 						viewDone(content3);
+						// if the functin has this many characters then keep incrementing the size of the input box
 						if (this.value.length > 9 && this.value.length < 50)
 							currentdropdown.children[1].size = this.value.length + 30;
+						// otherwise fix the size to 80
+						// 80 is the size of the input block at 50 characters, so it won't show any flick while changing the size
 						else 
 							currentdropdown.children[1].size = 80;
-					} else {
-						input.borderBottom = ".3vh solid #888";
+					} 
+					// if the input text is not valid
+					else {
+						input.borderBottom = ".3vh solid #888";// dark-grey color
+						// remove the lastchild (done button) // when the lastChild has the text inside it 'Done'
 						if(buttons[buttonId[1]].lastChild.textContent === content3.textContent) {
 							buttons[buttonId[1]].removeChild(buttons[buttonId[1]].lastChild);
 						}
 					}
 				}
+				// When the Done button is pressed
 				content3.addEventListener('click', function() {
 					doneClicked();
 				});
@@ -132,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 				content1.textContent = "Q" + (questionId + 1) + ": ";
 				content2.placeholder = "Enter your question here";
-				content3.textContent = "Done";
+				content3.textContent = "✔";
 				content4.textContent = optionCount + ")";
 				content5.placeholder = "Enter your option";
 
@@ -205,16 +216,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		function viewDone(c){
 			buttons[buttonId[1]].appendChild(c);
-			c.style.boxShadow = "0 0 0.5vw 0 #aaa";
-			c.style.padding = "0.5vw 0.8vw";
+			c.style.boxShadow = "0 0 0.3vw 0 #ddd";
+			c.style.padding = "0.2vw 0.6vw";
 			c.style.position = "absolute";
-			c.style.marginLeft = "27vw";
+			c.style.marginLeft = "24.4vw";
 			c.style.top = "0.6vw";
 			c.style.borderRadius = "1.2vw";
-			c.style.color = "#77bb00";	
+			c.style.fontSize = "1.5vw";
+			c.style.color = "#77bb00";
 		}
 	}
-
 	 // a is the dropdown which needs to be closed and b is the button which is clicked
 	 // firstClick false means that the dropdown is open
 	function closeAll(a, b) {
@@ -226,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			while (d.firstChild) {
 				d.removeChild(d.firstChild);
 			}
-		} if (buttons[a].lastChild.textContent === 'Done') {
+		} if (buttons[a].lastChild.textContent === '✔') {
 			buttons[a].removeChild(buttons[a].lastChild);
 		}
 		firstClick[b] = true;
