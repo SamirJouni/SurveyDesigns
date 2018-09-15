@@ -63,6 +63,9 @@
 .addAQuestion:hover {
 	box-shadow: 0 0 0.5vw 0 #ddd;
 }
+.dropdown {
+	position: relative;
+}
 .questionType img {	
 	pointer-events: none;
 	max-width: 2.5vw;

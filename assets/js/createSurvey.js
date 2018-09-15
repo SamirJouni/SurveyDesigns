@@ -48,49 +48,97 @@ document.addEventListener('DOMContentLoaded', function () {
 				const content1 = document.createElement('label');
 				const content2 = document.createElement('input');
 				const content3 = document.createElement('div');
+				const content4 = document.createElement('label');
 
 				content1.textContent = "Q" + (questionId + 1) + ": ";
 				content2.placeholder = "Enter your question here";
 				content3.textContent = "✔";
+				content4.textContent = "100";
+				let wordCounter = 100;
+				let checkDelete = 0;
 				currentdropdown.appendChild(content1);
 				currentdropdown.appendChild(content2);
+				currentdropdown.appendChild(content4);
 
 				currentdropdown.style.paddingLeft = "7vw";
 
 				currentdropdown.children[0].style.fontStyle = "italic";
 
+				const countHolder = currentdropdown.children[2].style;
+				countHolder.position = "absolute";
+				countHolder.right = "5.2vw";
+				countHolder.top = "0.6vw";
+				content4.fontFamily = "monospace";
+
+				currentdropdown.children[2].title = "Maximum number of words";
+
 				const input = currentdropdown.children[1].style;
 				input.fontFamily = "'Montserrat',sans-serif";
 				input.marginLeft = "1vw";
+				input.marginRight = "4.3vw";
 				input.height = "4vh";
-				input.paddingLeft = ".5vw";
+				input.paddingLeft = "1vw";
+				input.paddingRight = "3vw";
 				input.color = "#555";
 				input.border = "0";
-				input.borderBottom = ".3vh solid #888";
+				// input.borderBottom = ".3vh solid #888";
+				input.backgroundColor = "#f1f2f3";
+				input.borderRadius = "2.4vh";
 
 				// children[1] is for input box inside the dropdown
+				currentdropdown.children[1].addEventListener('focus', inFocus);
+				function inFocus() {
+					input.backgroundColor = "#fff";
+					input.border = ".15vw solid #ddd";
+
+				}
+				currentdropdown.children[1].addEventListener('focusout', outFocus);
+				function outFocus() {
+					input.backgroundColor = "#f1f2f3";
+					input.border = ".15vw solid #f1f2f3";
+				}
 				$(currentdropdown.children[1]).focus();
 				currentdropdown.children[1].minLength = "10";
 				currentdropdown.children[1].title = "minimum character length of a question should be " + currentdropdown.children[1].minLength;
-				currentdropdown.children[1].size = "39";
+				currentdropdown.children[1].size = "30";
 				currentdropdown.children[1].addEventListener("input", onChange);
+				currentdropdown.children[1].addEventListener("focus", () => {
+					wordCounter--;
+				});
 				// run when enter is pressed inside the input field
 				currentdropdown.children[1].addEventListener("keyup", function(e) {
 					if(e.keyCode == '13' && $(currentdropdown.children[1]).is(':valid') && this.value.length) doneClicked();
 				});
+				$( currentdropdown.children[1] ).on('keydown keyup', function(e){
+				    if (wordCounter === 0
+				        	&& e.keyCode !== 46 // keycode for delete
+				        	&& e.keyCode !== 8 // keycode for backspace
+				       ) {
+				       e.preventDefault();
+				    }
+				});
 				function onChange(value) {
+					if (this.value.slice(-1) === " " && checkDelete < this.value.length) {
+						console.log(wordCounter);
+						wordCounter--;
+						content4.textContent = wordCounter;
+					} else if (this.value.slice(-1) === " " && checkDelete > this.value.length) {
+						wordCounter++;
+						content4.textContent = wordCounter;
+					}
+					checkDelete = this.value.length;
 					// have to reassign the size because when the text inside the input box is again less than 10 
 					// then it have to make the done button transparent
-					currentdropdown.children[1].size = "39";
+					currentdropdown.children[1].size = "30";
 					// if the input text is valid and non-zero length then run this block
 					// had to give the non-zero block because without it the input was showing valid at zero length also (maybe some bug)
 					if($(currentdropdown.children[1]).is(':valid') && this.value.length) {
-						input.borderBottom = ".3vh solid #77bb00";//green color borderBottom
+						// input.border = ".15vw solid #bfeac2";//green color borderBottom
 						// add the done button with some styling // the styling is done in the viewDoen function itself
 						viewDone(content3);
 						// if the functin has this many characters then keep incrementing the size of the input box
-						if (this.value.length > 9 && this.value.length < 50)
-							currentdropdown.children[1].size = this.value.length + 30;
+						if (this.value.length > 0 && this.value.length < 59)
+							currentdropdown.children[1].size = this.value.length + 21;
 						// otherwise fix the size to 80
 						// 80 is the size of the input block at 50 characters, so it won't show any flick while changing the size
 						else 
@@ -98,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
 					} 
 					// if the input text is not valid
 					else {
-						input.borderBottom = ".3vh solid #888";// dark-grey color
+						input.border = ".15vw solid #ddd";// dark-grey color
 						// remove the lastchild (done button) // when the lastChild has the text inside it 'Done'
 						if(buttons[buttonId[1]].lastChild.textContent === content3.textContent) {
 							buttons[buttonId[1]].removeChild(buttons[buttonId[1]].lastChild);
@@ -161,9 +209,9 @@ document.addEventListener('DOMContentLoaded', function () {
 				input.marginLeft = "1vw";
 				input.height = "4vh";
 				input.paddingLeft = ".5vw";
-				input.color = "#555";
 				input.border = "0";
-				input.borderBottom = ".3vh solid #888";
+				// input.borderBottom = ".3vh solid #888";
+				input.backgroundColor = "#aaa";
 
 				// children[1] is for input box
 				$(currentdropdown.children[1]).focus();
