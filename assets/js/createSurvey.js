@@ -6,38 +6,23 @@ document.addEventListener('DOMContentLoaded', function () {
 	const modal = document.getElementById('accountModal');
 	const buttons = document.getElementsByClassName('addAQuestion');
 	const dropdown = document.getElementsByClassName('dropdown');
-	const NumberOfButtons = buttons.length;
 	const close = document.getElementById('closeModal');
 	const modalTextContent = document.getElementById('modalTextContent');
 	const surveyTitle = document.getElementById('surveyTitle');
 	const surveyTitlePreview = document.getElementById('surveyTitlePreview');
-	let questionId = 0 ;
 
+	let questionId = 0;
 	let firstClick = [true,true,true];
-	/* Add an event listener to open modal when a button among the question creation buttons is clicked */
-	for (var i = 0; i < NumberOfButtons; i++) {
+
+	for (var i = 0; i < buttons.length; i++) {
 		buttons[i].addEventListener('click', function (button) {
-			// modal.style.display = "flex";
-			createSpecificModal(button.target.id);
+			openButtonSpecificDropdown(button.target.id);
 		});
 	}
 
-	/* Add an event listener to close modal when the x symbol is clicked */
-	close.addEventListener('click', function () {
-		modal.style.display = "none";
-	});
+	function openButtonSpecificDropdown(buttonId) {
 
-	/* Add an event listener to close modal when anywhere outside of the modal is clicked is clicked */
-	window.addEventListener('click', function (event) {
-		if (event.target == modal) {
-			modal.style.display = "none";
-		}
-	});
-	/* Create a specific content in the modal based on what button was pressed */
-	function createSpecificModal(buttonId) {
-		/* specific modal creation if the "add a question" button was pressed */
 		if(buttonId[1] === '0' && firstClick[0]){
-
 			closeAll(1, buttonId[1]);
 			closeAll(2, buttonId[1]);
 			
@@ -53,9 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				content1.textContent = "Q" + (questionId + 1) + ": ";
 				content2.placeholder = "Enter your question here";
 				content3.textContent = "✔";
-				content4.textContent = "100";
 				let wordCounter = 100;
-				let checkDelete = 0;
 				currentdropdown.appendChild(content1);
 				currentdropdown.appendChild(content2);
 				currentdropdown.appendChild(content4);
@@ -64,251 +47,202 @@ document.addEventListener('DOMContentLoaded', function () {
 
 				currentdropdown.children[0].style.fontStyle = "italic";
 
-				const countHolder = currentdropdown.children[2].style;
-				countHolder.padding = "0.4vw 0.8vw 0 0.8vw";
-				countHolder.height = "1.6vw";
-				countHolder.borderRadius = "1.4vw";
-				countHolder.position = "absolute";
-				countHolder.left = "3vw";
-				countHolder.top = "0.2vw";
-				content4.fontFamily = "monospace";
-				countHolder.opacity = "0.5";
-				countHolder.boxShadow = "0 0 0.2vw 0 #ddd";
-				countHolder.color = "#61d800";
-				countHolder.transition = "0.2s all";
-				currentdropdown.children[2].addEventListener('mouseenter', inCountEnter);
-				function inCountEnter() {
-					if (wordCounter > 12) {
-						countHolder.opacity = "1";
-						countHolder.boxShadow = "0 0 0.5vw 0 #ddd";
-					}
-				}
-				currentdropdown.children[2].addEventListener('mouseout', inCountOver);
-				function inCountOver() {
-				if (wordCounter > 12) {
-						countHolder.opacity = "0.5";
-						countHolder.boxShadow = "0 0 0.2vw 0 #ddd";
-					}
-				}
+				countHolder(currentdropdown.children[2], wordCounter);
 
-				currentdropdown.children[2].title = "Maximum number of words";
-
-				const input = currentdropdown.children[1].style;
-				input.fontFamily = "'Montserrat',sans-serif";
-				input.marginLeft = "1vw";
-				input.marginRight = "4.3vw";
-				input.height = "4vh";
-				input.paddingLeft = "1vw";
-				input.paddingRight = "3vw";
-				input.color = "#555";
-				input.border = "0";
-				// input.borderBottom = ".3vh solid #888";
-				input.backgroundColor = "#f1f2f3";
-				input.borderRadius = "2.4vh";
-
-				// children[1] is for input box inside the dropdown
-				currentdropdown.children[1].addEventListener('focus', inFocus);
-				function inFocus() {
-					input.backgroundColor = "#fff";
-					input.border = ".15vw solid #ddd";
-
-				}
-				currentdropdown.children[1].addEventListener('focusout', outFocus);
-				function outFocus() {
-					input.backgroundColor = "#f1f2f3";
-					input.border = ".15vw solid #f1f2f3";
-				}
-				$(currentdropdown.children[1]).focus();
-				currentdropdown.children[1].minLength = "10";
-				currentdropdown.children[1].title = "minimum character length of a question should be " + currentdropdown.children[1].minLength;
-				currentdropdown.children[1].size = "30";
-				currentdropdown.children[1].addEventListener("input", onChange);
-				currentdropdown.children[1].addEventListener("focus", () => {
-					wordCounter--;
-				});
+				// desinging & limiting the number of words using wordCounter  
+				questionInput(currentdropdown.children[1], wordCounter, currentdropdown.children[2], buttons[buttonId[1]], content3);
+				
 				// run when enter is pressed inside the input field
 				currentdropdown.children[1].addEventListener("keyup", function(e) {
-					if(e.keyCode == '13' && $(currentdropdown.children[1]).is(':valid') && this.value.length) doneClicked();
+					if(e.keyCode == '13' && $( currentdropdown.children[1] ).is(':valid') && this.value.length) saveThisQuestion();
 				});
-				$( currentdropdown.children[1] ).on('keydown keyup', function(e){
-				    if (wordCounter === 0
-				        	&& e.keyCode !== 46 // keycode for delete
-				        	&& e.keyCode !== 8 // keycode for backspace
-				       ) {
-				       e.preventDefault();
-				    }
-				});
-				function onChange(value) {
-					if (wordCounter < 12) {
-						countHolder.opacity = "1";
-						countHolder.boxShadow = "0 0 0.5vw 0 #ddd";
-						countHolder.color = "#ff7f7f";
-					}
-					if (wordCounter > 12) {
-						countHolder.opacity = "0.5";
-						countHolder.boxShadow = "0 0 0.2vw 0 #ddd";
-						countHolder.color = "#61d800";
-					}
-					if (this.value.slice(-1) === " " && checkDelete < this.value.length) {
-						console.log(wordCounter);
-						wordCounter--;
-						content4.textContent = wordCounter;
-					} else if (this.value.slice(-1) === " " && checkDelete > this.value.length) {
-						wordCounter++;
-						content4.textContent = wordCounter;
-					}
-					checkDelete = this.value.length;
-					// have to reassign the size because when the text inside the input box is again less than 10 
-					// then it have to make the done button transparent
-					currentdropdown.children[1].size = "30";
-					// if the input text is valid and non-zero length then run this block
-					// had to give the non-zero block because without it the input was showing valid at zero length also (maybe some bug)
-					if($(currentdropdown.children[1]).is(':valid') && this.value.length) {
-						// input.border = ".15vw solid #bfeac2";//green color borderBottom
-						// add the done button with some styling // the styling is done in the viewDoen function itself
-						viewDone(content3);
-						// if the functin has this many characters then keep incrementing the size of the input box
-						if (this.value.length > 0 && this.value.length < 59)
-							currentdropdown.children[1].size = this.value.length + 21;
-						// otherwise fix the size to 80
-						// 80 is the size of the input block at 50 characters, so it won't show any flick while changing the size
-						else 
-							currentdropdown.children[1].size = 80;
-					} 
-					// if the input text is not valid
-					else {
-						input.border = ".15vw solid #ddd";// dark-grey color
-						// remove the lastchild (done button) // when the lastChild has the text inside it 'Done'
-						if(buttons[buttonId[1]].lastChild.textContent === content3.textContent) {
-							buttons[buttonId[1]].removeChild(buttons[buttonId[1]].lastChild);
-						}
-					}
-				}
+				// input value is changed
+				
 				// When the Done button is pressed
 				content3.addEventListener('click', function() {
-					doneClicked();
+					saveThisQuestion();
 				});
-				function doneClicked(){
+				function saveThisQuestion(){
 					if (content2.value) {
 						const questionObject = {
 							question: content2.value.includes('?') ? content2.value : content2.value + '?',
 						}
 						createPreview(1, questionObject, questionId);
 						questionId++;
-						modal.style.display = "none";
 					}
 					closeAll(buttonId[1], buttonId[1]);
 				}
 			}
 			firstClick[0] = false;
 			firstClick[1] = true;
-		}
-
-		// clicked single choice question button 
-		else if (buttonId[1] === '1' && firstClick[1]) {
-			var optionCount = 1;
+			firstClick[2] = true;
+		} else if (buttonId[1] === '1' && firstClick[1]) {
 			closeAll(0, buttonId[1]);
 			closeAll(2, buttonId[1]);
-
+			
 			const currentdropdown = dropdown[buttonId[1]];
 			
-			$( currentdropdown ).animate({ height: "8vh" }, 200 );
+			$( currentdropdown ).animate({ height: "20vh" }, 200 );
 			if(currentdropdown.children.length === 0) {
-				const content1 = document.createElement('label');
-				const content2 = document.createElement('input');
-				const content3 = document.createElement('div');
-				const content4 = document.createElement('label');
-				const content5 = document.createElement('input');
+				const content1 = document.createElement('label');	// questionCount	// Q1:
+				const content2 = document.createElement('input');	// input the question here
+				const content3 = document.createElement('div');		// doneButton
+				const content4 = document.createElement('label');	// wordCounter
+				const content5 = document.createElement('br');		// breaks the line between question and option
+				const content6 = document.createElement('ol');		// first necessary option
+				const li = document.createElement('li');
 
 				content1.textContent = "Q" + (questionId + 1) + ": ";
 				content2.placeholder = "Enter your question here";
 				content3.textContent = "✔";
-				content4.textContent = optionCount + ")";
-				content5.placeholder = "Enter your option";
+				content6.type = "i";
 
 				currentdropdown.appendChild(content1);
 				currentdropdown.appendChild(content2);
 				currentdropdown.appendChild(content4);
 				currentdropdown.appendChild(content5);
+				currentdropdown.appendChild(content6);
+				content6.appendChild(li);
+				li.appendChild(document.createTextNode('Hello'));
+				currentdropdown.appendChild(content5);
+				li.appendChild(document.createTextNode('World'));
+				let wordCounter = 100;
 
-				currentdropdown.style.paddingLeft = "7vw";
+				currentdropdown.style.paddingLeft = "8vw";
 
 				currentdropdown.children[0].style.fontStyle = "italic";
 
-				const input = currentdropdown.children[1].style;
-				input.fontFamily = "'Montserrat',sans-serif";
-				input.marginLeft = "1vw";
-				input.height = "4vh";
-				input.paddingLeft = ".5vw";
-				input.border = "0";
-				// input.borderBottom = ".3vh solid #888";
-				input.backgroundColor = "#aaa";
+				// brings the countholder view
+				countHolder(currentdropdown.children[2], wordCounter);
 
-				// children[1] is for input box
-				$(currentdropdown.children[1]).focus();
-				currentdropdown.children[1].minLength = "10";
-				currentdropdown.children[1].title = "minimum character length of a question should be " + currentdropdown.children[1].minLength;
-				currentdropdown.children[1].size = "39";
-				currentdropdown.children[1].addEventListener("input", onChange);
+				// desinging & limiting the number of words using wordCounter  
+				questionInput(currentdropdown.children[1], wordCounter, currentdropdown.children[2], buttons[buttonId[1]], content3);
+				// desing the option input box
+				optionInput(currentdropdown.children[4]);
+				function optionInput(option){
+					const optionStyle = option.style;
+					optionStyle.backgroundColor = "#f1f2f3";
+					optionStyle.border = "0";
+					optionStyle.borderRadius = "2.4vh";
+					optionStyle.color = "#555";
+					optionStyle.fontFamily = "'Montserrat',sans-serif";
+					optionStyle.height = "4vh";
+					optionStyle.marginLeft = "3vw";
+					optionStyle.marginTop = "2vh";
+					optionStyle.marginRight = "4.3vw";
+					optionStyle.paddingLeft = "1vw";
+					optionStyle.paddingRight = "3vw";
+					option.minLength = "1";
+				}
+				
 				// run when enter is pressed inside the input field
 				currentdropdown.children[1].addEventListener("keyup", function(e) {
-					if(e.keyCode == '13' && $(currentdropdown.children[1]).is(':valid') && this.value.length) doneClicked();
+					if(e.keyCode == '13' && $( currentdropdown.children[1] ).is(':valid') && this.value.length) saveThisQuestion();
 				});
-				function onChange(value) {
-					currentdropdown.children[1].size = "39";
-					if($(currentdropdown.children[1]).is(':valid') && this.value.length) {
-						input.borderBottom = ".3vh solid #77bb00";
-						viewDone(content3);
-						if (this.value.length > 9 && this.value.length < 50)
-							currentdropdown.children[1].size = this.value.length + 30;
-						else 
-							currentdropdown.children[1].size = 80;
-					} else {
-						input.borderBottom = ".3vh solid #888";
-						if(buttons[buttonId[1]].lastChild.textContent === content3.textContent) {
-							buttons[buttonId[1]].removeChild(buttons[buttonId[1]].lastChild);
-						}
-					}
-				}
+				
+				// When the Done button is pressed
 				content3.addEventListener('click', function() {
-					doneClicked();
+					saveThisQuestion();
 				});
-				function doneClicked(){
+				function saveThisQuestion(){
 					if (content2.value) {
 						const questionObject = {
 							question: content2.value.includes('?') ? content2.value : content2.value + '?',
 						}
 						createPreview(1, questionObject, questionId);
 						questionId++;
-						modal.style.display = "none";
 					}
 					closeAll(buttonId[1], buttonId[1]);
 				}
 			}
-			firstClick[1] = false;
 			firstClick[0] = true;
-		} else {
+			firstClick[1] = false;
+			firstClick[2] = true;
+		} else if (buttonId[1] === '2' && firstClick[2]) {
+			closeAll(0, buttonId[1]);
+			closeAll(1, buttonId[1]);
+			console.log('first ran');
+			const currentdropdown = dropdown[buttonId[1]];
+			
+			$( currentdropdown ).animate({ height: "12vh" }, 200 );
+			if(currentdropdown.children.length === 0) {
+				const content1 = document.createElement('label');	// questionCount	// Q1:
+				const content2 = document.createElement('input');	// input the question here
+				const content3 = document.createElement('div');		// doneButton
+				const content4 = document.createElement('label');	// wordCounter
+				const LastLine = document.createElement('hr');
+
+				content1.textContent = "Q" + (questionId + 1) + ": ";
+				content2.placeholder = "Enter your question here";
+				content3.textContent = "✔";
+
+				currentdropdown.appendChild(content1);
+				currentdropdown.appendChild(content2);
+				currentdropdown.appendChild(content4);
+				currentdropdown.appendChild(LastLine);
+				LastLine.style.border = "none";
+				LastLine.style.height = "0.2vh";
+				LastLine.style.background = "linear-gradient(to left,white,#61d800)"; 
+				LastLine.style.marginLeft = "-6vw";
+				LastLine.style.marginRight = "2vw";
+				LastLine.style.marginTop = "5vh";
+				let wordCounter = 100;
+
+				currentdropdown.style.paddingLeft = "8vw";
+
+				currentdropdown.children[0].style.fontStyle = "italic";
+
+				// brings the countholder view
+				countHolder(currentdropdown.children[2], wordCounter);
+
+				// desinging & limiting the number of words using wordCounter  
+				questionInput(currentdropdown.children[1], wordCounter, currentdropdown.children[2], buttons[buttonId[1]], content3);
+				// desing the option input box
+				
+				// run when enter is pressed inside the input field
+				currentdropdown.children[1].addEventListener("keyup", function(e) {
+					if(e.keyCode == '13' && $( currentdropdown.children[1] ).is(':valid') && this.value.length) saveThisQuestion();
+				});
+				
+				// When the Done button is pressed
+				content3.addEventListener('click', function() {
+					saveThisQuestion();
+				});
+				function saveThisQuestion(){
+					if (content2.value) {
+						const questionObject = {
+							question: content2.value.includes('?') ? content2.value : content2.value + '?',
+						}
+						createPreview(1, questionObject, questionId);
+						questionId++;
+					}
+					closeAll(buttonId[1], buttonId[1]);
+				}
+			}
+			firstClick[0] = true;
+			firstClick[1] = true;
+			firstClick[2] = false;
+		}
+		else {
 			for (i = 0; i < firstClick.length; i++){
 				closeAll(i, i);
 			}
 		}
-
-		function viewDone(c){
-			buttons[buttonId[1]].appendChild(c);
-			c.style.boxShadow = "0 0 0.3vw 0 #ddd";
-			c.style.padding = "0.2vw 0.6vw";
-			c.style.position = "absolute";
-			c.style.marginLeft = "24.4vw";
-			c.style.top = "0.6vw";
-			c.style.borderRadius = "1.2vw";
-			c.style.fontSize = "1.5vw";
-			c.style.color = "#77bb00";
-		}
+	}
+	function viewDone(doneButton, thisButton){
+		thisButton.appendChild(doneButton);
+		doneButton.style.boxShadow = "0 0 0.3vw 0 #ddd";
+		doneButton.style.padding = "0.2vw 0.6vw";
+		doneButton.style.position = "absolute";
+		doneButton.style.marginLeft = "24.4vw";
+		doneButton.style.top = "0.6vw";
+		doneButton.style.borderRadius = "1.2vw";
+		doneButton.style.fontSize = "1.5vw";
+		doneButton.style.color = "#77bb00";
 	}
 	 // a is the dropdown which needs to be closed and b is the button which is clicked
 	 // firstClick false means that the dropdown is open
 	function closeAll(a, b) {
-		var notClose = '100';
 		const d = dropdown[a];
 		$( d ).animate({ height: "0" }, 200 );
 		setTimeout(ontimeout, 250);
@@ -316,11 +250,143 @@ document.addEventListener('DOMContentLoaded', function () {
 			while (d.firstChild) {
 				d.removeChild(d.firstChild);
 			}
-		} if (buttons[a].lastChild.textContent === '✔') {
+		}
+		if (buttons[a].lastChild.textContent === '✔') {
 			buttons[a].removeChild(buttons[a].lastChild);
 		}
 		firstClick[b] = true;
 	}
+	
+	function questionInput(input, wordCounter, countHolder, thisButton, doneButton){
+		const inputStyle = input.style;
+		let previousLength = 0;
+		let lastChar = "";
+		inputStyle.backgroundColor = "#f1f2f3";
+		inputStyle.border = "0";
+		inputStyle.borderRadius = "2.4vh";
+		inputStyle.color = "#555";
+		inputStyle.fontFamily = "'Montserrat',sans-serif";
+		inputStyle.height = "4vh";
+		inputStyle.marginLeft = "1vw";
+		inputStyle.marginRight = "4.3vw";
+		inputStyle.paddingLeft = "1vw";
+		inputStyle.paddingRight = "3vw";
+		input.minLength = "10";
+		input.addEventListener('focus', inFocus);
+		input.addEventListener('focusout', outFocus);
+		function inFocus() {
+			inputStyle.backgroundColor = "#fff";
+				inputStyle.border = ".15vw solid #ddd";
+			}
+			function outFocus() {
+				inputStyle.backgroundColor = "#f1f2f3";
+				inputStyle.border = ".15vw solid #f1f2f3";
+			}
+			$(input).focus();
+			// children[1] is for input box inside the dropdown
+			input.title = "minimum character length of a question should be " + input.minLength;
+			input.size = "30";
+			// won't accept any more letter when the word count is 0
+			$( input ).on('keydown keyup', function(e){
+			    if (wordCounter === 0
+			        	&& e.keyCode !== 46 // keycode for delete
+			        	&& e.keyCode !== 8 // keycode for backspace
+			       ) {
+			       e.preventDefault();
+			    }
+			});
+			input.addEventListener("input", onChange);
+			function onChange(value) {
+				// this.value.length is current length of the input text
+				// if previous character before delete was " " then if previous length is smaller than current length then a word is added
+				if (lastChar === " ") (previousLength < this.value.length) ? wordCounter-- : wordCounter++;
+				
+				if(Math.abs(previousLength - this.value.length) > 1) {
+					wordCounter = 100;
+					for(var i = 0; i < this.value.length; i++) if (this.value[i] === " ") wordCounter--;
+				}
+				setCountHolderWarning(wordCounter, "valid", countHolder.style)
+				countHolder.textContent = wordCounter;
+
+				previousLength = this.value.length;
+				lastChar = this.value.slice(-1);
+
+				// have to reassign the size because when the text inside the input box is again less than 10 
+				// then it have to make the done button transparent
+				input.size = "30";
+				// if the input text is valid and non-zero length then run this block
+				// had to give the non-zero block because without it the input was showing valid at zero length also (maybe some bug)
+				if($(input).is(':valid') && this.value.length) {
+					// input.border = ".15vw solid #bfeac2";//green color borderBottom
+					// add the done button with some styling // the styling is done in the viewDoen function itself
+					viewDone(doneButton, thisButton);
+					// if the functin has this many characters then keep incrementing the size of the input box
+					if (this.value.length > 0 && this.value.length < 59)
+						input.size = this.value.length + 21;
+					// otherwise fix the size to 80
+					// 80 is the size of the input block at 50 characters, so it won't show any flick while changing the size
+					else 
+						input.size = 80;
+				} 
+				// if the input text is not valid
+				else {
+					input.border = ".15vw solid #ddd";// dark-grey color
+					// remove the lastchild (done button) // when the lastChild has the text inside it 'Done'
+					if(thisButton.lastChild.textContent === doneButton.textContent) {
+						thisButton.removeChild(thisButton.lastChild);
+					}
+				}
+			}
+		}
+
+		function countHolder(countHolder, wordCounter){
+			countHolder.textContent = "100";
+			const countHolderStyle = countHolder.style;
+			countHolderStyle.padding = "0.4vw 0.8vw 0 0.8vw";
+			countHolderStyle.height = "1.6vw";
+			countHolderStyle.borderRadius = "1.4vw";
+			countHolderStyle.position = "absolute";
+			countHolderStyle.left = "3vw";
+			countHolderStyle.top = "0.2vw";
+			countHolderStyle.opacity = "0.5";
+			countHolderStyle.boxShadow = "0 0 0.2vw 0 #ddd";
+			countHolderStyle.color = "#61d800";
+			countHolderStyle.transition = "0.2s all";
+			countHolder.title = "Maximum number of words";
+
+			countHolder.addEventListener('mouseenter', inCountEnter);
+			countHolder.addEventListener('mouseout', inCountOver);
+			
+			function inCountEnter() {
+				setCountHolderWarning(wordCounter, 'mouseenter', countHolderStyle);
+			}
+			function inCountOver() {
+				setCountHolderWarning(wordCounter, 'mouseout', countHolderStyle);
+			}
+		}
+		function setCountHolderWarning(wordCounter, CASE, countHolderStyle){
+			if(wordCounter > 12){
+				switch (CASE){
+					case "mouseenter":
+						countHolderStyle.opacity = "1";
+						countHolderStyle.boxShadow = "0 0 0.5vw 0 #ddd";
+					break;
+					case "mouseout":
+						countHolderStyle.opacity = "0.5";
+						countHolderStyle.boxShadow = "0 0 0.2vw 0 #ddd";
+					break;
+					case "valid":
+						countHolderStyle.opacity = "0.5";
+						countHolderStyle.boxShadow = "0 0 0.2vw 0 #ddd";
+						countHolderStyle.color = "#61d800";
+					break;
+				}
+			}else {
+				countHolderStyle.opacity = "1";
+				countHolderStyle.boxShadow = "0 0 0.5vw 0 #ddd";
+				countHolderStyle.color = "#ff7f7f";
+			}
+		}
 	// 		/* specific modal creation if the "add a one option question" button was pressed */
 	// 	else if (buttonId[1] === '2') {
 

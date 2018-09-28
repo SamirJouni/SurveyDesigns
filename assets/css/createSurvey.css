@@ -13,7 +13,7 @@
 }
 .field input {
 	font-family: 'Montserrat', sans-serif;
-	padding: 0 1vw;
+	padding: 0 1vw .1vw 1vw;
 	border: 0;
 	border-bottom: .1vw solid #7fbb00;
 	font-size: 1.2vw;
@@ -25,22 +25,24 @@
 	transition: 0.3s all;
 	color: #555555;
 }
+/* to keep the label in air on this conditions */
 .field input:valid:not(:focus) + label,
 .field input:focus + label {
 	color: #7fbb00;
 	left: 0;
 	transform: translate(-1.2vw, -1.7vw) scale(0.7);
 }
+/* when invalid */
 .field input:invalid:focus + label {
-	color: #ff7f7f;
+	color: #888888; /* color: red */
 }
-
 
 .makeAChoice {
 	margin-top: 3vw;
 	padding-bottom: 2vw;
 }
 .makeAChoice span {
+	font-family: 'Roboto',sans-serif;
 	font-size: 1.2vw;
 }
 .addAQuestion {
@@ -57,9 +59,9 @@
 	cursor: pointer;
 	transition: 0.2s all;
 }
-.addAQuestion:active {
+/*.addAQuestion:active {
 	transform: scale(0.98);
-}
+}*/
 .addAQuestion:hover {
 	box-shadow: 0 0 0.5vw 0 #ddd;
 }
