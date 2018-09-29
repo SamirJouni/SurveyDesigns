@@ -76,10 +76,37 @@ document.addEventListener('DOMContentLoaded', function () {
 			firstClick[0] = false;
 			firstClick[1] = true;
 			firstClick[2] = true;
-		} else if (buttonId[1] === '1' && firstClick[1]) {
+		} 
+
+
+
+		else if (buttonId[1] === '1' && firstClick[1]) {
 			closeAll(0, buttonId[1]);
 			closeAll(2, buttonId[1]);
 			
+			codeOptionQuestion();
+
+			firstClick[0] = true;
+			firstClick[1] = false;
+			firstClick[2] = true;
+		} 
+
+
+
+		else if (buttonId[1] === '2' && firstClick[2]) {
+			closeAll(0, buttonId[1]);
+			closeAll(1, buttonId[1]);
+			
+			codeOptionQuestion();
+			firstClick[0] = true;
+			firstClick[1] = true;
+			firstClick[2] = false;
+		} else {
+			for (i = 0; i < firstClick.length; i++){
+				closeAll(i, i);
+			}
+		}
+		function codeOptionQuestion(){
 			const currentdropdown = dropdown[buttonId[1]];
 			$( currentdropdown ).animate({ height: "8vh" }, 200 );
 
@@ -148,29 +175,32 @@ document.addEventListener('DOMContentLoaded', function () {
 				}
 			});
 			function saveThisQuestion(){
-				for (var i = 0; i < content6.children.length; i++){
-					optionsArray.push(content6.children[i].children[0].value);
-				}
-				if (currentdropdown.children[1].value) {
+				if (buttonId[1] === "1" && currentdropdown.children[1].value){
+					for (var i = 0; i < content6.children.length; i++){
+						if (content6.children[i].children[0].value)
+							optionsArray.push(content6.children[i].children[0].value);
+					}
 					const questionObject = {
 						question: content2.value.includes('?') ? content2.value : content2.value + '?',
 						options: optionsArray
 					}
 					createPreview(2, questionObject, questionId);
-					questionId++;
+				} else if (buttonId[1] === "2" && content2.value){
+					for (var i = 0; i < content6.children.length; i++){
+						if (content6.children[i].children[0].value)
+							optionsArray.push(content6.children[i].children[0].value);
+					}
+					const questionObject = {
+						question: content2.value.includes('?') ? content2.value : content2.value + '?',
+						choices: optionsArray
+					}
+					createPreview(3, questionObject, questionId);
 				}
+				questionId++;
 				closeAll(buttonId[1], buttonId[1]);
-			}
-			firstClick[0] = true;
-			firstClick[1] = false;
-			firstClick[2] = true;
-		} else {
-			for (i = 0; i < firstClick.length; i++){
-				closeAll(i, i);
 			}
 		}
 	}
-
 	// just adds an item to the options and styles it // nothing else
 	function addItem(ol, optionsCounter, doneButton, thisButtonId){
 	    const li = document.createElement("li");
@@ -396,92 +426,13 @@ document.addEventListener('DOMContentLoaded', function () {
 					countHolderStyle.color = "#61d800";
 				break;
 			}
-		}else {
+		} else {
 			countHolderStyle.opacity = "1";
 			countHolderStyle.boxShadow = "0 0 0.5vw 0 #ddd";
 			countHolderStyle.color = "#ff7f7f";
 		}
 	}
-	function rotateImage(whatToRotate, degree) {
-		$( whatToRotate ).animate({  transform: degree }, {
-	    step: function(now,fx) {
-	        $(this).css({
-	            '-webkit-transform':'rotate('+now+'deg)', 
-	            '-moz-transform':'rotate('+now+'deg)',
-	            'transform':'rotate('+now+'deg)'
-	        });
-	    }
-	    });
-	}
-	// 		/* specific modal creation if the "add a one option question" button was pressed */
-	// 	else if (buttonId[1] === '2') {
-
-	// 		clearContent();
-
-	// 		const content1 = document.createElement('p');
-	// 		const content2 = document.createElement('div');
-	// 		const content3 = document.createElement('input');
-	// 		const content4 = document.createElement('input');
-	// 		const content5 = document.createElement('button');
-	// 		const content6 = document.createElement('button');
-	// 		const content7 = document.createElement('div');
-	// 		const content8 = document.createElement('span');
-	// 		const content9 = document.createElement('div');
-	// 		let optionsCounter = 0;
-	// 		let optionsArray = [];
-
-	// 		content1.textContent = "Enter The Question Below";
-	// 		content3.placeholder = "Please Enter A Question";
-	// 		content2.appendChild(content3);
-	// 		content4.placeholder = "Please Enter An Option";
-	// 		content5.textContent = "Add More Options";
-	// 		content5.classList.add("addOption");
-	// 		content8.textContent = optionsCounter.toString();
-	// 		content9.classList.add('addMore');
-	// 		content9.appendChild(content5);
-	// 		content9.appendChild(content8);
-	// 		content6.textContent = "Send To Preview";
-	// 		content7.appendChild(content6);
-	// 		content7.classList.add("sendToPreview");
-
-	// 		content5.addEventListener('click', function () {
-	// 			if (content4.value) {
-	// 				optionsCounter++;
-	// 				content8.textContent = optionsCounter.toString();
-	// 				optionsArray.push(content4.value);
-	// 				content4.value = "";
-	// 			}
-	// 		});
-
-	// 		modalTextContent.appendChild(content1);
-	// 		modalTextContent.appendChild(content2);
-	// 		modalTextContent.appendChild(content4);
-	// 		modalTextContent.appendChild(content9);
-	// 		modalTextContent.appendChild(content7);
-
-	// 		togglePlaceholderOnClick();
-
-	// 		/* Send Question To Preview */
-	// 		content6.addEventListener('click', function () {
-
-	// 			if (content3.value && (content4.value || (optionsCounter > 0))) {
-
-	// 				if (content4.value) {
-	// 					optionsArray.push(content4.value);
-	// 				}
-
-	// 				const questionObject = {
-	// 					question: content3.value.includes('?') ? content3.value : content3.value + '?',
-	// 					options: optionsArray,
-	// 				}
-	// 				createPreview(2, questionObject, questionId);
-	// 				questionId++;
-	// 				modal.style.display = "none";
-	// 			}
-	// 		});
-
-	// 		 specific modal creation if the "add a multiple choice question" button was pressed 
-	// 	} else if (buttonId[1] === '3') {
+	//    else if (buttonId[1] === '3') {
 
 	// 		clearContent();
 
@@ -533,22 +484,8 @@ document.addEventListener('DOMContentLoaded', function () {
 	// 		/* Send Question To Preview */
 	// 		content6.addEventListener('click', function () {
 
-	// 			if (content3.value && (content4.value || (choicesCounter > 0))) {
-
-	// 				if (content4.value) {
-	// 					choicesArray.push(content4.value);
-	// 				}
-
-	// 				const questionObject = {
-	// 					question: content3.value.includes('?') ? content3.value : content3.value + '?',
-	// 					choices: choicesArray,
-
-	// 				}
-	// 				createPreview(3, questionObject, questionId);
-	// 				questionId++;
-	// 				modal.style.display = "none";
-	// 			}
-	// 		});
+				
+			// });
 	// 	}
 	// }
 
@@ -556,34 +493,4 @@ document.addEventListener('DOMContentLoaded', function () {
 	surveyTitle.onkeyup = (e) => {
 		surveyTitlePreview.textContent = e.target.value;
 	};
-
-	/* A fuction that clears the content of the modal, used to clear the modal before
-	adding the content to prevent duplicate content from other button presses */
-	function clearContent() {
-		while (modalTextContent.hasChildNodes()) {
-			modalTextContent.removeChild(modalTextContent.lastChild);
-		}
-	}
 });
-
-function togglePlaceholderOnClick() {
-
-	const Elements = Array.from(document.querySelectorAll('input'));
-	let ElementText = []; // An array to store placeholders
-
-	Elements.forEach(function (element) {
-		ElementText.push(element.placeholder); // pushing placeholders into the empty array
-
-		element.addEventListener("focusin", function (event) { // Event listener when element is in focus
-			element.placeholder = ""; // setting placeholder to nothing
-
-		});
-
-		window.addEventListener("click", function (event) { // Event listener on when element is not in focus
-			if (!element.value && event.target !== element) {
-				element.placeholder = ElementText[Elements.indexOf(element)]; // retrieving old placeholder and setting it
-			}
-
-		});
-	});
-}
