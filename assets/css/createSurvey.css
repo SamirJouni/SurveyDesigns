@@ -42,7 +42,9 @@
 	padding-bottom: 2vw;
 }
 .makeAChoice span {
-	font-family: 'Roboto',sans-serif;
+	font-family: 'Comfortaa', sans-serif;
+	font-weight: 300;
+	letter-spacing: .1vw;
 	font-size: 1.2vw;
 }
 .addAQuestion {
@@ -92,62 +94,34 @@
 .dropdown {
 	overflow: hidden;
 }
-
-.createSurveyButton {
-	margin-top: 4vw;
+.mainButtonHolder {
+	margin-top: 3vw;
+	margin-left: 1vw;
 }
-.createSurveyButton span {
-	margin-left: 4vw;
+.mainButtonHolder span {
 	font-size: 1.2vw;
+	border-radius: .5vw;
 	letter-spacing: .12vw;
 	padding: .8vw 1vw;
-	color: #ffffff;
-	border-radius: .5vw;
-	box-shadow: 0 0 5px 0 #ddd;
 	font-family: 'Comfortaa', cursive;
-	background: #7fbb00;
+	box-shadow: 0 0 0.3vw 0 #ddd;
 	cursor: pointer;
+}
+.mainButtonHolder .cancelSurvey {
+	margin-right: 3vw;
+	color: #555;
+	transition: 0s all;
+}
+.mainButtonHolder .createSurveyButton {
+	color: #ffffff;	
+	background: #7fbb00;
 	transition: background .15s ease-in-out;
 }
-.createSurveyButton span:hover {
+.cancelSurvey:hover {
+	color: #cc0000;
+	transform: scale(1.1);
+	box-shadow: 0 0 0.5vw 0 #ddd;
+}
+.createSurveyButton:hover {
 	background: #75a902;
-}
-.accountModal {
-	display: none;
-	position: fixed;
-	top: 0;
-	width: 100vw;
-	height: 100vh;
-	overflow: auto;
-	background-color: rgba(127,187,0,0.6);
-	align-items: center;
-	justify-content: center;
-}
-.accountModal {
-	background-color: rgba(20, 20, 20, 0.6);
-}
-.modalContent {
-	background-color: #ffffff;
-	border-radius: 1vw;
-	box-shadow: 0 0 3vw 0 #777;
-	margin: auto;
-	padding: 1vw 1.3vw;
-	width: 80%;
-}
-
-/* closeModal is the cross button on the top-right corner of the pop-up */
-.closeModal {
-	color: #808182;
-	float: right;
-	font-size: 4vw;
-	font-family: 'Comfortaa', cursive;
-	font-weight: 300;
-	margin: 1vw 1.5vw;
-	transition: color .2s ease-in-out;
-}
-.closeModal:hover,
-.closeModal:focus {
-	color: red;
-	text-decoration: none;
-	cursor: pointer;
 }

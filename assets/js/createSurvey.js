@@ -432,63 +432,6 @@ document.addEventListener('DOMContentLoaded', function () {
 			countHolderStyle.color = "#ff7f7f";
 		}
 	}
-	//    else if (buttonId[1] === '3') {
-
-	// 		clearContent();
-
-	// 		const content1 = document.createElement('p');
-	// 		const content2 = document.createElement('div');
-	// 		const content3 = document.createElement('input');
-	// 		const content4 = document.createElement('input');
-	// 		const content5 = document.createElement('button');
-	// 		const content6 = document.createElement('button');
-	// 		const content7 = document.createElement('div');
-	// 		const content8 = document.createElement('span');
-	// 		const content9 = document.createElement('div');
-	// 		var choicesCounter = 0;
-	// 		var choicesArray = [];
-
-	// 		content1.textContent = "Enter A Question Below";
-	// 		content3.placeholder = "Please Enter A Question";
-	// 		content2.appendChild(content3);
-	// 		content4.placeholder = "Please Enter A choice";
-	// 		content5.textContent = "Add More Choices";
-	// 		content5.classList.add("addChoice");
-	// 		content8.textContent = choicesCounter.toString();
-	// 		content6.textContent = "Send To Preview";
-	// 		content9.classList.add('addMore');
-	// 		content9.appendChild(content5);
-	// 		content9.appendChild(content8);
-	// 		content7.appendChild(content6);
-	// 		content7.classList.add("sendToPreview");
-
-
-	// 		content5.addEventListener('click', function () {
-
-	// 			if (content4.value) {
-	// 				choicesCounter++;
-	// 				content8.textContent = choicesCounter.toString();
-	// 				choicesArray.push(content4.value);
-	// 				content4.value = "";
-	// 			}
-	// 		});
-
-	// 		modalTextContent.appendChild(content1);
-	// 		modalTextContent.appendChild(content2);
-	// 		modalTextContent.appendChild(content4);
-	// 		modalTextContent.appendChild(content9);
-	// 		modalTextContent.appendChild(content7);
-
-	// 		togglePlaceholderOnClick();
-
-	// 		/* Send Question To Preview */
-	// 		content6.addEventListener('click', function () {
-
-				
-			// });
-	// 	}
-	// }
-
 	/* the id is declared in the html file and it is called using getElementById('surrveyTitlePreview') */
 	surveyTitle.onkeyup = (e) => {
 		surveyTitlePreview.textContent = e.target.value;
