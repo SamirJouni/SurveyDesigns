@@ -2,7 +2,14 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 	"use strict";
+	const cancelSurvey = document.getElementsByClassName('cancelSurvey');
+	cancelSurvey[0].addEventListener('click', goback);
+	function goback(){
+		if(confirm("Do you want to cancel this Survey?")){
+			window.history.back();
+		}
 
+	}
 	const modal = document.getElementById('accountModal');
 	const buttons = document.getElementsByClassName('addAQuestion');
 	const dropdown = document.getElementsByClassName('dropdown');
