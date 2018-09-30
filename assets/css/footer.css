@@ -18,7 +18,7 @@
 }
 .bottomText {
 	text-align: center;
-	color: #7fbb00;
+	color: #7fcc00;
 	font-family: 'Montserrat', cursive;
 }
 .love {
@@ -68,7 +68,7 @@
 	transition: all .2s ease-in-out;
 }
 .bottomText span:hover{
-	color: #43A047;
+	color: #43A747;
 }
 .bottomText span:hover .love{
 	color: #DD2C00;
@@ -83,6 +83,9 @@
 .theLinks a:hover {
 	text-decoration: underline;
 	color: #7fbb00;
+}
+.theLinks a:active {
+	transform: scale(0.98);
 }
 .ztmLogo img {
 	max-width: 14vw;
@@ -99,4 +102,8 @@
 .ztmLogo img:hover {
 	transform: scale(1.04);
 	box-shadow: 0 0 1.5vw 0 #999;
+}
+.ztmLogo img:active {
+	transform: scale(1);
+	box-shadow: 0 0 1vw 0 #777;
 }
