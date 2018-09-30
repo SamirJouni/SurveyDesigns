@@ -3,13 +3,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 	"use strict";
 	const cancelSurvey = document.getElementsByClassName('cancelSurvey');
-	cancelSurvey[0].addEventListener('click', goback);
-	function goback(){
-		if(confirm("Do you want to cancel this Survey?")){
-			window.history.back();
-		}
-
-	}
 	const modal = document.getElementById('accountModal');
 	const buttons = document.getElementsByClassName('addAQuestion');
 	const dropdown = document.getElementsByClassName('dropdown');
@@ -20,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	let questionId = 0;
 	let firstClick = [true, true, true];
-	let checkOptions = [false, false, false];
 
 	for (var i = 0; i < buttons.length; i++) {
 		buttons[i].addEventListener('click', function (button) {
@@ -153,11 +145,6 @@ document.addEventListener('DOMContentLoaded', function () {
 			questionInput(currentdropdown, wordCounter, buttonId[1], content3);
 			// design the option input box
 
-			// run when enter is pressed inside the input field
-			currentdropdown.children[1].addEventListener("keyup", function(e) {
-				if(e.keyCode == '13' && $( currentdropdown.children[1] ).is(':valid') && this.value.length) saveThisQuestion();
-			});
-
 			// When the Done button is pressed & it is also clicked through
 			content3.addEventListener('click', function() {
 				saveThisQuestion();
@@ -236,6 +223,11 @@ document.addEventListener('DOMContentLoaded', function () {
 	    		viewDone(doneButton, thisButtonId);
 	    	}
 	    }
+	    li.children[0].addEventListener('keyup', function(e) {
+	    	if (e.keycode === "13"){
+	    		addItem(ol, optionsCounter, doneButton, thisButtonId);
+	    	}
+	    });
 
 	    function optionFocus(){
 			optionStyle.backgroundColor = "#fff";
@@ -318,8 +310,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		inputStyle.height = "4vh";
 		inputStyle.marginLeft = "1vw";
 		inputStyle.marginRight = "4.3vw";
-		inputStyle.paddingLeft = "1vw";
-		inputStyle.paddingRight = "3vw";
+		inputStyle.padding = "0 1vw";
 
 		input.minLength = "10";
 		input.addEventListener('focus', inFocus);
@@ -443,4 +434,11 @@ document.addEventListener('DOMContentLoaded', function () {
 	surveyTitle.onkeyup = (e) => {
 		surveyTitlePreview.textContent = e.target.value;
 	};
+	cancelSurvey[0].addEventListener('click', goback);
+	function goback(){
+		if(confirm("Do you want to cancel this Survey?")){
+			window.history.back();
+		}
+
+	}
 });

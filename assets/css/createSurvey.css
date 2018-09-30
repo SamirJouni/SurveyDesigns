@@ -1,11 +1,22 @@
 /* This is the corresponding css file fo createSurvey.html */
-
+.createSurvey {
+	margin-bottom: 8vh;
+	margin-left: 1vw;
+}
 .contentAndTitles {
+	/*width: 100%;*/
+}
+.contentAndTitles > div{
 	margin-left: 4vw;
+}
+.contentAndTitles > hr {
+	border: none;
+	height: 1px;
+	background: linear-gradient(to right, white, #aaa, white); 
 }
 
 .field {
-	margin-top: 3vw;
+	margin-top: 5vh;
 	margin-left: 2vw;
 	height: 2vw;
 	position: relative;
@@ -13,9 +24,9 @@
 }
 .field input {
 	font-family: 'Montserrat', sans-serif;
-	padding: 0 1vw .1vw 1vw;
+	padding: 0 4vw .1vw 1vw;
 	border: 0;
-	border-bottom: .1vw solid #7fbb00;
+	/*border-bottom: .1vw solid #7fbb00;*/
 	font-size: 1.2vw;
 }
 .field label {
@@ -36,10 +47,15 @@
 .field input:invalid:focus + label {
 	color: #888888; /* color: red */
 }
+.field > hr{
+	border: none;
+	height: 1px;
+	background: linear-gradient(to right, #7fbb00, #7fbb00, white, white); 
+}
 
 .makeAChoice {
-	margin-top: 3vw;
-	padding-bottom: 2vw;
+	margin-top: 9vh;
+	padding-bottom: 4vh;
 }
 .makeAChoice span {
 	font-family: 'Comfortaa', sans-serif;
@@ -67,6 +83,10 @@
 .addAQuestion:hover {
 	box-shadow: 0 0 0.5vw 0 #ddd;
 }
+.addAQuestion > p {
+	font-size: 1.2vw;
+}
+
 .dropdown {
 	position: relative;
 }
@@ -96,7 +116,7 @@
 	overflow: hidden;
 }
 .mainButtonHolder {
-	margin-top: 3vw;
+	margin-top: 6vh;
 	margin-left: 1vw;
 }
 .mainButtonHolder span {

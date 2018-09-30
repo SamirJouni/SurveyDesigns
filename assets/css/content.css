@@ -6,10 +6,10 @@
 	justify-content: flex-start;
 	box-shadow: 0 .15vw .1vw rgba(0, 0, 0, 0.05);
 }
-
+/*
 .createSurvey {
 	margin: 0 auto;
-}
+}*/
 
 .createSurvey span {
 	font-size: 2.5vw;
