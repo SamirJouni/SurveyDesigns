@@ -3,13 +3,10 @@
 	margin-bottom: 9vh;
 	margin-left: 1vw;
 }
-.contentAndTitles {
-	/*width: 100%;*/
-}
 .contentAndTitles > div{
 	margin-left: 4vw;
 }
-.contentAndTitles > hr {
+.contentAndTitles > div > hr {
 	border: none;
 	height: 1px;
 	background: linear-gradient(to right, white, #aaa, white); 
