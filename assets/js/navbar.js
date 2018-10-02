@@ -13,11 +13,9 @@ document.addEventListener('DOMContentLoaded', function () {
 		// rolling down
 		if (window.scrollY >= 150 && e.deltaY > 0) {
 			navbar[0].style.transform = "translate(0, -100%)";
-			console.log(navbar[0].getBoundingClientRect().top);
 		}
 		else if (e.deltaY < 0 && navbar[0].getBoundingClientRect().top < 0) {
 			navbar[0].style.transform = "translate(0, 0%)";
-			console.log(navbar[0].getBoundingClientRect().top);
 		}
 	}
 
@@ -31,11 +29,4 @@ document.addEventListener('DOMContentLoaded', function () {
 	projectRepo.addEventListener('click', function () {
 		window.location.href = "https://github.com/zero-to-mastery/TheVerySpecialProject"
 	});
-
-	function hideNavBar() {
-		navbar[0].style.transform = "translate(0, -100%)";
-	}
-	function showNavBar() {
-
-	}
 });
