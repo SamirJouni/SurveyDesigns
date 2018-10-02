@@ -24,7 +24,7 @@
 }
 .field input {
 	font-family: 'Montserrat', sans-serif;
-	padding: 0 4vw .1vw 1vw;
+	padding: 0 4vw 0 1vw;
 	border: 0;
 	/*border-bottom: .1vw solid #7fbb00;*/
 	font-size: 1.2vw;
@@ -140,7 +140,7 @@
 }
 .cancelSurvey:hover {
 	color: #cc0000;
-	transform: scale(1.1);
+	opacity: 0.8;
 	box-shadow: 0 0 0.5vw 0 #ddd;
 }
 .createSurveyButton:hover {

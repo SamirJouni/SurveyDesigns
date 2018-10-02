@@ -253,13 +253,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		addItemButton.style.boxShadow = "0 0 0.5vw 0 #ccc";
 		addItemButton.style.textAlign = "center";
-		addItemButton.style.height = "4vh";
-		addItemButton.style.width = "4.5vh";
 		addItemButton.style.position = "absolute";
 		addItemButton.style.marginLeft = "29vw";
 		addItemButton.style.top = "0.6vw";
-		addItemButton.style.borderRadius = "2.25vw";
-		addItemButton.style.padding = "0.42vh 0 0 0";
+		addItemButton.style.borderRadius = "50%";
+		addItemButton.style.padding = "0.5vh 0.73vw";
 		addItemButton.style.fontSize = "1.5vw";
 		addItemButton.style.color = "#77bb00";
 		addItemButton.style.transition = "0.4s all";
