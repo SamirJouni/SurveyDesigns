@@ -26,6 +26,10 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: 0.2s all;
+}
+.logoWithText:active {
+  transform: scale(0.98);
 }
 .logo {
   width: 3.5vw;
@@ -38,13 +42,15 @@ body {
   height: 100%;
 }
 .text {
-  font-size: 2vw;
+  font-size: 1.8vw;
   padding: 1vw 1.2vw;
-  color: #333;
-  font-family: 'Spectral SC', serif;
+  color: #555;
+  transition: 0.2s all;
+}
+.text:hover {
+  color: #000;
 }
 .signupContainer {
-  font-family: 'Josefin', monospace;
   letter-spacing: .08vw;
   display:flex;
   flex:1;
