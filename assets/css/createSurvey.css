@@ -1,6 +1,6 @@
 /* This is the corresponding css file fo createSurvey.html */
 .createSurvey {
-	margin-bottom: 8vh;
+	margin-bottom: 9vh;
 	margin-left: 1vw;
 }
 .contentAndTitles {
@@ -16,7 +16,7 @@
 }
 
 .field {
-	margin-top: 5vh;
+	margin-top: 7vh;
 	margin-left: 2vw;
 	height: 2vw;
 	position: relative;
@@ -24,7 +24,7 @@
 }
 .field input {
 	font-family: 'Montserrat', sans-serif;
-	padding: 0 4vw 0 1vw;
+	padding: 0 4vw 0 0.8vw;
 	border: 0;
 	/*border-bottom: .1vw solid #7fbb00;*/
 	font-size: 1.2vw;
@@ -41,7 +41,7 @@
 .field input:focus + label {
 	color: #7fbb00;
 	left: 0;
-	transform: translate(-1.2vw, -1.7vw) scale(0.7);
+	transform: translate(-1.3vw, -3vh) scale(0.7);
 }
 /* when invalid */
 .field input:invalid:focus + label {
@@ -50,6 +50,7 @@
 .field > hr{
 	border: none;
 	height: 1px;
+	margin-top: 0.3vh; 
 	background: linear-gradient(to right, #7fbb00, #7fbb00, white, white); 
 }
 
