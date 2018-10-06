@@ -15,11 +15,11 @@ function createPreview ( questionType, questionObject, questionId ) {
 
 		content1.id = String(questionId);
 		content1.classList.add('previewQuestion');
-		content3.textContent = 'Q. ' + questionObject.question;
-		content4.textContent = 'A. ';
-		content5.placeholder = 'And Your Answer is...';
-		contentDelete.src = '../svg/delete.svg';
-		contentDelete.title = 'Delete From Preview (Only Available For Creator)';
+		content3.textContent = questionObject.question;
+		content5.placeholder = 'Type your answer here';
+		content5.style.fontFamily = "'Roboto', sans-serif";
+		contentDelete.src = '../svg/crossIcon.svg';
+		contentDelete.title = 'Delete from preview (only available for creator)';
 		contentDelete.qid = content1.id;
 
 		contentDelete.onclick = () => handleDeleteContent(contentDelete.qid);
@@ -46,10 +46,11 @@ function createPreview ( questionType, questionObject, questionId ) {
 
 		content1.id = String(questionId);
 		content1.classList.add('previewQuestion');
-		content3.textContent = 'Q. ' + questionObject.question;
-		content4.textContent = 'A. Pick One Of The Following Options: ';
-		contentDelete.src = '../svg/delete.svg';
-		contentDelete.title = 'Delete From Preview (Only Available For Creator)';
+		content3.textContent = questionObject.question;
+		content4.textContent = 'Pick one of the following options ';
+		content4.style.fontFamily = "'Roboto', sans-serif";
+		contentDelete.src = '../svg/crossIcon.svg';
+		contentDelete.title = 'Delete from preview (only available for creator)';
 		contentDelete.qid = content1.id;
 
 		content2.appendChild(content3);
@@ -66,6 +67,7 @@ function createPreview ( questionType, questionObject, questionId ) {
 				content6.textContent = option;
 				content6.value = option;
 				content5.appendChild(content6);
+				content5.style.fontFamily = "'Roboto', sans-serif";
 			}
 		)
 
@@ -76,19 +78,19 @@ function createPreview ( questionType, questionObject, questionId ) {
 	} else if (questionType === 3) {
 		const content1 = document.createElement('div');
 		const content2 = document.createElement('div');
-		const content3 = document.createElement('span');
+		const content3 = document.createElement('div');
 		const content4 = document.createElement('div');
 		const contentDelete = document.createElement('img');
 
 		content1.id = String(questionId);
-		content1.classList.add('previewQuestion')
-		content3.textContent = 'Q. ' + questionObject.question;
-		content4.textContent = 'A. Pick One Or More Of The Following Choices: ';
+		content1.classList.add('previewQuestion');
+		content3.textContent = questionObject.question;
+		content4.textContent = 'Pick one or more from the choices: ';
+		content4.style.fontFamily = "'Roboto', sans-serif";
 		content4.classList.add('previewCheckbox');
-		contentDelete.src = '../svg/delete.svg';
-		contentDelete.title = 'Delete From Preview (Only Available For Creator)';
+		contentDelete.src = '../svg/crossIcon.svg';
+		contentDelete.title = 'Delete from preview (only available for creator)';
 		contentDelete.qid = content1.id;
-
 		content2.appendChild(content3);
 		content1.appendChild(contentDelete);
 		content1.appendChild(content2);
@@ -121,6 +123,8 @@ function createPreview ( questionType, questionObject, questionId ) {
 
 	function handleDeleteContent (id) {
 		document.getElementById(id).remove();
+		console.log('ra');
+		questionId--;
 	}
 
 	function togglePlaceholderOnClick() {
@@ -140,7 +144,6 @@ function createPreview ( questionType, questionObject, questionId ) {
 				if (!element.value && event.target !== element) {
 					element.placeholder = ElementText[Elements.indexOf(element)]; // retrieving old placeholder and setting it
 				}
-
 			});
 		});
 	}

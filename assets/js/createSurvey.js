@@ -2,6 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 	"use strict";
+
 	const cancelSurvey = document.getElementsByClassName('cancelSurvey');
 	const modal = document.getElementById('accountModal');
 	const buttons = document.getElementsByClassName('addAQuestion');
@@ -12,6 +13,26 @@ document.addEventListener('DOMContentLoaded', function () {
 	const surveyTitlePreview = document.getElementById('surveyTitlePreview');
 
 	let questionId = 0;
+	const questionObject1 = {
+		question: 'What is your name?',
+	}
+	createPreview(1, questionObject1, questionId);
+	questionId++;
+
+	const questionObject2 = {
+		question: 'What you do for living?',
+		options: ['Nothing', 'Anything', 'Everything']
+	}
+	createPreview(2, questionObject2, questionId);
+	questionId++;
+
+	const questionObject3 = {
+		question: 'Which car do you have?',
+		choices: ['TATA nano', 'Lamborghini Aventador', 'None']
+	}
+	createPreview(3, questionObject3, questionId);
+	questionId++;
+
 	let firstClick = [true, true, true];
 
 	for (var i = 0; i < buttons.length; i++) {
@@ -74,12 +95,8 @@ document.addEventListener('DOMContentLoaded', function () {
 			}
 			firstClick[0] = false;
 			firstClick[1] = true;
-			firstClick[2] = true;
-		} 
-
-
-
-		else if (buttonId[1] === '1' && firstClick[1]) {
+			firstClick[2] = true;// simple question
+		} else if (buttonId[1] === '1' && firstClick[1]) {
 			closeAll(0, buttonId[1]);
 			closeAll(2, buttonId[1]);
 			
@@ -87,25 +104,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
 			firstClick[0] = true;
 			firstClick[1] = false;
-			firstClick[2] = true;
-		} 
-
-
-
-		else if (buttonId[1] === '2' && firstClick[2]) {
+			firstClick[2] = true;// single choice
+		} else if (buttonId[1] === '2' && firstClick[2]) {
 			closeAll(0, buttonId[1]);
 			closeAll(1, buttonId[1]);
 			
 			codeOptionQuestion();
+
 			firstClick[0] = true;
 			firstClick[1] = true;
-			firstClick[2] = false;
+			firstClick[2] = false;// multiple choice
 		} else {
 			for (i = 0; i < firstClick.length; i++){
 				closeAll(i, i);
-			}
+			}//close all
 		}
-		function codeOptionQuestion(){
+		function codeOptionQuestion(){//code for questions with options
 			const currentdropdown = dropdown[buttonId[1]];
 			$( currentdropdown ).animate({ height: "8vh" }, 200 );
 
@@ -146,11 +160,12 @@ document.addEventListener('DOMContentLoaded', function () {
 			// design the option input box
 
 			// When the Done button is pressed & it is also clicked through
-			content3.addEventListener('click', function() {
+			content3.addEventListener('click', (e) => {
 				saveThisQuestion();
+				e.stopPropagation();
 			});
 			content7.addEventListener("click", function(e) {
-					e.stopPropagation();	// to disable click through add options button
+				e.stopPropagation();	// to disable click through add options button
 				if (content2.value.length > 9){
 					content7.style.color = "#77bb00";
 					$( currentdropdown ).animate({ height: ((++optionsCounter*6)+10)+"vh" }, 200 );
@@ -191,6 +206,7 @@ document.addEventListener('DOMContentLoaded', function () {
 					createPreview(3, questionObject, questionId);
 				}
 				questionId++;
+				// parameter are dropdown, buttonClicked, whether the done button is clicked(true) or not(false)
 				closeAll(buttonId[1], buttonId[1]);
 			}
 		}
@@ -246,6 +262,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		doneButton.style.borderRadius = "1.2vw";
 		doneButton.style.fontSize = "1.5vw";
 		doneButton.style.color = "#77bb00";
+		doneButton.style.zIndex = "100";
 	}
 	function viewAddButton(addItemButton, thisButtonId){
 		buttons[thisButtonId].appendChild(addItemButton);
@@ -272,8 +289,11 @@ document.addEventListener('DOMContentLoaded', function () {
 			addItemButton.style.transform = "rotate(0deg) scale(1)";
 		}
 	}
-	 // a is the dropdown which needs to be closed and b is the button which is clicked
-	 // firstClick false means that the dropdown is open
+	/* 
+		a is the dropdown which needs to be closed and b is the button which is clicked
+		a & b comes in a format of '1' and '2'
+		firstClick false means that the dropdown is open 
+	*/
 	function closeAll(a, b) {
 		const d = dropdown[a];
 		$( d ).animate({ height: "0" }, 200 );
@@ -437,6 +457,5 @@ document.addEventListener('DOMContentLoaded', function () {
 		if(confirm("Do you want to cancel this Survey?")){
 			window.history.back();
 		}
-
 	}
 });

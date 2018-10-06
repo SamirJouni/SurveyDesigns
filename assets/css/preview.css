@@ -1,60 +1,76 @@
+/* complete preview container */
 #pRoot {
-	margin-left: 6vw;
-	margin-top: 4vw;
-	margin-bottom: 10vw;
-}
-#pRoot > div:first-child {
-	margin-bottom: 4vw;
-}
-#surveyTitlePreview {
-	font-size: 1.9vw;
-	font-weight: 200;
-	color: #000000;
-}
-.previewQuestion {
-	margin-top: 3vw ;
-}
-.previewQuestion > div {
+	font-family: 'Comfortaa', sans-serif;
 	margin-top: 2vw;
-	font-size: 1.2vw;
-	font-weight: 400;
-	width: 79vw;
+	margin-bottom: 14vh;
 }
+.previewSurveyTitle {
+	margin-top: 8vh;
+	text-align: center;
+	color: #555;
+}
+
+/* is the container of those shadowed boxes */
+.previewQuestion { 
+	box-shadow: 0 0 0.2vw 0 #ddd;
+	padding: 1vh 6vw 5vh 2vw;
+	border-radius: 0.5vw;
+	margin-top: 3vh;
+}
+.previewQuestion:hover {
+	box-shadow: 0 0 0.5vw 0 #ddd;
+}
+/* it has the question and anwswer div */
+.previewQuestion > div:last-child {
+	margin-top: 4vh;
+	margin-left: 1vw;
+	font-size: 1.2vw;
+	font-weight: 300;
+}
+/* input text area of first question type */
 .previewQuestion > div input {
-	padding: 0 1vw;
 	border: 0;
-	border-bottom: .2vw solid #7fbb00;
+	border-bottom: .2vh solid #7fbb00;
+	font-family: 'Comfortaa', sans-serif;
 	font-size: 1.2vw;
-	font-family: 'Roboto', sans-serif;
 	line-height: 1.6;
-	width: 75vw;
+	padding: 0 0.4vw;
+	width: 25vw;
 }
+/* has the options from the second question type */
+.previewQuestion > div select {
+	padding: .2vw .5vw;
+	margin-left: 2vw;
+	border: .1vw solid #7fbb00;
+	border-radius: 2vw;
+	font-size: 1vw;
+	font-family: 'Comfortaa', sans-serif;
+	color: #808182;
+}
+/* checkboxes from the last question type */
 .previewQuestion > div input[type="checkbox"] {
 	padding: 0 1vw;
 	border: 0;
-	font-size: 1.2vw;
-	font-family: 'Roboto', sans-serif;
+	font-size: 1vw;
+	font-family: 'Comfortaa', sans-serif;
 	line-height: 1;
 	width: auto;
 	margin-right: 1vw;
 }
-.previewQuestion > div select {
-	padding: .2vw .5vw;
-	margin-left: 1vw;
-	border: .1vw solid #7fbb00;
-	font-size: 1vw;
-	font-family: 'Roboto', sans-serif;
-	color: #808182;
-}
+/* delete button */
 .previewQuestion img {
-  max-width: 2vw;
-  max-height: 2vw;
-  width: 100%;
+	max-width: 1.5vw;
+	max-height: 1.5vw;
+	width: 100%;
 	height: 100%;
 	cursor: pointer;
 	position: relative;
-	top: 3.8vw;
-	left: 80vw;
+	top: 0.8vh;
+	left: 35.5vw;
+	transition: all 0.2s;
+}
+.previewQuestion img:hover {
+	transform: rotate(-90deg);
 }
 .previewCheckbox div:first-child{
 	margin-top: 1vw;
