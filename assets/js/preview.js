@@ -122,9 +122,12 @@ function createPreview ( questionType, questionObject, questionId ) {
 	}
 
 	function handleDeleteContent (id) {
-		document.getElementById(id).remove();
-		console.log('ra');
-		questionId--;
+
+		$( document.getElementById(id) ).animate({ height: "0", padding:"0vh 6vw 0vh 2vw"}, 400 );
+		setTimeout(after200sec, 380);
+		function after200sec(){
+			document.getElementById(id).remove();
+		}
 	}
 
 	function togglePlaceholderOnClick() {

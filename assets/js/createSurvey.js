@@ -11,28 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	const modalTextContent = document.getElementById('modalTextContent');
 	const surveyTitle = document.getElementById('surveyTitle');
 	const surveyTitlePreview = document.getElementById('surveyTitlePreview');
-
 	let questionId = 0;
-	const questionObject1 = {
-		question: 'What is your name?',
-	}
-	createPreview(1, questionObject1, questionId);
-	questionId++;
-
-	const questionObject2 = {
-		question: 'What you do for living?',
-		options: ['Nothing', 'Anything', 'Everything']
-	}
-	createPreview(2, questionObject2, questionId);
-	questionId++;
-
-	const questionObject3 = {
-		question: 'Which car do you have?',
-		choices: ['TATA nano', 'Lamborghini Aventador', 'None']
-	}
-	createPreview(3, questionObject3, questionId);
-	questionId++;
-
 	let firstClick = [true, true, true];
 
 	for (var i = 0; i < buttons.length; i++) {
@@ -459,3 +438,28 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	}
 });
+
+
+
+/* SAMPLE QUESTIONS FOR DESIGNING PREVIEW */ 
+
+	// let questionId = 0;
+	// const questionObject1 = {
+	// 	question: 'What is your name?',
+	// }
+	// createPreview(1, questionObject1, questionId);
+	// questionId++;
+
+	// const questionObject2 = {
+	// 	question: 'What you do for living?',
+	// 	options: ['Nothing', 'Anything', 'Everything']
+	// }
+	// createPreview(2, questionObject2, questionId);
+	// questionId++;
+
+	// const questionObject3 = {
+	// 	question: 'Which car do you have?',
+	// 	choices: ['TATA nano', 'Lamborghini Aventador', 'None']
+	// }
+	// createPreview(3, questionObject3, questionId);
+	// questionId++;

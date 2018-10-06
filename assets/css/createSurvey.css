@@ -6,8 +6,10 @@
 .contentAndTitles > div{
 	margin-left: 4vw;
 }
-.contentAndTitles > div > hr {
+.contentAndTitles > hr {
 	border: none;
+	margin: 1vw 4vw;
+	width: 40vw;
 	height: 1px;
 	background: linear-gradient(to right, white, #aaa, white); 
 }
@@ -46,6 +48,8 @@
 }
 .field > hr{
 	border: none;
+	width: 40vw;
+	margin: 0;
 	height: 1px;
 	margin-top: 0.3vh; 
 	background: linear-gradient(to right, #7fbb00, #7fbb00, white, white); 
@@ -144,5 +148,3 @@
 .createSurveyButton:hover {
 	background: #75a902;
 }
-
-
