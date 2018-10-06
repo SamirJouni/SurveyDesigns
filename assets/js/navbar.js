@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	const logo = document.getElementsByClassName('logoWithText')[0];
 	const projectRepo = document.getElementById('projectRepo');
 	const  navbar = document.getElementsByClassName('navbar');
-	navbar[0].style.transition = "all 0.5s";
+	navbar[0].style.transition = "all 0.4s";
 
 	window.addEventListener("wheel",onWheelRoll);	//whenever changes execute the following function
 	let wheelRollCounter = 0;
