@@ -12,6 +12,8 @@
 
 /* is the container of those shadowed boxes */
 .previewQuestion { 
+	word-wrap: break-word;
+	overflow: hidden;
 	box-shadow: 0 0 0.2vw 0 #ddd;
 	padding: 1vh 6vw 5vh 2vw;
 	border-radius: 0.5vw;
