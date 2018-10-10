@@ -18,7 +18,7 @@ allSurveys.addEventListener('click', function(){
 		window.location.href = "allSurveys.html"
 }
 	else {
-		window.location.href = "assets/html/allSurveys.html"
+		window.location.href = "../html/allSurveys.html"
 	}
 });
 
@@ -29,7 +29,7 @@ mySurveys.addEventListener('click', function(){
 		window.location.href = "mySurveys.html"
 }
 	else {
-		window.location.href = "assets/html/mySurveys.html"
+		window.location.href = "../html/mySurveys.html"
 	}
 });
 
@@ -40,7 +40,7 @@ myAccount.addEventListener('click', function(){
 		window.location.href = "myAccount.html"
 }
 	else {
-		window.location.href = "assets/html/myAccount.html"
+		window.location.href = "../html/myAccount.html"
 	}
 });
 
