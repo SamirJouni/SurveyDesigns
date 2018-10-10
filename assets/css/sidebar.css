@@ -20,6 +20,9 @@
 	overflow-y: hidden;
 	transition: color .1s ease-in-out;
 }
+.sidebar span > img {
+	width: 8vw;
+}
 
 .sidebar span:hover {
 	color: #7fbb00;

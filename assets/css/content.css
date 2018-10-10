@@ -12,7 +12,15 @@
 }*/
 
 .createSurvey span {
-	font-size: 2.5vw;
+	font-size: 2vw;
 	letter-spacing: .1vw;
 	cursor: pointer;
+}
+.mainButton {
+	background-color: #7fbb04;
+    padding: 2vh 2vw;
+    font-family: 'Comfortaa', sans-serif;
+    border-radius: 4vh;
+    color: white;
+    margin-left: 10vw;
 }
