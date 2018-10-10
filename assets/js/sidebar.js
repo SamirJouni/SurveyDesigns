@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	const projectRepo = document.getElementById('projectRepo');
 
 	const createSurvey = document.getElementsByClassName('createSurvey')[0];
+	console.log(createSurvey);
 
 
 /* event listener that redirects to a page that displays all surveys that have ever been created,
