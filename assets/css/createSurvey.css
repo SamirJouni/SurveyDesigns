@@ -3,8 +3,11 @@
 	margin-bottom: 9vh;
 	margin-left: 1vw;
 }
+.createSurveyTitle {
+	margin-left: 2vw;
+}
 .contentAndTitles > div{
-	margin-left: 4vw;
+	margin-left: 3vw;
 }
 .contentAndTitles > hr {
 	border: none;
@@ -24,14 +27,13 @@
 .field input {
 	font-family: 'Montserrat', sans-serif;
 	padding: 0 4vw 0 0.8vw;
-
+}
 .createSurveyContainer {
 	margin-top: 3vw;
-	margin-bottom: 8vw;
+	margin-bottom: 6vw;
 }
 .createSurveyContainer > div {
-	padding-top: 4vw;
-	margin: 2vw 4vw;
+	margin: 2vw 3vw;
 }
 .createSurveyContainer div input {
 	padding: 0 1vw;
