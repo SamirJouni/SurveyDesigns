@@ -24,6 +24,17 @@
 .field input {
 	font-family: 'Montserrat', sans-serif;
 	padding: 0 4vw 0 0.8vw;
+
+.createSurveyContainer {
+	margin-top: 3vw;
+	margin-bottom: 8vw;
+}
+.createSurveyContainer > div {
+	padding-top: 4vw;
+	margin: 2vw 4vw;
+}
+.createSurveyContainer div input {
+	padding: 0 1vw;
 	border: 0;
 	/*border-bottom: .1vw solid #7fbb00;*/
 	font-size: 1.2vw;

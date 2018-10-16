@@ -2,7 +2,7 @@
 .sidebar {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	/* align-items: center; */
 	width: 22vw;
 	height: 91vh;
 	box-shadow: .15vw 0 .1vw rgba(0, 0, 0, 0.05);
@@ -14,8 +14,10 @@
 	font-weight: 800;
 	padding: 3.9vw 0;
 	border-bottom: .15vw solid #dce5ee;
-	width: 80%;
-	text-align: left;
+	/* width: 80%; */
+	width: 100%;
+	/* text-align: left; */
+	text-align: center;
 	cursor: pointer;
 	overflow-y: hidden;
 	transition: color .1s ease-in-out;
@@ -26,4 +28,13 @@
 
 .sidebar span:hover {
 	color: #7fbb00;
+}
+
+.sidebar span.active-link {
+	color:#fff;
+	background:#7fbb00;
+}
+.sidebar span.inactive-link {
+	color:#7fbb00;
+	background:#fff;
 }
