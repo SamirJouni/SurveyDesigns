@@ -2,25 +2,27 @@
 .contentContainer {
 	display: flex;
 	flex-direction: row;
+	align-items: center;
 	justify-content: flex-start;
 	box-shadow: 0 .15vw .1vw rgba(0, 0, 0, 0.05);
 }
 
-/*
 .createSurvey {
 	margin: 0 auto;
-}*/
-
-.createSurvey span {
-	font-size: 2vw;
-	letter-spacing: .1vw;
-	cursor: pointer;
 }
-.mainButton {
-	background-color: #7fbb04;
-    padding: 2vh 2vw;
-    font-family: 'Comfortaa', sans-serif;
-    border-radius: 4vh;
-    color: white;
-    margin-left: 10vw;
+
+.mainBtn {
+	font-size: 2.5vw;
+	letter-spacing: .2vw;
+	padding: 1.5vw;
+	color: #ffffff;
+	border: .1vw solid #7fbb00;
+	border-radius: .9vw;
+	background: #7fbb00;
+	cursor: pointer;
+	transition: background .2s ease-in-out;
+}
+
+.mainBtn:hover {
+	background: #75a902;
 }
