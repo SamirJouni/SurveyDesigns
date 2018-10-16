@@ -9,10 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	const createSurvey = document.getElementsByClassName('createSurvey')[0];
 	console.log(createSurvey);
-<<<<<<< HEAD
-
-=======
->>>>>>> afa1ef687610f06e46d3eff0584faf409862e677
 
 /* event listener that redirects to a page that displays all surveys that have ever been created,
 when the "All Surveys" button in the sidebar is pressed */
