@@ -3,11 +3,18 @@
 
 <head>
 	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Create Survey - The Survey</title>
 	<link rel="shortcut icon" type="image/png" href="../img/favicon.png">
+
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Comfortaa:300|Comfortaa:400|Montserrat:500|" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Spectral+SC:300" rel="stylesheet">
+
 	<link rel="stylesheet" type="text/css" href="../css/cssReset.css">
 	<link rel="stylesheet" type="text/css" href="../css/navbar.css">
 	<link rel="stylesheet" type="text/css" href="../css/sidebar.css">
@@ -28,7 +35,7 @@
 				<img src="../svg/logo.svg" alt="Logo of The Survey">
 			</div>
 			<div class="text">
-				<span class="survey">The Survey</span>
+				<span class="surveyText">The Survey</span>
 			</div>
 		</div>
 		<!-- This is the signup button in the navbar -->
@@ -36,6 +43,9 @@
 			<span id="projectRepo">
 				<img class="ghLink" src="../svg/github.svg" alt="github repo">
 			</span>
+			<div class="login">
+				<a href="../html/login.html">Log In</a>
+			</div>
 			<div class="signup">
 				<a href="../html/signup.html">Sign Up</a>
 			</div>
@@ -51,42 +61,82 @@
 		</div>
 
 		<div class="contentAndTitles">
-			<div class="surveysTitle">
-				<span>Create Your Survey</span>
+			<div style="width: 80vw;">
+				<div class="surveysTitle createSurveyTitle">
+					<span>Create Your Survey</span>
+				</div>
 			</div>
 			<div class="createSurveyContainer">
-				<div>
-					<input type="text" name="surveyTitle" id="surveyTitle" placeholder="Survey Title" />
-				</div>
-				<div>
-					<div class="makeAChoice">
-						<span>Add One Or More Of The Following To Create A Survey:</span>
+				<div class="createSurvey">
+					<div class="field">
+						<input type="text" name="surveyTitle" id="surveyTitle" minlength="1" maxlength="30" size="30" 
+							placeholder="" title="Minimum number of charecters is 1" required/>
+						<label>Enter survey name</label>
+						<hr/>
 					</div>
-					<div class="questionType">
-						<img src="../svg/question.svg" alt="Add A Question" title="Add A Question" class="addAQuestion" id="B1" />
-						<img src="../svg/option.svg" alt="Add A One Option Question" title="Add A One Option Question" class="addAQuestion" id="B2"
-						/>
-						<img src="../svg/multipleChoices.svg" alt="Add a Multiple Choice Question" title="Add a Multiple Choice Question" class="addAQuestion"
-						 id="B3" />
+					<div>
+						<div class="makeAChoice">
+							<span>Choose variety of question types for your survey</span>
+						</div>
+						<!-- checkbox helps to keep the questionInput open using CSS -->
+						<div class="questionType">
+							<div class="addAQuestion" id="B0">
+								<img src="../svg/question.svg" alt="Add A Question"/>
+								<p>Add a simple question</p>
+							</div>
+							<div class="dropdown" id="dropdown0">
+
+							</div>
+							<div class="addAQuestion" id="B1">
+								<img src="../svg/option.svg" alt="Add A One Option Question"/>
+								<p>Add a single choice question</p>
+							</div>
+							<div class="dropdown"id="dropdown1">
+
+							</div>
+							<div class="addAQuestion" id="B2">
+								<img src="../svg/multipleChoices.svg" alt="Add a Multiple Choice Question"/>
+								<p>Add a multiple choice question</p>
+							</div>
+							<div class="dropdown"id="dropdown2">
+
+							</div>
+						</div>
 					</div>
-				</div>
-				<div class="createSurveyButton">
-					<span>Create This Survey</span>
+					<div class="mainButtonHolder">
+							<span class="cancelSurvey">Cancel Survey</span>
+						<span class="createSurveyButton">Create this Survey</span>
+					</div>
 				</div>
 			</div>
-			<div class="previewSurvey">
-				<div class="surveysTitle">
-					<span>Preview Your Survey</span>
+			<hr/>
+			<div class="previewSurvey" style="width:40vw;">
+				<div class="surveysTitle previewSurveyTitle" title="/* Preview of your survey will be shown below */">
+					<span>SURVEY PREVIEW</span>
 				</div>
+
 				<div id="pRoot">
-					<div>
-						<span id="surveyTitlePreview"></span>
-					</div>
 				</div>
+
 			</div>
 		</div>
 	</div>
 
+<!--<div id="accountModal" class="accountModal">
+		// modalContent is the white part of the popup
+		<div class="modalContent">
+			// closeModal is the cross on the top right corner of the popup
+			// &times; is to give the cross symbol to the close button for the popup
+			<span class="closeModal" id="closeModal">&times;</span>
+			<div id="modalTextContent" class="modalTextContent">
+
+			</div>
+		</div>
+	</div>-->
+
+
+
+<!-- FOOTER -->
 	<div class="footer">
 		<div class="links">
 			<div class="leftLinks">
@@ -94,19 +144,19 @@
 					<span>COMMUNITY</span>
 				</div>
 				<div class="theLinks">
-					<a href="https://zerotomastery.io">Community Website</a>
-					<a href="https://github.com/zero-to-mastery">Community Github</a>
-					<a href="https://zero-to-mastery.github.io/ZtM-Job-Board/">ZTM Job-Board</a>
-					<a href="https://www.udemy.com/the-complete-web-developer-in-2018/">ZTM Course</a>
-					<a href="https://www.udemy.com/the-complete-junior-to-senior-web-developer-roadmap/">Senior Course</a>
+					<a href="https://zerotomastery.io" style="text-decoration: none;" target="_blank">Community Website</a>
+					<a href="https://github.com/zero-to-mastery" style="text-decoration: none;" target="_blank">Community Github</a>
+					<a href="https://zero-to-mastery.github.io/ZtM-Job-Board/" style="text-decoration: none;" target="_blank">ZTM Job-Board</a>
+					<a href="https://www.udemy.com/the-complete-web-developer-in-2018/" style="text-decoration: none;" target="_blank">ZTM Course</a>
+					<a href="https://www.udemy.com/the-complete-junior-to-senior-web-developer-roadmap/" style="text-decoration: none;" target="_blank">Senior Course</a>
 				</div>
 			</div>
 			<div class="middleText">
 				<div class="initiative">
-					<span>An Initiative Of :</span>
+					<span>An initiative by</span>
 				</div>
 				<div class="ztmLogo">
-					<img src="../img/ZTM.jpg" alt="Zero To Mastery Community">
+					<img src="../img/ZTM.jpg 	" alt="Zero To Mastery Community">
 				</div>
 			</div>
 			<div class="rightLinks">
@@ -114,26 +164,17 @@
 					<span>THE SURVEY</span>
 				</div>
 				<div class="theLinks">
-					<a href="https://github.com/zero-to-mastery/TheVerySpecialProject">Github Repo</a>
-					<a href="https://github.com/zero-to-mastery/TheVerySpecialProject/graphs/contributors">Contributors</a>
-					<a href="https://github.com/zero-to-mastery/TheVerySpecialProject/wiki">Wiki</a>
-					<a href="https://github.com/zero-to-mastery/TheVerySpecialProject/blob/master/README.md">Coming Features</a>
-					<a href="https://github.com/zero-to-mastery/TheVerySpecialProject/issues">Report A Bug</a>
+					<a href="https://github.com/zero-to-mastery/TheVerySpecialProject" style="text-decoration: none;" target="_blank">Github Repo</a>
+					<a href="https://github.com/zero-to-mastery/TheVerySpecialProject/graphs/contributors" style="text-decoration: none;" target="_blank">Contributors</a>
+					<a href="https://github.com/zero-to-mastery/TheVerySpecialProject/wiki" style="text-decoration: none;" target="_blank">Wiki</a>
+					<a href="https://github.com/zero-to-mastery/TheVerySpecialProject/blob/master/README.md" style="text-decoration: none;" target="_blank">Coming Features</a>
+					<a href="https://github.com/zero-to-mastery/TheVerySpecialProject/issues" style="text-decoration: none;" target="_blank">Report A Bug</a>
 				</div>
 			</div>
 		</div>
+		<hr/>
 		<div class="bottomText">
-			<span>Made With
-				<span class="love">🖤</span>
-				By The ZTM Community</span>
-		</div>
-	</div>
-	<div id="accountModal" class="accountModal">
-		<div class="modalContent">
-			<span class="closeModal" id="closeModal">&times;</span>
-			<div id="modalTextContent" class="modalTextContent">
-
-			</div>
+			<span>Made With&ensp;<big><sub><span class="love">♥</span></sub></big>&ensp;By The ZTM Community</span>
 		</div>
 	</div>
 	<script type="text/javascript" src="../js/goToZTM.js"></script>
@@ -144,5 +185,4 @@
 	<script type="text/javascript" src="../js/createSurvey.js"></script>
 	<script type="text/javascript" src="../js/footer.js"></script>
 </body>
-
 </html>

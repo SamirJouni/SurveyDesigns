@@ -1,79 +1,163 @@
 /* This is the corresponding css file fo createSurvey.html */
+.createSurvey {
+	margin-bottom: 9vh;
+	margin-left: 1vw;
+}
+.createSurveyTitle {
+	margin-left: 2vw;
+}
+.contentAndTitles > div{
+	margin-left: 3vw;
+}
+.contentAndTitles > hr {
+	border: none;
+	margin: 1vw 4vw;
+	width: 40vw;
+	height: 1px;
+	background: linear-gradient(to right, white, #aaa, white); 
+}
+
+.field {
+	margin-top: 5vh;
+	margin-left: 2vw;
+	height: 2vw;
+	position: relative;
+	font-family: 'Montserrat', sans-serif;
+}
+.field input {
+	font-family: 'Montserrat', sans-serif;
+	padding: 0 4vw 0 0.8vw;
+}
 .createSurveyContainer {
 	margin-top: 3vw;
-	margin-bottom: 8vw;
+	margin-bottom: 6vw;
 }
 .createSurveyContainer > div {
-	padding-top: 4vw;
-	margin: 2vw 4vw;
+	margin: 2vw 3vw;
 }
 .createSurveyContainer div input {
 	padding: 0 1vw;
 	border: 0;
-	border-bottom: .2vw solid #7fbb00;
+	/*border-bottom: .1vw solid #7fbb00;*/
 	font-size: 1.2vw;
-	font-family: 'Roboto', sans-serif;
-	line-height: 1.6;
 }
+.field label {
+	pointer-events: none;
+	position: absolute;
+	left: 0.7vw;
+	transition: 0.3s all;
+	color: #555555;
+}
+/* to keep the label in air on this conditions */
+.field input:valid:not(:focus) + label,
+.field input:focus + label {
+	color: #7fbb00;
+	left: 0;
+	transform: translate(-1.3vw, -3vh) scale(0.7);
+}
+/* when invalid */
+.field input:invalid:focus + label {
+	color: #888888; /* color: red */
+}
+.field > hr{
+	border: none;
+	width: 40vw;
+	margin: 0;
+	height: 1px;
+	margin-top: 0.3vh; 
+	background: linear-gradient(to right, #7fbb00, #7fbb00, white, white); 
+}
+
 .makeAChoice {
-	padding-bottom: 2vw;
+	margin-top: 9vh;
+	padding-bottom: 4vh;
 }
 .makeAChoice span {
+	font-family: 'Comfortaa', sans-serif;
+	font-weight: 300;
+	letter-spacing: .1vw;
 	font-size: 1.2vw;
 }
-.questionType {
-	width: 20vw;
-	height: 4vw;
-}
-.questionType img {
-	max-width: 4vw;
-	max-height: 4vw;
-	width: 100%;
-	height: 100%;
-	margin-right: 2vw;
+.addAQuestion {
+	position: relative;
+	width: 27vw;
+	height: 2.5vw;
+	margin-left: 2vw;
+	margin-bottom: 1vw;
+	position: relative;
+	padding: 0.5vw;
+	padding-left: 1vw;
+	border-radius: 2vw;
+	box-shadow: 0 0 0.2vw 0 #ddd;
 	cursor: pointer;
+	transition: 0.2s all;
 }
-.createSurveyButton span {
-  font-size: 1.2vw;
-  letter-spacing: .12vw;
-	padding: .8vw;
-  color: #ffffff;
-  border-radius: .25vw;
-	background: #7fbb00;
-	cursor: pointer;
-  transition: background .15s ease-in-out;
+/*.addAQuestion:active {
+	transform: scale(0.98);
+}*/
+.addAQuestion:hover {
+	box-shadow: 0 0 0.5vw 0 #ddd;
 }
-.createSurveyButton span:hover {
-  background: #75a902;
+.addAQuestion > p {
+	font-size: 1.2vw;
 }
-.accountModal {
-	display: none;
-	position: fixed;
-	top: 0;
-	width: 100vw;
-	height: 100vh;
-	overflow: auto;
-	background-color: rgba(127,187,0,0.6);
 
-	align-items: center;
-	justify-content: center;
+.dropdown {
+	position: relative;
 }
-.modalContent {
-	background-color: #ffffff;
-	margin: auto;
-	padding: 1vw 1.3vw;
-	width: 80%;
+.questionType img {	
+	pointer-events: none;
+	max-width: 2.5vw;
+	max-height: 2.5vw;
 }
-.closeModal {
-	color: #808182;
-	float: right;
-	font-size: 28px;
-	font-weight: bold;
-	transition: color .2s ease-in-out;
+#B1 img {
+	padding-left: 0.2vw;
 }
-.closeModal:hover,
-.closeModal:focus {
-	color: #7fbb00;
-	text-decoration: none;
+#B2 img {
+	padding-top: 0.1vw;
+	padding-left: 0.2vw;
+}
+.questionType p {
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	text-align: center;
+	border-left: .1vw solid;
+	border-image: linear-gradient(white, #888, white) 1 100%;
+	padding-left: 2vw;
+	left: 5vw;
+}
+.dropdown {
+	overflow: hidden;
+}
+.mainButtonHolder {
+	margin-top: 6vh;
+	margin-left: 1vw;
+}
+.mainButtonHolder span {
+	font-size: 1.2vw;
+	border-radius: .5vw;
+	letter-spacing: .12vw;
+	padding: .8vw 1vw;
+	font-family: 'Comfortaa', cursive;
+	box-shadow: 0 0 0.3vw 0 #ddd;
 	cursor: pointer;
+}
+.mainButtonHolder .cancelSurvey {
+	margin-right: 3vw;
+	color: #555;
+	transition: 0s all;
+}
+.mainButtonHolder .createSurveyButton {
+	color: #ffffff;	
+	background: #7fbb00;
+	transition: background .15s ease-in-out;
+}
+.cancelSurvey:hover {
+	color: #cc0000;
+	opacity: 0.8;
+	box-shadow: 0 0 0.5vw 0 #ddd;
+}
+.createSurveyButton:hover {
+	background: #75a902;
 }

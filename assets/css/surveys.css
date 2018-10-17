@@ -1,6 +1,6 @@
 /* This is the css file corresponding to pages with surveys listed */
 .surveyList {
-	padding: 1vw 0vw;
+	padding: 1vw 2vw;
 	width: 100%;
 	height: 70vh;
 	overflow-y: auto;
